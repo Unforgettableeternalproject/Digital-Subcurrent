@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Net.Http;
 using UnityEngine;
 
 namespace Digital_Subcurrent
@@ -67,9 +68,10 @@ namespace Digital_Subcurrent
         {
             // 計算目標位置
             Vector2 playerPosition = transform.position;
+            Vector2 targetTestGrid = playerPosition + direction * new Vector2(0.5f,0.5f);
             Vector2 targetGrid = playerPosition + direction * gridSize;
 
-            if (IsBlocked(targetGrid))
+            if (IsBlocked(targetTestGrid))
             {
                 Debug.Log("Blocked by wall or obstacle");
                 return; // 如果目標格子被牆或障礙物阻擋
@@ -88,7 +90,7 @@ namespace Digital_Subcurrent
                     if (box != null && box.TryMove(direction))
                     {
                         Debug.Log("Push box success");
-//                        targetPosition = targetGrid; // 推動成功，玩家移動到格子
+                        //                        targetPosition = targetGrid; // 推動成功，玩家移動到格子
                         isMoving = true;
                     }
                 }
@@ -121,8 +123,10 @@ namespace Digital_Subcurrent
         {
             // 使用圓形檢測，以更準確地檢查位置是否有障礙物
             Collider2D hit = Physics2D.OverlapCircle(position, 0.1f);
+
             if (hit != null && (hit.CompareTag("Wall") || (hit.CompareTag("Obstacle"))))
             {
+                Debug.Log(" hit " + hit.gameObject.tag + " position " + position);
                 return true; // 如果碰到牆或其他障礙物
             }
             return false;
