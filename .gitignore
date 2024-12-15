@@ -74,5 +74,8 @@ crashlytics-build.properties
 # Starter Files
 *.bat
 
+# Others
+temp_branch.txt
+
 # Configs
 .vsconfig
