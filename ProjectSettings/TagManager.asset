@@ -7,6 +7,9 @@ TagManager:
   - Box
   - Wall
   - Obstacle
+  - Hole
+  - Key
+  - Terminal
   layers:
   - Default
   - TransparentFX

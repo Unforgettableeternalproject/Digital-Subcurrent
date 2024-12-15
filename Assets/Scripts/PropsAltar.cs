@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//when something get into the alta, make the runes glow
 namespace Digital_Subcurrent
 {
-
     public class PropsAltar : MonoBehaviour
     {
         public List<SpriteRenderer> runes;
         public float lerpSpeed;
+        public GameObject closedDoor; // 關閉門的 prefab
+        public GameObject openDoor;   // 開啟門的 prefab
+        public Transform doorPosition; // 門的位置 (同一位置切換)
 
         private Color curColor;
         private Color targetColor;
@@ -21,21 +22,34 @@ namespace Digital_Subcurrent
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            targetColor.a = 1.0f;
-        }
+            Debug.Log("Test");
+            CharacterController player = other.GetComponent<CharacterController>();
+            if (player != null && player.HasKey())
+            {
+                Debug.Log("Altar activated!");
+                targetColor.a = 1.0f; // 符文發光
 
-        private void OnTriggerExit2D(Collider2D other)
-        {
-            targetColor.a = 0.0f;
+                // 切換門狀態
+                OpenTheDoor();
+            }
         }
 
         private void Update()
         {
             curColor = Color.Lerp(curColor, targetColor, lerpSpeed * Time.deltaTime);
-
             foreach (var r in runes)
             {
                 r.color = curColor;
+            }
+        }
+
+        private void OpenTheDoor()
+        {
+            // 移除舊門並生成新門
+            if (closedDoor != null && openDoor != null)
+            {
+                Destroy(closedDoor);
+                Instantiate(openDoor, doorPosition.position, Quaternion.identity);
             }
         }
     }

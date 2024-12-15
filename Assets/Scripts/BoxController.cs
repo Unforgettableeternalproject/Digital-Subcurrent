@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,15 +8,15 @@ namespace Digital_Subcurrent
 
     public class BoxController : MonoBehaviour
     {
-        public Vector2 gridSize = new Vector2(1, 1); // ®æ¤l¤j¤p
-        public float moveSpeed = 5f; // ²¾°Ê³t«×
+        public Vector2 gridSize = new Vector2(1, 1); // æ ¼å­å¤§å°
+        public float moveSpeed = 5f; // ç§»å‹•é€Ÿåº¦
 
         private bool isMoving = false;
         private Vector2 targetPosition;
 
         private void Start()
         {
-            targetPosition = transform.position; // ªì©l¤Æ¥Ø¼Ğ¦ì¸m
+            targetPosition = transform.position; // åˆå§‹åŒ–ç›®æ¨™ä½ç½®
         }
 
         private void Update()
@@ -29,38 +29,52 @@ namespace Digital_Subcurrent
 
         public bool TryMove(Vector2 direction)
         {
-            if (isMoving) return false; // ¦pªG¥¿¦b²¾°Ê¡AµLªk¦A±À°Ê
+            if (isMoving) return false; // å¦‚æœæ­£åœ¨ç§»å‹•ï¼Œç„¡æ³•å†æ¨å‹•
 
-            // ­pºâ¥Ø¼Ğ¦ì¸m
+            // è¨ˆç®—ç›®æ¨™ä½ç½®
             Vector2 potentialPosition = (Vector2)transform.position + direction * gridSize;
 
-            // ÀË¬d¥Ø¼Ğ¦ì¸m¬O§_¦³®Ä¡]¥i®Ú¾Ú¨ãÅéÅŞ¿èÂX®iÀË¬d±ø¥ó¡^
+            // æª¢æŸ¥ç›®æ¨™ä½ç½®æ˜¯å¦æœ‰æ•ˆï¼ˆå¯æ ¹æ“šå…·é«”é‚è¼¯æ“´å±•æª¢æŸ¥æ¢ä»¶ï¼‰
             if (CanMoveTo(potentialPosition))
             {
                 targetPosition = potentialPosition;
                 isMoving = true;
-                return true; // ±À°Ê¦¨¥\
+                return true; // æ¨å‹•æˆåŠŸ
             }
 
-            return false; // ±À°Ê¥¢±Ñ
+            return false; // æ¨å‹•å¤±æ•—
         }
 
         private bool CanMoveTo(Vector2 position)
         {
-            // ¨Ï¥Î Raycast ÀË¬d¥Ø¼Ğ¦ì¸m¬O§_¥i¥Î
+            // ä½¿ç”¨ Raycast æª¢æŸ¥ç›®æ¨™ä½ç½®æ˜¯å¦å¯ç”¨
             RaycastHit2D hit = Physics2D.Raycast(position, Vector2.zero);
-            return hit.collider == null; // ¦pªG¥Ø¼Ğ®æ¤l¨S¦³¸I¼²¡A«h¥i²¾°Ê
-        }
+            // å¦‚æœæ²’æœ‰ç¢°æ’ (ç©ºæ ¼)ï¼Œå‰‡å¯ç§»å‹•
+            if (hit.collider == null)
+            {
+                return true;
+            }
 
+            // å¦‚æœç›®æ¨™æ˜¯ç©ºæ´ (Tag == "Hole")ï¼Œä¹Ÿå…è¨±ç§»å‹•
+            if (hit.collider.CompareTag("Hole") || hit.collider.CompareTag("Terminal"))
+            {
+                Debug.Log("The hole!");
+                return true;
+            }
+
+            // å…¶ä»–æƒ…æ³ (å¦‚ Tag æ˜¯ Obstacle)ï¼Œç„¡æ³•ç§»å‹•
+            return false;
+        }
+        
         private void MoveTowardsTarget()
         {
-            // ¥­·Æ²¾°Ê
+            // å¹³æ»‘ç§»å‹•
             transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
 
-            // §PÂ_¬O§_¨ì¹F¥Ø¼Ğ¦ì¸m
+            // åˆ¤æ–·æ˜¯å¦åˆ°é”ç›®æ¨™ä½ç½®
             if (Vector2.Distance(transform.position, targetPosition) < 0.01f)
             {
-                transform.position = targetPosition; // ºë½T¹ï»ô®æ¤l
+                transform.position = targetPosition; // ç²¾ç¢ºå°é½Šæ ¼å­
                 isMoving = false;
             }
         }
