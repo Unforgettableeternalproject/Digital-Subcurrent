@@ -40,16 +40,18 @@ namespace Digital_Subcurrent
         {
             if (other.CompareTag("Key"))
             {
-                Debug.Log("Key collected!");
+                Debug.Log("Box filled the hole!");
                 hasKey = true;
 
-                // 播放音效
-                AudioSource keyAudio = other.GetComponent<AudioSource>();
-                if (keyAudio != null)
-                {
-                    Debug.Log("Play key audio");
-                    keyAudio.Play();
-                }
+                // 創建一個臨時音效物件
+                GameObject audioPlayer = new GameObject("TempAudioPlayer");
+                AudioSource tempAudio = audioPlayer.AddComponent<AudioSource>();
+                tempAudio.clip = other.gameObject.GetComponent<AudioSource>().clip;
+                tempAudio.volume = 0.6f;
+                tempAudio.Play();
+
+                // 自動銷毀音效物件
+                Destroy(audioPlayer, tempAudio.clip.length);
 
                 // 移除鑰匙物件
                 Destroy(other.gameObject, 0.1f);
@@ -109,7 +111,11 @@ namespace Digital_Subcurrent
                     if (box != null && box.TryMove(direction))
                     {
                         Debug.Log("Push box success");
-//                        targetPosition = targetGrid; // 推動成功，玩家移動到格子
+                        AudioSource pushAudio = hit.collider.GetComponent<AudioSource>();
+                        if (pushAudio != null)
+                        {
+                            pushAudio.Play();
+                        }
                         isMoving = true;
                     }
                 }

@@ -50,6 +50,11 @@ namespace Digital_Subcurrent
             {
                 Destroy(closedDoor);
                 Instantiate(openDoor, doorPosition.position, Quaternion.identity);
+                AudioSource doorAudio = GetComponent<AudioSource>();
+                if (doorAudio != null)
+                {
+                    doorAudio.Play();
+                }
             }
         }
     }

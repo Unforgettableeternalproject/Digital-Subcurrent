@@ -17,10 +17,22 @@ namespace Digital_Subcurrent
             if (!isFilled && other.CompareTag("Box"))
             {
                 Debug.Log("Box filled the hole!");
+
+                // 創建一個臨時音效物件
+                GameObject audioPlayer = new GameObject("TempAudioPlayer");
+                AudioSource tempAudio = audioPlayer.AddComponent<AudioSource>();
+                tempAudio.clip = GetComponent<AudioSource>().clip;
+                tempAudio.volume = 0.5f;
+                tempAudio.Play();
+
+                // 自動銷毀音效物件
+                Destroy(audioPlayer, tempAudio.clip.length);
+
                 // 切換為已填滿的地板
                 Instantiate(filledFloorPrefab, transform.position, Quaternion.identity);
                 Destroy(other.gameObject); // 移除箱子
-                Destroy(gameObject); // 移除空洞
+                Destroy(gameObject);       // 移除空洞
+
                 isFilled = true;
             }
         }
