@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Net.Http;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace Digital_Subcurrent
 {
@@ -103,22 +104,28 @@ namespace Digital_Subcurrent
                 // 嘗試推動箱子
                 Debug.Log("Try push box");
 
-                // 檢查箱子目標位置是否被阻擋(也就是玩家推動方向的2格)
-                if (collisionHandler.getBlockInfo(transform.position, direction, 2f) == null)
+                BoxController box = collidedObject.GetComponent<BoxController>();
+                if (box.TryMove(direction))
                 {
-                    Debug.Log("Box can be pushed");
-                    BoxController box = collidedObject.GetComponent<BoxController>();
+                    isMoving = true;
+                }
 
-                    if (box != null && box.TryMove(direction))
-                    {
-                        Debug.Log("Push box success");
-                        isMoving = true;
-                    }
-                }
-                else
-                {
-                    Debug.Log("Box push blocked");
-                }
+                // // 檢查箱子目標位置是否被collider阻擋(也就是玩家推動方向的2格)
+                // if (collisionHandler.getBlockInfo(transform.position, direction, 2f) == null)
+                // {
+                //     Debug.Log("Box can be pushed");
+                //     BoxController box = collidedObject.GetComponent<BoxController>();
+
+                //     if (box != null && box.TryMove(direction))
+                //     {
+                //         Debug.Log("Push box success");
+                //         isMoving = true;
+                //     }
+                // }
+                // else
+                // {
+                //     Debug.Log("Box push blocked");
+                // }
 
             }
         }

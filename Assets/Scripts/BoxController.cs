@@ -13,6 +13,7 @@ namespace Digital_Subcurrent
 
         private bool isMoving = false;
         private Vector2 targetPosition;
+        public CollisionHandler collisionHandler;
 
         private void Start()
         {
@@ -43,20 +44,24 @@ namespace Digital_Subcurrent
             }
 
             return false; // 推動失敗
+
+            
         }
 
         private bool CanMoveTo(Vector2 position)
         {
-            // 使用 Raycast 檢查目標位置是否可用
-            RaycastHit2D hit = Physics2D.Raycast(position, Vector2.zero);
+            // 得到碰撞資訊
+            Collider2D collidedObject = collisionHandler.getBlockInfo(position);
+
             // 如果沒有碰撞 (空格)，則可移動
-            if (hit.collider == null)
+            if (collidedObject == null)
             {
                 return true;
             }
 
+
             // 如果目標是空洞 (Tag == "Hole")，也允許移動
-            if (hit.collider.CompareTag("Hole") || hit.collider.CompareTag("Terminal"))
+            if (collisionHandler.IsTagMatched(collidedObject,new List<string>{"Hole","Termianl"}))
             {
                 Debug.Log("The hole!");
                 return true;
@@ -64,6 +69,7 @@ namespace Digital_Subcurrent
 
             // 其他情況 (如 Tag 是 Obstacle)，無法移動
             return false;
+
         }
         
         private void MoveTowardsTarget()
