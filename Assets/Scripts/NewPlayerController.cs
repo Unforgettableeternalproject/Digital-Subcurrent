@@ -1,24 +1,36 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using System.Net.Http;
 using UnityEngine;
 
 namespace Digital_Subcurrent
 {
-    public class CharacterController : MonoBehaviour
+    public class NewPlayerController : MonoBehaviour
     {
         public float moveSpeed = 5f; // 每格移動速度
         public Vector2 gridSize = new Vector2(1, 1); // 格子大小
-        //public Vector2 test = new Vector2(0.5f,0.5f);
+
 
         private Animator animator;
         private bool isMoving = false;
         private Vector2 targetPosition;
+        public CollisionHandler collisionHandler;
 
         private void Start()
         {
             animator = GetComponent<Animator>();
+            // collisionHandler = GetComponent<CollisionHandler>();
             targetPosition = transform.position; // 初始化為當前位置
+
+
+            if (collisionHandler == null)
+            {
+                Debug.LogError("CollisionHandler is missing on this GameObject!");
+            }
+            else
+            {
+                Debug.Log("CollisionHandler found successfully.");
+            }
         }
 
         private void Update()
@@ -66,33 +78,40 @@ namespace Digital_Subcurrent
         }
 
         private void TryMoveOrPush(Vector2 direction)
-        {
-            // 計算目標位置
-            Vector2 playerPosition = transform.position;
-            Vector2 targetTestGrid = playerPosition + direction * new Vector2(0.5f,0.5f);
-            Vector2 targetGrid = playerPosition + direction * gridSize;
 
-            if (IsBlocked(targetGrid))
+        {
+            //獲取碰撞物資訊
+            Collider2D collidedObject = collisionHandler.getBlockInfo(transform.position, direction);
+            
+            Debug.Log (" return hit info " + collidedObject);
+
+            if (collidedObject == null)
+            {
+                //移動
+                targetPosition += direction * gridSize;
+                isMoving = true;
+            }
+
+            else if (collidedObject.CompareTag("Wall") || collidedObject.CompareTag("Obstacle"))
             {
                 Debug.Log("Blocked by wall or obstacle");
                 return; // 如果目標格子被牆或障礙物阻擋
             }
 
-            RaycastHit2D hit = Physics2D.Raycast(targetGrid, Vector2.zero);
-
-            if (hit.collider != null && hit.collider.CompareTag("Box"))
+            else if (collidedObject.CompareTag("Box"))
             {
-                Debug.Log("Try push box");
                 // 嘗試推動箱子
-                Vector2 boxTargetGrid = targetGrid + direction * gridSize;
-                if (!IsBlocked(boxTargetGrid)) // 檢查箱子目標位置是否被阻擋
+                Debug.Log("Try push box");
+
+                // 檢查箱子目標位置是否被阻擋(也就是玩家推動方向的2格)
+                if (collisionHandler.getBlockInfo(transform.position, direction, 2f) == null)
                 {
                     Debug.Log("Box can be pushed");
-                    BoxController box = hit.collider.GetComponent<BoxController>();
+                    BoxController box = collidedObject.GetComponent<BoxController>();
+
                     if (box != null && box.TryMove(direction))
                     {
                         Debug.Log("Push box success");
-                        //                        targetPosition = targetGrid; // 推動成功，玩家移動到格子
                         isMoving = true;
                     }
                 }
@@ -100,11 +119,7 @@ namespace Digital_Subcurrent
                 {
                     Debug.Log("Box push blocked");
                 }
-            }
-            else if (hit.collider == null) // 如果目標格子是空的
-            {
-                targetPosition = targetGrid;
-                isMoving = true;
+
             }
         }
 
@@ -121,17 +136,5 @@ namespace Digital_Subcurrent
             }
         }
 
-        private bool IsBlocked(Vector2 position)
-        {
-            // 使用圓形檢測，以更準確地檢查位置是否有障礙物
-            Collider2D hit = Physics2D.OverlapCircle(position, 0.1f);
-            
-            if (hit != null && (hit.CompareTag("Wall") || (hit.CompareTag("Obstacle"))))
-            {
-                Debug.Log(" hit " + hit.gameObject.tag + " position " + position);
-                return true; // 如果碰到牆或其他障礙物
-            }
-            return false;
-        }
     }
 }

@@ -8,15 +8,15 @@ namespace Digital_Subcurrent
 
     public class BoxController : MonoBehaviour
     {
-        public Vector2 gridSize = new Vector2(1, 1); // ®æ¤l¤j¤p
-        public float moveSpeed = 5f; // ²¾°Ê³t«×
+        public Vector2 gridSize = new Vector2(1, 1); // ï¿½ï¿½lï¿½jï¿½p
+        public float moveSpeed = 5f; // ï¿½ï¿½ï¿½Ê³tï¿½ï¿½
 
         private bool isMoving = false;
         private Vector2 targetPosition;
 
         private void Start()
         {
-            targetPosition = transform.position; // ªì©l¤Æ¥Ø¼Ð¦ì¸m
+            targetPosition = transform.position; // ï¿½ï¿½lï¿½Æ¥Ø¼Ð¦ï¿½m
         }
 
         private void Update()
@@ -29,38 +29,38 @@ namespace Digital_Subcurrent
 
         public bool TryMove(Vector2 direction)
         {
-            if (isMoving) return false; // ¦pªG¥¿¦b²¾°Ê¡AµLªk¦A±À°Ê
+            if (isMoving) return false; // ï¿½pï¿½Gï¿½ï¿½ï¿½bï¿½ï¿½ï¿½Ê¡Aï¿½Lï¿½kï¿½Aï¿½ï¿½ï¿½ï¿½
 
-            // ­pºâ¥Ø¼Ð¦ì¸m
+            // ï¿½pï¿½ï¿½Ø¼Ð¦ï¿½m
             Vector2 potentialPosition = (Vector2)transform.position + direction * gridSize;
 
-            // ÀË¬d¥Ø¼Ð¦ì¸m¬O§_¦³®Ä¡]¥i®Ú¾Ú¨ãÅéÅÞ¿èÂX®iÀË¬d±ø¥ó¡^
+            
             if (CanMoveTo(potentialPosition))
             {
                 targetPosition = potentialPosition;
                 isMoving = true;
-                return true; // ±À°Ê¦¨¥\
+                return true; // ï¿½ï¿½ï¿½Ê¦ï¿½ï¿½\
             }
 
-            return false; // ±À°Ê¥¢±Ñ
+            return false; // ï¿½ï¿½ï¿½Ê¥ï¿½ï¿½ï¿½
         }
 
         private bool CanMoveTo(Vector2 position)
         {
-            // ¨Ï¥Î Raycast ÀË¬d¥Ø¼Ð¦ì¸m¬O§_¥i¥Î
+            // ï¿½Ï¥ï¿½ Raycast ï¿½Ë¬dï¿½Ø¼Ð¦ï¿½mï¿½Oï¿½_ï¿½iï¿½ï¿½
             RaycastHit2D hit = Physics2D.Raycast(position, Vector2.zero);
-            return hit.collider == null; // ¦pªG¥Ø¼Ð®æ¤l¨S¦³¸I¼²¡A«h¥i²¾°Ê
+            return hit.collider == null; // ï¿½pï¿½Gï¿½Ø¼Ð®ï¿½lï¿½Sï¿½ï¿½ï¿½Iï¿½ï¿½ï¿½Aï¿½hï¿½iï¿½ï¿½ï¿½ï¿½
         }
 
         private void MoveTowardsTarget()
         {
-            // ¥­·Æ²¾°Ê
+            // ï¿½ï¿½ï¿½Æ²ï¿½ï¿½ï¿½
             transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
 
-            // §PÂ_¬O§_¨ì¹F¥Ø¼Ð¦ì¸m
+            // ï¿½Pï¿½_ï¿½Oï¿½_ï¿½ï¿½Fï¿½Ø¼Ð¦ï¿½m
             if (Vector2.Distance(transform.position, targetPosition) < 0.01f)
             {
-                transform.position = targetPosition; // ºë½T¹ï»ô®æ¤l
+                transform.position = targetPosition; // ï¿½ï¿½Tï¿½ï¿½ï¿½ï¿½ï¿½l
                 isMoving = false;
             }
         }
