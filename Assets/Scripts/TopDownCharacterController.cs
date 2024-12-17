@@ -14,6 +14,7 @@ namespace Digital_Subcurrent
         private Animator animator;
         private bool isMoving = false;
         private Vector2 targetPosition;
+        private bool hasKey = false; // 玩家是否擁有鑰匙
 
         private void Start()
         {
@@ -34,6 +35,28 @@ namespace Digital_Subcurrent
             if (inputDir != Vector2.zero)
             {
                 TryMoveOrPush(inputDir);
+            }
+        }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.CompareTag("Key"))
+            {
+                Debug.Log("Box filled the hole!");
+                hasKey = true;
+
+                // 創建一個臨時音效物件
+                GameObject audioPlayer = new GameObject("TempAudioPlayer");
+                AudioSource tempAudio = audioPlayer.AddComponent<AudioSource>();
+                tempAudio.clip = other.gameObject.GetComponent<AudioSource>().clip;
+                tempAudio.volume = 0.6f;
+                tempAudio.Play();
+
+                // 自動銷毀音效物件
+                Destroy(audioPlayer, tempAudio.clip.length);
+
+                // 移除鑰匙物件
+                Destroy(other.gameObject, 0.1f);
             }
         }
 
@@ -72,7 +95,7 @@ namespace Digital_Subcurrent
             Vector2 targetTestGrid = playerPosition + direction * new Vector2(0.5f,0.5f);
             Vector2 targetGrid = playerPosition + direction * gridSize;
 
-            if (IsBlocked(targetGrid))
+            if (IsBlocked(targetGrid) || IsHole(targetGrid))
             {
                 Debug.Log("Blocked by wall or obstacle");
                 return; // 如果目標格子被牆或障礙物阻擋
@@ -85,14 +108,18 @@ namespace Digital_Subcurrent
                 Debug.Log("Try push box");
                 // 嘗試推動箱子
                 Vector2 boxTargetGrid = targetGrid + direction * gridSize;
-                if (!IsBlocked(boxTargetGrid)) // 檢查箱子目標位置是否被阻擋
+                if (!IsBlocked(boxTargetGrid) || IsHole(boxTargetGrid)) // 檢查箱子目標位置是否被阻擋
                 {
                     Debug.Log("Box can be pushed");
                     BoxController box = hit.collider.GetComponent<BoxController>();
                     if (box != null && box.TryMove(direction))
                     {
                         Debug.Log("Push box success");
-                        //                        targetPosition = targetGrid; // 推動成功，玩家移動到格子
+                        AudioSource pushAudio = hit.collider.GetComponent<AudioSource>();
+                        if (pushAudio != null)
+                        {
+                            pushAudio.Play();
+                        }
                         isMoving = true;
                     }
                 }
@@ -101,7 +128,7 @@ namespace Digital_Subcurrent
                     Debug.Log("Box push blocked");
                 }
             }
-            else if (hit.collider == null) // 如果目標格子是空的
+            else // 如果目標格子是空的
             {
                 targetPosition = targetGrid;
                 isMoving = true;
@@ -132,6 +159,21 @@ namespace Digital_Subcurrent
                 return true; // 如果碰到牆或其他障礙物
             }
             return false;
+        }
+
+        private bool IsHole(Vector2 position)
+        {
+            Collider2D hit = Physics2D.OverlapCircle(position, 0.1f);
+            if (hit != null && hit.CompareTag("Hole"))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public bool HasKey()
+        {
+            return hasKey;
         }
     }
 }

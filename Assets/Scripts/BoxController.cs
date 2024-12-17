@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,15 +8,15 @@ namespace Digital_Subcurrent
 
     public class BoxController : MonoBehaviour
     {
-        public Vector2 gridSize = new Vector2(1, 1); // ��l�j�p
-        public float moveSpeed = 5f; // ���ʳt��
+        public Vector2 gridSize = new Vector2(1, 1); // 格子大小
+        public float moveSpeed = 5f; // 移動速度
 
         private bool isMoving = false;
         private Vector2 targetPosition;
 
         private void Start()
         {
-            targetPosition = transform.position; // ��l�ƥؼЦ�m
+            targetPosition = transform.position; // 初始化目標位置
         }
 
         private void Update()
@@ -29,38 +29,52 @@ namespace Digital_Subcurrent
 
         public bool TryMove(Vector2 direction)
         {
-            if (isMoving) return false; // �p�G���b���ʡA�L�k�A����
+            if (isMoving) return false; // 如果正在移動，無法再推動
 
-            // �p��ؼЦ�m
+            // 計算目標位置
             Vector2 potentialPosition = (Vector2)transform.position + direction * gridSize;
 
-            
+            // 檢查目標位置是否有效（可根據具體邏輯擴展檢查條件）
             if (CanMoveTo(potentialPosition))
             {
                 targetPosition = potentialPosition;
                 isMoving = true;
-                return true; // ���ʦ��\
+                return true; // 推動成功
             }
 
-            return false; // ���ʥ���
+            return false; // 推動失敗
         }
 
         private bool CanMoveTo(Vector2 position)
         {
-            // �ϥ� Raycast �ˬd�ؼЦ�m�O�_�i��
+            // 使用 Raycast 檢查目標位置是否可用
             RaycastHit2D hit = Physics2D.Raycast(position, Vector2.zero);
-            return hit.collider == null; // �p�G�ؼЮ�l�S���I���A�h�i����
-        }
+            // 如果沒有碰撞 (空格)，則可移動
+            if (hit.collider == null)
+            {
+                return true;
+            }
 
+            // 如果目標是空洞 (Tag == "Hole")，也允許移動
+            if (hit.collider.CompareTag("Hole") || hit.collider.CompareTag("Terminal"))
+            {
+                Debug.Log("The hole!");
+                return true;
+            }
+
+            // 其他情況 (如 Tag 是 Obstacle)，無法移動
+            return false;
+        }
+        
         private void MoveTowardsTarget()
         {
-            // ���Ʋ���
+            // 平滑移動
             transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
 
-            // �P�_�O�_��F�ؼЦ�m
+            // 判斷是否到達目標位置
             if (Vector2.Distance(transform.position, targetPosition) < 0.01f)
             {
-                transform.position = targetPosition; // ��T�����l
+                transform.position = targetPosition; // 精確對齊格子
                 isMoving = false;
             }
         }

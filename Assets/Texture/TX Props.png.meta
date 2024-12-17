@@ -1460,6 +1460,72 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: TX Hole
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 191
+        width: 32
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9737ee3e2b8386f4085042203ed03c61
+      internalID: -781807796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX Filled_Floor
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 192
+        width: 32
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6209ba671ab825d4d88397bb3c6cff1d
+      internalID: 540216949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX Keycode
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 134
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dc1a26622b518d4b8352ea14318eb6c
+      internalID: -1083053967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -1474,6 +1540,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+      TX Filled_Floor: 540216949
+      TX Hole: -781807796
+      TX Keycode: -1083053967
       TX Props Altar: 21300142
       TX Props Altar Rune 1: 21300144
       TX Props Altar Rune 2: 21300146
@@ -1522,6 +1591,7 @@ TextureImporter:
       TX Props Well: 21300164
       TX Props Wooden Gate: 21300158
       TX Props Wooden Gate Opened: 21300160
+      TX Props_1: 1076875371
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
