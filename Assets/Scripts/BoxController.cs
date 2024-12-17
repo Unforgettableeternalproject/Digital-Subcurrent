@@ -13,11 +13,12 @@ namespace Digital_Subcurrent
 
         private bool isMoving = false;
         private Vector2 targetPosition;
-        public CollisionHandler collisionHandler;
+        private CollisionHandler collisionHandler;
 
         private void Start()
         {
             targetPosition = transform.position; // 初始化目標位置
+            collisionHandler = GetComponent<CollisionHandler>();
         }
 
         private void Update()

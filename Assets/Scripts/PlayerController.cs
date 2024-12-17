@@ -6,7 +6,7 @@ using UnityEngine.AI;
 
 namespace Digital_Subcurrent
 {
-    public class NewPlayerController : MonoBehaviour
+    public class PlayerController : MonoBehaviour
     {
         public float moveSpeed = 5f; // 每格移動速度
         public Vector2 gridSize = new Vector2(1, 1); // 格子大小
@@ -15,12 +15,12 @@ namespace Digital_Subcurrent
         private Animator animator;
         private bool isMoving = false;
         private Vector2 targetPosition;
-        public CollisionHandler collisionHandler;
+        private CollisionHandler collisionHandler;
 
         private void Start()
         {
             animator = GetComponent<Animator>();
-            // collisionHandler = GetComponent<CollisionHandler>();
+            collisionHandler = GetComponent<CollisionHandler>();
             targetPosition = transform.position; // 初始化為當前位置
 
 
@@ -86,7 +86,7 @@ namespace Digital_Subcurrent
             
             Debug.Log (" return hit info " + collidedObject);
 
-            if (collidedObject == null)
+            if (collidedObject == null || collidedObject.CompareTag("Standable"))  
             {
                 //移動
                 targetPosition += direction * gridSize;
@@ -110,24 +110,8 @@ namespace Digital_Subcurrent
                     isMoving = true;
                 }
 
-                // // 檢查箱子目標位置是否被collider阻擋(也就是玩家推動方向的2格)
-                // if (collisionHandler.getBlockInfo(transform.position, direction, 2f) == null)
-                // {
-                //     Debug.Log("Box can be pushed");
-                //     BoxController box = collidedObject.GetComponent<BoxController>();
-
-                //     if (box != null && box.TryMove(direction))
-                //     {
-                //         Debug.Log("Push box success");
-                //         isMoving = true;
-                //     }
-                // }
-                // else
-                // {
-                //     Debug.Log("Box push blocked");
-                // }
-
             }
+
         }
 
         private void MoveTowardsTarget()
