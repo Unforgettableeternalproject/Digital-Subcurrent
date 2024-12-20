@@ -79,7 +79,6 @@ namespace Digital_Subcurrent
         }
 
         private void TryMoveOrPush(Vector2 direction)
-
         {
             //獲取碰撞物資訊
             Collider2D collidedObject = collisionHandler.getBlockInfo(transform.position, direction);
