@@ -61,7 +61,7 @@ namespace Digital_Subcurrent
 
 
             // 如果目標是空洞 (Tag == "Hole")，也允許移動
-            if (collisionHandler.IsTagMatched(collidedObject,new List<string>{"Hole","Termianl"}))
+            if (collisionHandler.IsTagMatched(collidedObject,new List<string>{"Hole","Terminal"}))
             {
                 Debug.Log("The hole!");
                 return true;

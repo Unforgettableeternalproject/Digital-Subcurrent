@@ -86,7 +86,7 @@ namespace Digital_Subcurrent
             
             Debug.Log (" return hit info " + collidedObject);
 
-            if (collidedObject == null)
+            if (collidedObject == null || collidedObject.CompareTag("Key"))
             {
                 //移動
                 targetPosition += direction * gridSize;
@@ -107,7 +107,7 @@ namespace Digital_Subcurrent
                 BoxController box = collidedObject.GetComponent<BoxController>();
                 if (box.TryMove(direction))
                 {
-                    isMoving = true;
+                    Debug.Log("Push box success");
                 }
 
                 // // 檢查箱子目標位置是否被collider阻擋(也就是玩家推動方向的2格)
