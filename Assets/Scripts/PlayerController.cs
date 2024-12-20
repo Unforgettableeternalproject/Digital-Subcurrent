@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Net.Http;
 using UnityEngine;
-using UnityEngine.AI;
 
 namespace Digital_Subcurrent
 {
@@ -10,28 +8,26 @@ namespace Digital_Subcurrent
     {
         public float moveSpeed = 5f; // 每格移動速度
         public Vector2 gridSize = new Vector2(1, 1); // 格子大小
-
+        private bool isMoving = false;
+        private Vector2 initPosition = new Vector2(0, 0);
+        private Vector2 targetPosition;
+        private bool canMove = true;
 
         private Animator animator;
-        private bool isMoving = false;
-        private Vector2 targetPosition;
-        private CollisionHandler collisionHandler;
+        public GameManager gameManager;
 
         private void Start()
         {
             animator = GetComponent<Animator>();
-            collisionHandler = GetComponent<CollisionHandler>();
-            targetPosition = transform.position; // 初始化為當前位置
 
+            if (gameManager == null)
+            {
+                Debug.LogError("GameManager is missing in the scene!");
+            }
 
-            if (collisionHandler == null)
-            {
-                Debug.LogError("CollisionHandler is missing on this GameObject!");
-            }
-            else
-            {
-                Debug.Log("CollisionHandler found successfully.");
-            }
+            initPosition = transform.position; // 初始化為當前位置
+            gameManager.InitializeGame(initPosition); // 初始化GameManager
+            PrintObjectMatrix();
         }
 
         private void Update()
@@ -42,15 +38,19 @@ namespace Digital_Subcurrent
                 return;
             }
 
-            Vector2 inputDir = GetInputDirection();
-
-            if (inputDir != Vector2.zero)
+            if (canMove)
             {
-                TryMoveOrPush(inputDir);
+                Vector2 inputDir = HandleMovement();
+
+                if (inputDir != Vector2.zero)
+                {
+                    TryMove(inputDir);
+                }
             }
         }
 
-        private Vector2 GetInputDirection()
+        // 處理玩家移動輸入
+        private Vector2 HandleMovement()
         {
             Vector2 dir = Vector2.zero;
             if (Input.GetKey(KeyCode.A))
@@ -78,44 +78,24 @@ namespace Digital_Subcurrent
             return dir;
         }
 
-        private void TryMoveOrPush(Vector2 direction)
+        private void TryMove(Vector2 direction)
         {
-            //獲取碰撞物資訊
-            Collider2D collidedObject = collisionHandler.getBlockInfo(transform.position, direction);
-            
-            Debug.Log (" return hit info " + collidedObject);
-
-            if (collidedObject == null || collidedObject.CompareTag("Standable"))  
+            Vector2 playerPosition = transform.position;
+            if(gameManager.TryMove(direction))
             {
-                //移動
-                targetPosition += direction * gridSize;
+                targetPosition = playerPosition + direction * gridSize;
                 isMoving = true;
+                canMove = false;
+                gameManager.UpdatePlayer(new Vector2(direction.x, -direction.y));
             }
 
-            else if (collidedObject.CompareTag("Wall") || collidedObject.CompareTag("Obstacle"))
-            {
-                Debug.Log("Blocked by wall or obstacle");
-                return; // 如果目標格子被牆或障礙物阻擋
-            }
-
-            else if (collidedObject.CompareTag("Box"))
-            {
-                // 嘗試推動箱子
-                Debug.Log("Try push box");
-
-                BoxController box = collidedObject.GetComponent<BoxController>();
-                if (box.TryMove(direction))
-                {
-                    isMoving = true;
-                }
-
-            }
-
+            // 打印當前的物件矩陣狀態
+            PrintObjectMatrix();
         }
 
+        // 平滑移動到目標格子
         private void MoveTowardsTarget()
         {
-            // 平滑移動到目標格子
             transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
 
             // 判斷是否到達目標格子
@@ -123,8 +103,97 @@ namespace Digital_Subcurrent
             {
                 transform.position = targetPosition; // 對齊到目標位置
                 isMoving = false; // 移動完成
+                StartCoroutine(WaitForNextMove());
             }
         }
 
+        // 等待玩家放開按鍵後才能再次移動
+        private IEnumerator WaitForNextMove()
+        {
+            yield return new WaitUntil(() => Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0);
+            canMove = true;
+        }
+
+        // 打印當前的物件矩陣狀態
+        private void PrintObjectMatrix()
+        {
+            int[,] objectMatrix = GameManager.Instance.GetObjectMatrix();
+            string matrixString = "";
+
+            for (int x = 0; x < objectMatrix.GetLength(0); x++)
+            {
+                for (int y = 0; y < objectMatrix.GetLength(1); y++)
+                {
+                    matrixString += objectMatrix[x, y] + " ";
+                }
+                matrixString += "\n";
+            }
+            Debug.Log("Current Object Matrix:\n" + matrixString);
+        }
+        //private Vector2 GetInputDirection()
+        //{
+        //    Vector2 dir = Vector2.zero;
+        //    if (Input.GetKey(KeyCode.A))
+        //    {
+        //        dir = Vector2.left;
+        //        animator.SetInteger("Direction", 3); // 左
+        //    }
+        //    else if (Input.GetKey(KeyCode.D))
+        //    {
+        //        dir = Vector2.right;
+        //        animator.SetInteger("Direction", 2); // 右
+        //    }
+        //    else if (Input.GetKey(KeyCode.W))
+        //    {
+        //        dir = Vector2.up;
+        //        animator.SetInteger("Direction", 1); // 上
+        //    }
+        //    else if (Input.GetKey(KeyCode.S))
+        //    {
+        //        dir = Vector2.down;
+        //        animator.SetInteger("Direction", 0); // 下
+        //    }
+
+        //    animator.SetBool("IsMoving", dir != Vector2.zero);
+        //    return dir;
+        //}
+
+        //private void TryMove(Vector2 direction)
+        //{
+        //    Vector2Int playerGridPosition = gameManager.WorldToGrid(transform.position);
+        //    Vector2Int targetGridPosition = playerGridPosition + Vector2Int.RoundToInt(direction);
+
+        //    // 使用GameManager來檢查移動是否合法
+        //    if (gameManager.CanPlayerMoveTo(targetGridPosition))
+        //    {
+        //        gameManager.UpdatePlayerPosition(playerGridPosition, targetGridPosition);
+        //        targetPosition = gameManager.GridToWorld(targetGridPosition);
+        //        isMoving = true;
+        //    }
+        //    else if (gameManager.IsBoxAtPosition(targetGridPosition))
+        //    {
+        //        // 嘗試推箱子
+        //        Vector2Int boxNewPosition = targetGridPosition + Vector2Int.RoundToInt(direction);
+        //        if (gameManager.TryMoveBox(targetGridPosition, boxNewPosition))
+        //        {
+        //            gameManager.UpdatePlayerPosition(playerGridPosition, targetGridPosition);
+        //            targetPosition = gameManager.GridToWorld(targetGridPosition);
+        //            isMoving = true;
+        //        }
+        //    }
+        //}
+
+        //private void MoveTowardsTarget()
+        //{
+        //    // 平滑移動到目標格子
+        //    transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+
+        //    // 判斷是否到達目標格子
+        //    if (Vector2.Distance(transform.position, targetPosition) < 0.01f)
+        //    {
+        //        transform.position = targetPosition; // 對齊到目標位置
+        //        isMoving = false; // 移動完成
+        //    }
+        //}
     }
 }
