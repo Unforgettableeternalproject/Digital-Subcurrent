@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using UnityEngine;
 
 namespace Digital_Subcurrent
@@ -11,7 +11,7 @@ namespace Digital_Subcurrent
         private int[,] floorMatrix;
         private Vector2 offset = new Vector2(0, 0);
         private Vector2Int playerMatrixPosition;
-        private Vector2 gridSize = new Vector2(1, 1); // ¨C®æªº¥@¬É®y¼Ğ¤j¤p
+        private Vector2 gridSize = new Vector2(1, 1); // æ¯æ ¼çš„ä¸–ç•Œåº§æ¨™å¤§å°
 
         void Awake()
         {
@@ -25,7 +25,7 @@ namespace Digital_Subcurrent
             }
         }
 
-        // ªì©l¤Æ¯x°}
+        // åˆå§‹åŒ–çŸ©é™£
         public void InitializeGame(Vector2 position)
         {
             objectMatrix = new int[,] { 
@@ -54,7 +54,7 @@ namespace Digital_Subcurrent
             Debug.Log($"PlayerM = {playerMatrixPosition}");
         }
 
-        // §ä¨ìª±®a¦b¯x°}¤¤ªº¦ì¸m
+        // æ‰¾åˆ°ç©å®¶åœ¨çŸ©é™£ä¸­çš„ä½ç½®
         private Vector2Int FindPlayerPosition(int[,] matrix)
         {
             for (int x = 0; x < matrix.GetLength(0); x++)
@@ -70,7 +70,7 @@ namespace Digital_Subcurrent
             throw new Exception("Player not found in the matrix");
         }
 
-        // ÀË¬dª±®a¬O§_¥i¥H²¾°Ê¨ì¥Ø¼Ğ¦ì¸m
+        // æª¢æŸ¥ç©å®¶æ˜¯å¦å¯ä»¥ç§»å‹•åˆ°ç›®æ¨™ä½ç½®
         public bool TryMove(Vector2 direction)
         {
             Vector2Int targetPosition = playerMatrixPosition + Vector2Int.RoundToInt(direction);
@@ -81,7 +81,7 @@ namespace Digital_Subcurrent
             return true;
         }
 
-        // §ó·s¯x°}
+        // æ›´æ–°çŸ©é™£
         public void UpdateMatrix(Vector2Int original)
         {
             objectMatrix[original.y, original.x] = 0;
@@ -96,32 +96,32 @@ namespace Digital_Subcurrent
             UpdateMatrix(original);
         }
 
-        // ÀË¬dÃä¬É
+        // æª¢æŸ¥é‚Šç•Œ
         private bool IsOutOfBounds(Vector2Int position)
         {
             return position.x < 0 || position.x >= objectMatrix.GetLength(0) || position.y < 0 || position.y >= objectMatrix.GetLength(1);
         }
 
-        // §ó·s¦aªO
+        // æ›´æ–°åœ°æ¿
         private void UpdateFloor(Vector2Int position)
         {
 
         }
 
-        // ´£¨Ñ°T®§µ¹ª±®a
+        // æä¾›è¨Šæ¯çµ¦ç©å®¶
         public string GetMessage(Vector2Int targetPosition)
         {
-            if (IsOutOfBounds(targetPosition)) return "µLªk²¾°Ê¡G¶W¥XÃä¬É¡I";
+            if (IsOutOfBounds(targetPosition)) return "ç„¡æ³•ç§»å‹•ï¼šè¶…å‡ºé‚Šç•Œï¼";
 
             int objectValue = objectMatrix[targetPosition.x, targetPosition.y];
             switch (objectValue)
             {
                 case -1:
-                    return "µLªk²¾°Ê¡G¦³Àğ¾À¡I";
+                    return "ç„¡æ³•ç§»å‹•ï¼šæœ‰ç‰†å£ï¼";
                 case 2:
-                    return "½c¤lªı¾×¡A¹Á¸Õ±À°Ê¥¦¡I";
+                    return "ç®±å­é˜»æ“‹ï¼Œå˜—è©¦æ¨å‹•å®ƒï¼";
                 default:
-                    return "¥i¥H²¾°Ê¡C";
+                    return "å¯ä»¥ç§»å‹•ã€‚";
             }
         }
 
