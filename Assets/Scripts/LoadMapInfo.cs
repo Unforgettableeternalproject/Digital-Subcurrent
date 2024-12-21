@@ -6,6 +6,8 @@ namespace Digital_Subcurrent
     public class TilemapTagArray : MonoBehaviour
     {
         public Tilemap tilemap;
+        public Tilemap wallTilemap;
+        public GameObject wallMarker;
         private M2WConvertHelper helper = new M2WConvertHelper();
 
         // 二維陣列儲存每個有效格子上的 GameObject
@@ -30,7 +32,10 @@ namespace Digital_Subcurrent
                 Debug.LogError("Tilemap 組件未找到！");
                 return;
             }
+        }
 
+        public void GenerateMapData()
+        {
             // 1. 計算實際上具有 Tile 的邊界範圍
             CalculateTileBounds();
 
@@ -40,15 +45,16 @@ namespace Digital_Subcurrent
             // 3. 使用 M2WConvertHelper 將 GameObject 轉換為數值並存入新的二維陣列
             objectValueGrid = ConvertGridToValueGrid(objectGrid);
             floorValueGrid = ConvertGridToValueGrid(floorGrid);
+        }
 
+        public int[,] GetObjectMatrix()
+        {
+            return objectValueGrid;
+        }
 
-            // Debug 列印GameObject內容
-            PrintGrid(objectGrid);
-            PrintGrid(floorGrid);
-
-            //Debug 列印GameObject int內容
-            PrintValueGrid(objectValueGrid);
-            PrintValueGrid(floorValueGrid);
+        public int[,] GetFloorMatrix()
+        {
+            return floorValueGrid;
         }
 
         void CalculateTileBounds()
@@ -89,6 +95,7 @@ namespace Digital_Subcurrent
                     if (tilemap.HasTile(cellPosition))
                     {
                         // 將 Tilemap 格子座標轉換為世界座標
+                        Vector3Int gridPosition = new Vector3Int(x, y, 0);
                         Vector3 worldPosition = tilemap.CellToWorld(cellPosition) + tilemap.tileAnchor;
 
                         int gridX = x - gridMin.x;
@@ -103,7 +110,19 @@ namespace Digital_Subcurrent
                         }
                         else
                         {
-                            objectGrid[gridX, gridY] = null;
+                            // **檢測牆壁 (Tilemap)**
+                            TileBase wallTile = wallTilemap.GetTile(gridPosition);
+                            if (wallTile != null)
+                            {
+                                // 如果該位置有牆壁 Tile，儲存為牆壁代表物件
+                                objectGrid[gridX, gridY] = wallMarker; // 可用 null 或自定義牆壁標記物件
+                                Debug.Log($"Stored Wall Placeholder at Grid[{gridX}, {gridY}]");
+                            }
+                            else
+                            {
+                                // 如果該位置什麼都沒有，儲存為 null
+                                objectGrid[gridX, gridY] = null;
+                            }
                         }
 
                         // 第二次檢測 (floorLayerMask)
@@ -124,11 +143,13 @@ namespace Digital_Subcurrent
 
         int[,] ConvertGridToValueGrid(GameObject[,] inputGrid)
         {
-            int width = inputGrid.GetLength(0);
-            int height = inputGrid.GetLength(1);
+            int width = inputGrid.GetLength(0);  // 原始矩陣的列數
+            int height = inputGrid.GetLength(1); // 原始矩陣的行數
 
-            int[,] valueGrid = new int[width, height];
+            // 初始化旋轉後的矩陣 (-90 度結果)
+            int[,] rotatedGrid = new int[height, width];
 
+            // 將 inputGrid 映射到 rotatedGrid，直接實現 -90 度旋轉
             for (int x = 0; x < width; x++)
             {
                 for (int y = 0; y < height; y++)
@@ -136,18 +157,18 @@ namespace Digital_Subcurrent
                     GameObject obj = inputGrid[x, y];
                     if (obj != null)
                     {
-                        valueGrid[x, y] = helper.GetValue(obj);
+                        rotatedGrid[height - 1 - y, x] = helper.GetValue(obj);
                     }
                     else
                     {
-                        valueGrid[x, y] = 0; // 預設值為 0
+                        rotatedGrid[height - 1 - y, x] = 0;
                     }
                 }
             }
 
-            Debug.Log("Input grid successfully converted to value grid.");
-            return valueGrid;
+            return rotatedGrid;
         }
+
 
         void PrintGrid(GameObject[,] grid, string gridName = "Grid")
         {

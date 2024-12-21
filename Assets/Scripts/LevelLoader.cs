@@ -23,6 +23,41 @@ namespace Digital_Subcurrent
                     roomEntryPoints.Add(room.name, entryPoint);
                 }
             }
+            LoadLevel("SL-1");
+        }
+
+        public void LoadLevel(string levelName)
+        {
+            Transform levelTransform = transform.Find(levelName);
+            if (levelTransform == null)
+            {
+                Debug.LogError($"Level {levelName} not found!");
+                return;
+            }
+
+            // 從該房間物件中抓 LoadMapInfo
+            var loadMapInfo = levelTransform.GetComponent<TilemapTagArray>();
+            if (loadMapInfo == null)
+            {
+                Debug.LogError($"LoadMapInfo not found in {levelName}!");
+                return;
+            }
+
+            // 1. 產生房間的矩陣資料
+            loadMapInfo.GenerateMapData();
+            // 這會產生 objectMatrix, floorMatrix (可以存在它的屬性裡)
+
+            // 2. 拿到這些資料
+            int[,] objectMatrix = loadMapInfo.GetObjectMatrix();
+            int[,] floorMatrix = loadMapInfo.GetFloorMatrix();
+
+            // 3. 把資料交給 GameManager
+            GameManager.Instance.InitializeGame(objectMatrix, floorMatrix);
+
+            // 4. 設定玩家的位置
+            MovePlayerToRoom(levelName);
+
+            Debug.Log($"Finish loading {levelName}");
         }
 
         // 傳送玩家到指定房間

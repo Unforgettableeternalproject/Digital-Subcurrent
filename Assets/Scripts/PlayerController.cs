@@ -15,20 +15,18 @@ namespace Digital_Subcurrent
         private bool hasKey = false; // 玩家是否擁有鑰匙
 
         private Animator animator;
-        public GameManager gameManager;
+        private GameManager gameManager;
 
         private void Start()
         {
             animator = GetComponent<Animator>();
-
+            gameManager = GameManager.Instance;
             if (gameManager == null)
             {
                 Debug.LogError("GameManager is missing in the scene!");
             }
 
             initPosition = transform.position; // 初始化為當前位置
-            gameManager.InitializeGame(initPosition); // 初始化GameManager
-            PrintObjectMatrix();
         }
 
         private void Update()

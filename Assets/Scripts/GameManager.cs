@@ -34,32 +34,14 @@ namespace Digital_Subcurrent
         }
 
         // 初始化矩陣
-        public void InitializeGame(Vector2 position)
+        public void InitializeGame(int[,] oM, int[,] fM)
         {
-            objectMatrix = new int[,] { 
-                { -1, -1, -1, -1, -1, -1, -1, -2, -1, -1, -1 },
-                { -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1 },
-                { -1, 0, 0, 0, 0, 1, 0, 0, 0, 0, -1 },
-                { -1, 0, 0, 0, 0, 0, 0, 0, 0, 3, -1 },
-                { -1, 0, 0, 0, 0, 0, 2, 0, 0, 0, -1 },
-                { -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1 },
-                { -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1 },
-                { -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1 },
-                { -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 } 
-            };
-            floorMatrix = new int[,] { 
-                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0 },
-                { 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0 },
-                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0 },
-                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 } 
-            };
+            objectMatrix = oM;
+            floorMatrix = fM;
             playerMatrixPosition = FindPlayerPosition(objectMatrix);
             Debug.Log($"PlayerM = {playerMatrixPosition}");
+
+            PrintMatrix(objectMatrix);
         }
 
         // 找到玩家在矩陣中的位置
@@ -87,7 +69,7 @@ namespace Digital_Subcurrent
             {
                 return false;
             }
-            Debug.Log($"objectMatric[{targetPosition.x}, {targetPosition.y}] = {objectMatrix[targetPosition.y, targetPosition.x]}");
+            Debug.Log($"objectMatrix[{targetPosition.x}, {targetPosition.y}] = {objectMatrix[targetPosition.y, targetPosition.x]}");
             return true;
         }
 
@@ -200,6 +182,20 @@ namespace Digital_Subcurrent
             }
         }
 
+        private void PrintMatrix(int[,] matrix)
+        {
+            string matrixString = "";
+            for (int x = 0; x < matrix.GetLength(0); x++)
+            {
+                for (int y = 0; y < matrix.GetLength(1); y++)
+                {
+                    matrixString += matrix[x, y] + " ";
+                }
+                matrixString += "\n";
+            }
+            Debug.Log(matrixString);
+        }
+
         // 檢查邊界
         private bool IsOutOfBounds(Vector2Int position)
         {
@@ -269,7 +265,7 @@ namespace Digital_Subcurrent
                 stateStack.Push(initialState);
             }
         }
-        }
+    }
 
     public class GameState
     {

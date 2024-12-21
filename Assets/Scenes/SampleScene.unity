@@ -785,6 +785,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cfa0a5ef94fb05d4f97d095a05dc55c5, type: 3}
+--- !u!1 &326910068
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 326910069}
+  m_Layer: 0
+  m_Name: WallMarker
+  m_TagString: Obstacle
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &326910069
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 326910068}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1021591980}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &356603851
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1128,6 +1159,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 464002120}
+  - component: {fileID: 464002121}
   m_Layer: 0
   m_Name: SL-1
   m_TagString: Untagged
@@ -1153,6 +1185,21 @@ Transform:
   - {fileID: 1878721961}
   m_Father: {fileID: 1694999246}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &464002121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 464002119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d26c567e54cb384db09f4ea709c64e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 611998951}
+  wallTilemap: {fileID: 1021591985}
+  wallMarker: {fileID: 326910068}
 --- !u!1001 &491015738
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1552,7 +1599,6 @@ GameObject:
   - component: {fileID: 611998949}
   - component: {fileID: 611998951}
   - component: {fileID: 611998950}
-  - component: {fileID: 611998952}
   m_Layer: 0
   m_Name: Ground
   m_TagString: Untagged
@@ -2905,19 +2951,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!114 &611998952
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 611998948}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d26c567e54cb384db09f4ea709c64e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tilemap: {fileID: 611998951}
 --- !u!4 &664431864 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7947911505737750448, guid: cfa0a5ef94fb05d4f97d095a05dc55c5,
@@ -4368,7 +4401,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 326910069}
   m_Father: {fileID: 255952043}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!66 &1021591981
