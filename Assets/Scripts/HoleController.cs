@@ -20,9 +20,9 @@ namespace Digital_Subcurrent
                 Debug.Log("Box filled the hole!");
 
                 PlaySound(); // 播放音效
-
+                Transform parentContainer = transform.parent;
                 // 切換為已填滿的地板
-                Instantiate(filledFloorPrefab, transform.position, Quaternion.identity);
+                Instantiate(filledFloorPrefab, transform.position, Quaternion.identity, parentContainer);
                 Destroy(other.gameObject); // 移除箱子
                 Destroy(gameObject);       // 移除空洞
 

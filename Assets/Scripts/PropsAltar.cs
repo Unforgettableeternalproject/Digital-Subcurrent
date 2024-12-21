@@ -12,6 +12,8 @@ namespace Digital_Subcurrent
         public GameObject openDoor;   // 開啟門的 prefab
         public Transform doorPosition; // 門的位置 (同一位置切換)
 
+        public GameManager gameManager;
+
         private Color curColor;
         private Color targetColor;
 
@@ -23,6 +25,7 @@ namespace Digital_Subcurrent
         private void OnTriggerEnter2D(Collider2D other)
         {
             Debug.Log("Test");
+            gameManager.DoorOpened();
             PlayerController player = other.GetComponent<PlayerController>();
             if (player != null && player.HasKey())
             {
@@ -48,8 +51,9 @@ namespace Digital_Subcurrent
             // 移除舊門並生成新門
             if (closedDoor != null && openDoor != null)
             {
+                Transform parentContainer = closedDoor.transform.parent;
                 Destroy(closedDoor);
-                Instantiate(openDoor, doorPosition.position, Quaternion.identity);
+                Instantiate(openDoor, doorPosition.position, Quaternion.identity, parentContainer);
                 PlaySound();
             }
         }

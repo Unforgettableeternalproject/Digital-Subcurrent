@@ -37,7 +37,7 @@ namespace Digital_Subcurrent
         public void InitializeGame(Vector2 position)
         {
             objectMatrix = new int[,] { 
-                { -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 },
+                { -1, -1, -1, -1, -1, -1, -1, -2, -1, -1, -1 },
                 { -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1 },
                 { -1, 0, 0, 0, 0, 1, 0, 0, 0, 0, -1 },
                 { -1, 0, 0, 0, 0, 0, 0, 0, 0, 3, -1 },
@@ -83,7 +83,7 @@ namespace Digital_Subcurrent
         {
             Debug.Log($"Moving direction: {direction}");
             Vector2Int targetPosition = playerMatrixPosition + Vector2Int.RoundToInt(direction);
-            if(IsOutOfBounds(targetPosition) || objectMatrix[targetPosition.y, targetPosition.x] == -1 || floorMatrix[targetPosition.y, targetPosition.x] == 1)
+            if(IsOutOfBounds(targetPosition) || objectMatrix[targetPosition.y, targetPosition.x] < 0 || floorMatrix[targetPosition.y, targetPosition.x] == 1)
             {
                 return false;
             }
@@ -96,12 +96,13 @@ namespace Digital_Subcurrent
             if (tempBoxMPosition.x == -1 || tempBoxMPosition.y == -1) return false;
 
             Vector2Int targetPosition = tempBoxMPosition + Vector2Int.RoundToInt(direction);
-            if (IsOutOfBounds(targetPosition) || objectMatrix[targetPosition.y, targetPosition.x] == -1)
+            if (IsOutOfBounds(targetPosition) || objectMatrix[targetPosition.y, targetPosition.x] < 0)
             {
                 return false;
             }
             return true;
         }
+
 
         public bool HasBox(Vector2 direction)
         {
@@ -182,6 +183,21 @@ namespace Digital_Subcurrent
             Vector2Int original = tempBoxMPosition;
             tempBoxMPosition += Vector2Int.RoundToInt(direction);
             UpdateMatrix(original, tempBoxMPosition, 2);
+        }
+
+        public void DoorOpened()
+        {
+            //找到objectMatrix中-2的位置並將其替換為0
+            for (int x = 0; x < objectMatrix.GetLength(0); x++)
+            {
+                for (int y = 0; y < objectMatrix.GetLength(1); y++)
+                {
+                    if (objectMatrix[x, y] == -2)
+                    {
+                        objectMatrix[x, y] = 0;
+                    }
+                }
+            }
         }
 
         // 檢查邊界

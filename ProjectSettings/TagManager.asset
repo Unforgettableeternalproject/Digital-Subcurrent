@@ -10,6 +10,7 @@ TagManager:
   - Hole
   - Key
   - Terminal
+  - Exit
   layers:
   - Default
   - TransparentFX
