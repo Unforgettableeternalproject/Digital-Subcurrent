@@ -15,6 +15,8 @@ namespace Digital_Subcurrent
         private Vector2 targetPosition;
         private CollisionHandler collisionHandler;
 
+        public GameManager gameManager;
+
         private void Start()
         {
             targetPosition = transform.position; // 初始化目標位置
@@ -33,44 +35,16 @@ namespace Digital_Subcurrent
         {
             if (isMoving) return false; // 如果正在移動，無法再推動
 
-            // 計算目標位置
-            Vector2 potentialPosition = (Vector2)transform.position + direction * gridSize;
-
+            Vector2 boxPosition = transform.position;
             // 檢查目標位置是否有效（可根據具體邏輯擴展檢查條件）
-            if (CanMoveTo(potentialPosition))
+            if (gameManager.BoxTryMove(new Vector2(direction.x, -direction.y)))
             {
-                targetPosition = potentialPosition;
+                targetPosition = boxPosition + direction * gridSize;
                 isMoving = true;
                 return true; // 推動成功
             }
 
             return false; // 推動失敗
-
-            
-        }
-
-        private bool CanMoveTo(Vector2 position)
-        {
-            // 得到碰撞資訊
-            Collider2D collidedObject = collisionHandler.getBlockInfo(position);
-
-            // 如果沒有碰撞 (空格)，則可移動
-            if (collidedObject == null)
-            {
-                return true;
-            }
-
-
-            // 如果目標是空洞 (Tag == "Hole")，也允許移動
-            if (collisionHandler.IsTagMatched(collidedObject,new List<string>{"Hole","Termianl"}))
-            {
-                Debug.Log("The hole!");
-                return true;
-            }
-
-            // 其他情況 (如 Tag 是 Obstacle)，無法移動
-            return false;
-
         }
         
         private void MoveTowardsTarget()

@@ -81,7 +81,24 @@ namespace Digital_Subcurrent
         private void TryMove(Vector2 direction)
         {
             Vector2 playerPosition = transform.position;
-            if(gameManager.TryMove(direction))
+            if(gameManager.HasBox(new Vector2(direction.x, -direction.y)))
+            {
+                BoxController box = gameManager.GetBox(playerPosition + direction * gridSize);
+                if (box != null)
+                {
+                    Debug.Log("Has box");
+                    if (box.TryMove(direction))
+                    {
+                        Debug.Log("Push box success");
+                        canMove = false;
+                        gameManager.UpdateBox(new Vector2(direction.x, -direction.y));
+                        StartCoroutine(WaitForNextMove());
+                    }
+                }
+                return;
+            }
+
+            if(gameManager.PlayerTryMove(new Vector2(direction.x, -direction.y)))
             {
                 targetPosition = playerPosition + direction * gridSize;
                 isMoving = true;
