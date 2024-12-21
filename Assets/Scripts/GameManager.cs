@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Digital_Subcurrent
 {
@@ -26,7 +27,10 @@ namespace Digital_Subcurrent
             else
             {
                 Destroy(gameObject);
+                return;
             }
+            Instance = this;
+            DontDestroyOnLoad(gameObject); // 保持跨場景持續
         }
 
         // 初始化矩陣
@@ -130,7 +134,7 @@ namespace Digital_Subcurrent
                 // 在該位置檢測是否有碰撞的物件 (假設箱子有 "Box" Layer 或 Tag)
                 Collider2D hit = Physics2D.OverlapPoint(worldPosition);
                 if (hit != null && hit.CompareTag("Box")) // 使用 Tag 過濾箱子
-                {
+        {
                     // 返回該物件的 BoxController
                     return hit.GetComponent<BoxController>();
                 }
@@ -233,7 +237,7 @@ namespace Digital_Subcurrent
         public void ResetRoom()
         {
             if (stateStack.Count > 0)
-            {
+        {
                 // 還原矩陣
                 floorMatrix = (int[,])initialState.FloorMatrix.Clone();
                 objectMatrix = (int[,])initialState.ObjectMatrix.Clone();
@@ -249,7 +253,7 @@ namespace Digital_Subcurrent
                 stateStack.Push(initialState);
             }
         }
-    }
+        }
 
     public class GameState
     {
