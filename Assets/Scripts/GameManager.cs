@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using System.Collections.Generic;
 
 namespace Digital_Subcurrent
 {
@@ -9,6 +10,8 @@ namespace Digital_Subcurrent
 
         private int[,] objectMatrix;
         private int[,] floorMatrix;
+        private Stack<GameState> stateStack = new Stack<GameState>();
+        private GameState initialState;
         private Vector2 offset = new Vector2(0, 0);
         private Vector2Int playerMatrixPosition;
         private Vector2Int tempBoxMPosition;
@@ -194,5 +197,66 @@ namespace Digital_Subcurrent
             return (int[,])objectMatrix.Clone();
         }
 
+        public void SaveState()
+        {
+            // 深拷貝矩陣
+            int[,] floorCopy = (int[,])floorMatrix.Clone();
+            int[,] objectCopy = (int[,])objectMatrix.Clone();
+
+            GameState currentState = new GameState
+            {
+                FloorMatrix = floorCopy,
+                ObjectMatrix = objectCopy,
+                PlayerPosition = playerMatrixPosition
+            };
+            stateStack.Push(currentState);
+        }
+
+        public void LoadState()
+        {
+            if (stateStack.Count > 0)
+            {
+                GameState previousState = stateStack.Pop();
+
+                // 還原矩陣
+                floorMatrix = (int[,])previousState.FloorMatrix.Clone();
+                objectMatrix = (int[,])previousState.ObjectMatrix.Clone();
+
+                // 還原玩家位置
+                playerMatrixPosition = previousState.PlayerPosition;
+
+                // 更新遊戲中所有物件的狀態
+                //UpdateGameObjects();
+            }
+        }
+
+        public void ResetRoom()
+        {
+            if (stateStack.Count > 0)
+            {
+                // 還原矩陣
+                floorMatrix = (int[,])initialState.FloorMatrix.Clone();
+                objectMatrix = (int[,])initialState.ObjectMatrix.Clone();
+
+                // 還原玩家位置
+                playerMatrixPosition = initialState.PlayerPosition;
+
+                // 更新遊戲中所有物件的狀態
+                //UpdateGameObjects();
+
+                // 清空堆疊並保存初始狀態
+                stateStack.Clear();
+                stateStack.Push(initialState);
+            }
+        }
+    }
+
+    public class GameState
+    {
+        public int[,] FloorMatrix { get; set; }
+        public int[,] ObjectMatrix { get; set; }
+        public Vector2Int PlayerPosition { get; set; }
+
+        // 可能有更多
     }
 }
