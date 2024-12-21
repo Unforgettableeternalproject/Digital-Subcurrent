@@ -12,6 +12,7 @@ namespace Digital_Subcurrent
         private Vector2 initPosition = new Vector2(0, 0);
         private Vector2 targetPosition;
         private bool canMove = true;
+        private bool hasKey = false; // 玩家是否擁有鑰匙
 
         private Animator animator;
         public GameManager gameManager;
@@ -81,7 +82,7 @@ namespace Digital_Subcurrent
         private void TryMove(Vector2 direction)
         {
             Vector2 playerPosition = transform.position;
-            if(gameManager.HasBox(new Vector2(direction.x, -direction.y)))
+            if (gameManager.HasBox(new Vector2(direction.x, -direction.y)))
             {
                 BoxController box = gameManager.GetBox(playerPosition + direction * gridSize);
                 if (box != null)
@@ -98,11 +99,20 @@ namespace Digital_Subcurrent
                 return;
             }
 
-            if(gameManager.PlayerTryMove(new Vector2(direction.x, -direction.y)))
+            if (gameManager.PlayerTryMove(new Vector2(direction.x, -direction.y)))
             {
                 targetPosition = playerPosition + direction * gridSize;
                 isMoving = true;
                 canMove = false;
+                if (gameManager.HasKey(new Vector2(direction.x, -direction.y)))
+                {
+                    KeyController key = gameManager.GetKey(playerPosition + direction * gridSize);
+                    if (key != null)
+                    {
+                        hasKey = true;
+                        key.OnCollect();
+                    }
+                }
                 gameManager.UpdatePlayer(new Vector2(direction.x, -direction.y));
             }
 
@@ -146,6 +156,11 @@ namespace Digital_Subcurrent
                 matrixString += "\n";
             }
             Debug.Log("Current Object Matrix:\n" + matrixString);
+        }
+
+        public bool HasKey()
+        {
+            return hasKey;
         }
         //private Vector2 GetInputDirection()
         //{

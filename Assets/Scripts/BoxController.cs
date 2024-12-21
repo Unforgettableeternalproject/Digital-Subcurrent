@@ -39,6 +39,7 @@ namespace Digital_Subcurrent
             // 檢查目標位置是否有效（可根據具體邏輯擴展檢查條件）
             if (gameManager.BoxTryMove(new Vector2(direction.x, -direction.y)))
             {
+                PlaySound();
                 targetPosition = boxPosition + direction * gridSize;
                 isMoving = true;
                 return true; // 推動成功
@@ -58,6 +59,19 @@ namespace Digital_Subcurrent
                 transform.position = targetPosition; // 精確對齊格子
                 isMoving = false;
             }
+        }
+
+        private void PlaySound()
+        {
+            // 創建一個臨時音效物件
+            GameObject audioPlayer = new GameObject("TempAudioPlayer");
+            AudioSource tempAudio = audioPlayer.AddComponent<AudioSource>();
+            tempAudio.clip = GetComponent<AudioSource>().clip;
+            tempAudio.volume = 0.5f;
+            tempAudio.Play();
+
+            // 自動銷毀音效物件
+            Destroy(audioPlayer, tempAudio.clip.length);
         }
     }
 

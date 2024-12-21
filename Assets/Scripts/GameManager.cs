@@ -109,18 +109,25 @@ namespace Digital_Subcurrent
             }
         }
 
+        public bool HasKey(Vector2 direction)
+        {
+            Vector2Int targetPosition = playerMatrixPosition + Vector2Int.RoundToInt(direction);
+            if (objectMatrix[targetPosition.y, targetPosition.x] == 3)
+            {
+                return true;
+            }
+            return false;
+        }
+
         public BoxController GetBox(Vector2 worldPosition)
         {
             if (tempBoxMPosition.x == -1 || tempBoxMPosition.y == -1) return null;
-            Debug.Log("1");
             if (objectMatrix[tempBoxMPosition.y, tempBoxMPosition.x] == 2)
             {
-                Debug.Log("2");
                 // 在該位置檢測是否有碰撞的物件 (假設箱子有 "Box" Layer 或 Tag)
                 Collider2D hit = Physics2D.OverlapPoint(worldPosition);
                 if (hit != null && hit.CompareTag("Box")) // 使用 Tag 過濾箱子
                 {
-                    Debug.Log("3");
                     // 返回該物件的 BoxController
                     return hit.GetComponent<BoxController>();
                 }
@@ -129,9 +136,28 @@ namespace Digital_Subcurrent
             return null; // 如果沒有找到箱子，返回 null
         }
 
+        public KeyController GetKey(Vector2 worldPosition)
+        {
+            Collider2D hit = Physics2D.OverlapPoint(worldPosition);
+            if (hit != null && hit.CompareTag("Key"))
+            {
+                return hit.GetComponent<KeyController>();
+            }
+            return null;
+        }
+
         // 更新矩陣
         public void UpdateMatrix(Vector2Int original, Vector2Int updated, int value)
         {
+            if(value == 2) // 填洞
+            {
+                if (floorMatrix[updated.y, updated.x] == 1)
+                {
+                    value = 0;
+                    UpdateFloor(updated, 0);
+                    Debug.Log("Fill hole");
+                }
+            }
             objectMatrix[original.y, original.x] = 0;
             objectMatrix[updated.y, updated.x] = value;
             Debug.Log($"PlayerM = {playerMatrixPosition}");
@@ -158,26 +184,9 @@ namespace Digital_Subcurrent
         }
 
         // 更新地板
-        private void UpdateFloor(Vector2Int position)
+        private void UpdateFloor(Vector2Int position, int value)
         {
-
-        }
-
-        // 提供訊息給玩家
-        public string GetMessage(Vector2Int targetPosition)
-        {
-            if (IsOutOfBounds(targetPosition)) return "無法移動：超出邊界！";
-
-            int objectValue = objectMatrix[targetPosition.x, targetPosition.y];
-            switch (objectValue)
-            {
-                case -1:
-                    return "無法移動：有牆壁！";
-                case 2:
-                    return "箱子阻擋，嘗試推動它！";
-                default:
-                    return "可以移動。";
-            }
+            floorMatrix[position.y, position.x] = value;
         }
 
         public int[,] GetObjectMatrix()
