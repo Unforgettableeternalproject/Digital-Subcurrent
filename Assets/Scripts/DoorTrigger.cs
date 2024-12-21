@@ -17,7 +17,7 @@ namespace Digital_Subcurrent
             // 獲取當前門的房間 ID，例如通過門所在的父物件名字
             var currentRoomId = transform.parent.parent.name;
 
-            // 假設房間命名為 SR-1, SR-2, SR-3 ...
+            // 假設房間命名為 SL-1, SL-2, SL-3 ...
             int currentRoomNumber = int.Parse(currentRoomId.Split('-')[1]);
             targetRoomName = "SL-" + (currentRoomNumber + 1);
         }

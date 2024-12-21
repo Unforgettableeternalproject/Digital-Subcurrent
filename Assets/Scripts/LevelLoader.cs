@@ -8,6 +8,7 @@ namespace Digital_Subcurrent
     public class LevelLoader : MonoBehaviour
     {
         public Transform player;
+        public TransitionManager transitionManager;
         private Dictionary<string, Transform> roomEntryPoints;
 
         void Start()
@@ -29,8 +30,12 @@ namespace Digital_Subcurrent
         {
             if (roomEntryPoints.ContainsKey(roomName))
             {
-                Transform entryPoint = roomEntryPoints[roomName];
-                player.position = entryPoint.position;
+                System.Action loadRoomAction = () =>
+                {
+                    Transform entryPoint = roomEntryPoints[roomName];
+                    player.position = entryPoint.position;
+                };
+               // StartCoroutine(transitionManager.TransitionToRoom(loadRoomAction));
             }
             else
             {
