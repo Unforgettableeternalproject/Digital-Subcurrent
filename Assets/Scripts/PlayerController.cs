@@ -12,6 +12,7 @@ namespace Digital_Subcurrent
         private Vector2 initPosition = new Vector2(0, 0);
         private Vector2 targetPosition;
         private bool canMove = true;
+        private bool hasKey = false; // 玩家是否擁有鑰匙
 
         private Animator animator;
         public GameManager gameManager;
@@ -81,11 +82,37 @@ namespace Digital_Subcurrent
         private void TryMove(Vector2 direction)
         {
             Vector2 playerPosition = transform.position;
-            if(gameManager.TryMove(direction))
+            if (gameManager.HasBox(new Vector2(direction.x, -direction.y)))
+            {
+                BoxController box = gameManager.GetBox(playerPosition + direction * gridSize);
+                if (box != null)
+                {
+                    Debug.Log("Has box");
+                    if (box.TryMove(direction))
+                    {
+                        Debug.Log("Push box success");
+                        canMove = false;
+                        gameManager.UpdateBox(new Vector2(direction.x, -direction.y));
+                        StartCoroutine(WaitForNextMove());
+                    }
+                }
+                return;
+            }
+
+            if (gameManager.PlayerTryMove(new Vector2(direction.x, -direction.y)))
             {
                 targetPosition = playerPosition + direction * gridSize;
                 isMoving = true;
                 canMove = false;
+                if (gameManager.HasKey(new Vector2(direction.x, -direction.y)))
+                {
+                    KeyController key = gameManager.GetKey(playerPosition + direction * gridSize);
+                    if (key != null)
+                    {
+                        hasKey = true;
+                        key.OnCollect();
+                    }
+                }
                 gameManager.UpdatePlayer(new Vector2(direction.x, -direction.y));
             }
 
@@ -129,6 +156,11 @@ namespace Digital_Subcurrent
                 matrixString += "\n";
             }
             Debug.Log("Current Object Matrix:\n" + matrixString);
+        }
+
+        public bool HasKey()
+        {
+            return hasKey;
         }
         //private Vector2 GetInputDirection()
         //{

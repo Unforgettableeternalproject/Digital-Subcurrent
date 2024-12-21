@@ -23,7 +23,7 @@ namespace Digital_Subcurrent
         private void OnTriggerEnter2D(Collider2D other)
         {
             Debug.Log("Test");
-            CharacterController player = other.GetComponent<CharacterController>();
+            PlayerController player = other.GetComponent<PlayerController>();
             if (player != null && player.HasKey())
             {
                 Debug.Log("Altar activated!");
@@ -50,12 +50,21 @@ namespace Digital_Subcurrent
             {
                 Destroy(closedDoor);
                 Instantiate(openDoor, doorPosition.position, Quaternion.identity);
-                AudioSource doorAudio = GetComponent<AudioSource>();
-                if (doorAudio != null)
-                {
-                    doorAudio.Play();
-                }
+                PlaySound();
             }
+        }
+
+        private void PlaySound()
+        {
+            // 創建一個臨時音效物件
+            GameObject audioPlayer = new GameObject("TempAudioPlayer");
+            AudioSource tempAudio = audioPlayer.AddComponent<AudioSource>();
+            tempAudio.clip = GetComponent<AudioSource>().clip;
+            tempAudio.volume = 0.5f;
+            tempAudio.Play();
+
+            // 自動銷毀音效物件
+            Destroy(audioPlayer, tempAudio.clip.length);
         }
     }
 }

@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using UnityEngine;
 
 namespace Digital_Subcurrent
@@ -11,7 +11,8 @@ namespace Digital_Subcurrent
         private int[,] floorMatrix;
         private Vector2 offset = new Vector2(0, 0);
         private Vector2Int playerMatrixPosition;
-        private Vector2 gridSize = new Vector2(1, 1); // ¨C®æªº¥@¬É®y¼Ğ¤j¤p
+        private Vector2Int tempBoxMPosition;
+        private Vector2 gridSize = new Vector2(1, 1); // æ¯æ ¼çš„ä¸–ç•Œåº§æ¨™å¤§å°
 
         void Awake()
         {
@@ -25,7 +26,7 @@ namespace Digital_Subcurrent
             }
         }
 
-        // ªì©l¤Æ¯x°}
+        // åˆå§‹åŒ–çŸ©é™£
         public void InitializeGame(Vector2 position)
         {
             objectMatrix = new int[,] { 
@@ -54,7 +55,7 @@ namespace Digital_Subcurrent
             Debug.Log($"PlayerM = {playerMatrixPosition}");
         }
 
-        // §ä¨ìª±®a¦b¯x°}¤¤ªº¦ì¸m
+        // æ‰¾åˆ°ç©å®¶åœ¨çŸ©é™£ä¸­çš„ä½ç½®
         private Vector2Int FindPlayerPosition(int[,] matrix)
         {
             for (int x = 0; x < matrix.GetLength(0); x++)
@@ -70,22 +71,95 @@ namespace Digital_Subcurrent
             throw new Exception("Player not found in the matrix");
         }
 
-        // ÀË¬dª±®a¬O§_¥i¥H²¾°Ê¨ì¥Ø¼Ğ¦ì¸m
-        public bool TryMove(Vector2 direction)
+        // æª¢æŸ¥ç©å®¶æ˜¯å¦å¯ä»¥ç§»å‹•åˆ°ç›®æ¨™ä½ç½®
+        public bool PlayerTryMove(Vector2 direction)
         {
+            Debug.Log($"Moving direction: {direction}");
             Vector2Int targetPosition = playerMatrixPosition + Vector2Int.RoundToInt(direction);
-            if(objectMatrix[targetPosition.x, targetPosition.y] == -1 || floorMatrix[targetPosition.x, targetPosition.y] == 1)
+            if(IsOutOfBounds(targetPosition) || objectMatrix[targetPosition.y, targetPosition.x] == -1 || floorMatrix[targetPosition.y, targetPosition.x] == 1)
+            {
+                return false;
+            }
+            Debug.Log($"objectMatric[{targetPosition.x}, {targetPosition.y}] = {objectMatrix[targetPosition.y, targetPosition.x]}");
+            return true;
+        }
+
+        public bool BoxTryMove(Vector2 direction)
+        {
+            if (tempBoxMPosition.x == -1 || tempBoxMPosition.y == -1) return false;
+
+            Vector2Int targetPosition = tempBoxMPosition + Vector2Int.RoundToInt(direction);
+            if (IsOutOfBounds(targetPosition) || objectMatrix[targetPosition.y, targetPosition.x] == -1)
             {
                 return false;
             }
             return true;
         }
 
-        // §ó·s¯x°}
-        public void UpdateMatrix(Vector2Int original)
+        public bool HasBox(Vector2 direction)
         {
+            Vector2Int targetPosition = playerMatrixPosition + Vector2Int.RoundToInt(direction);
+            if (objectMatrix[targetPosition.y, targetPosition.x] == 2) {
+                tempBoxMPosition = targetPosition;
+                return true;
+            }else
+            {   
+                tempBoxMPosition = new Vector2Int(-1, -1);
+                return false;
+            }
+        }
+
+        public bool HasKey(Vector2 direction)
+        {
+            Vector2Int targetPosition = playerMatrixPosition + Vector2Int.RoundToInt(direction);
+            if (objectMatrix[targetPosition.y, targetPosition.x] == 3)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public BoxController GetBox(Vector2 worldPosition)
+        {
+            if (tempBoxMPosition.x == -1 || tempBoxMPosition.y == -1) return null;
+            if (objectMatrix[tempBoxMPosition.y, tempBoxMPosition.x] == 2)
+            {
+                // åœ¨è©²ä½ç½®æª¢æ¸¬æ˜¯å¦æœ‰ç¢°æ’çš„ç‰©ä»¶ (å‡è¨­ç®±å­æœ‰ "Box" Layer æˆ– Tag)
+                Collider2D hit = Physics2D.OverlapPoint(worldPosition);
+                if (hit != null && hit.CompareTag("Box")) // ä½¿ç”¨ Tag éæ¿¾ç®±å­
+                {
+                    // è¿”å›è©²ç‰©ä»¶çš„ BoxController
+                    return hit.GetComponent<BoxController>();
+                }
+                return null; // è‹¥ç„¡æ³•æª¢æ¸¬åˆ°ç®±å­ï¼Œè¿”å› null
+            }
+            return null; // å¦‚æœæ²’æœ‰æ‰¾åˆ°ç®±å­ï¼Œè¿”å› null
+        }
+
+        public KeyController GetKey(Vector2 worldPosition)
+        {
+            Collider2D hit = Physics2D.OverlapPoint(worldPosition);
+            if (hit != null && hit.CompareTag("Key"))
+            {
+                return hit.GetComponent<KeyController>();
+            }
+            return null;
+        }
+
+        // æ›´æ–°çŸ©é™£
+        public void UpdateMatrix(Vector2Int original, Vector2Int updated, int value)
+        {
+            if(value == 2) // å¡«æ´
+            {
+                if (floorMatrix[updated.y, updated.x] == 1)
+                {
+                    value = 0;
+                    UpdateFloor(updated, 0);
+                    Debug.Log("Fill hole");
+                }
+            }
             objectMatrix[original.y, original.x] = 0;
-            objectMatrix[playerMatrixPosition.y, playerMatrixPosition.x] = 1;
+            objectMatrix[updated.y, updated.x] = value;
             Debug.Log($"PlayerM = {playerMatrixPosition}");
         }
 
@@ -93,36 +167,26 @@ namespace Digital_Subcurrent
         {
             Vector2Int original = playerMatrixPosition;
             playerMatrixPosition += Vector2Int.RoundToInt(direction);
-            UpdateMatrix(original);
+            UpdateMatrix(original, playerMatrixPosition, 1);
         }
 
-        // ÀË¬dÃä¬É
+        public void UpdateBox(Vector2 direction)
+        {
+            Vector2Int original = tempBoxMPosition;
+            tempBoxMPosition += Vector2Int.RoundToInt(direction);
+            UpdateMatrix(original, tempBoxMPosition, 2);
+        }
+
+        // æª¢æŸ¥é‚Šç•Œ
         private bool IsOutOfBounds(Vector2Int position)
         {
-            return position.x < 0 || position.x >= objectMatrix.GetLength(0) || position.y < 0 || position.y >= objectMatrix.GetLength(1);
+            return position.x < 0 || position.y >= objectMatrix.GetLength(0) || position.y < 0 || position.x >= objectMatrix.GetLength(1);
         }
 
-        // §ó·s¦aªO
-        private void UpdateFloor(Vector2Int position)
+        // æ›´æ–°åœ°æ¿
+        private void UpdateFloor(Vector2Int position, int value)
         {
-
-        }
-
-        // ´£¨Ñ°T®§µ¹ª±®a
-        public string GetMessage(Vector2Int targetPosition)
-        {
-            if (IsOutOfBounds(targetPosition)) return "µLªk²¾°Ê¡G¶W¥XÃä¬É¡I";
-
-            int objectValue = objectMatrix[targetPosition.x, targetPosition.y];
-            switch (objectValue)
-            {
-                case -1:
-                    return "µLªk²¾°Ê¡G¦³Àğ¾À¡I";
-                case 2:
-                    return "½c¤lªı¾×¡A¹Á¸Õ±À°Ê¥¦¡I";
-                default:
-                    return "¥i¥H²¾°Ê¡C";
-            }
+            floorMatrix[position.y, position.x] = value;
         }
 
         public int[,] GetObjectMatrix()

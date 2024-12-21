@@ -8,6 +8,7 @@ namespace Digital_Subcurrent
     public class HoleController : MonoBehaviour
     {
         public GameObject filledFloorPrefab; // 已填滿的地板Prefab
+        public GameManager gameManager;       // 遊戲管理器
 
         private bool isFilled = false;
 
@@ -18,15 +19,7 @@ namespace Digital_Subcurrent
             {
                 Debug.Log("Box filled the hole!");
 
-                // 創建一個臨時音效物件
-                GameObject audioPlayer = new GameObject("TempAudioPlayer");
-                AudioSource tempAudio = audioPlayer.AddComponent<AudioSource>();
-                tempAudio.clip = GetComponent<AudioSource>().clip;
-                tempAudio.volume = 0.5f;
-                tempAudio.Play();
-
-                // 自動銷毀音效物件
-                Destroy(audioPlayer, tempAudio.clip.length);
+                PlaySound(); // 播放音效
 
                 // 切換為已填滿的地板
                 Instantiate(filledFloorPrefab, transform.position, Quaternion.identity);
@@ -35,6 +28,19 @@ namespace Digital_Subcurrent
 
                 isFilled = true;
             }
+        }
+
+        private void PlaySound()
+        {
+            // 創建一個臨時音效物件
+            GameObject audioPlayer = new GameObject("TempAudioPlayer");
+            AudioSource tempAudio = audioPlayer.AddComponent<AudioSource>();
+            tempAudio.clip = GetComponent<AudioSource>().clip;
+            tempAudio.volume = 0.5f;
+            tempAudio.Play();
+
+            // 自動銷毀音效物件
+            Destroy(audioPlayer, tempAudio.clip.length);
         }
     }
 }
