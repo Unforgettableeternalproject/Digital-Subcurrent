@@ -27,7 +27,7 @@ namespace Digital_Subcurrent
             if (other.CompareTag("Player"))
             {
                 Debug.Log($"Player entered door to {targetRoomName}");
-                levelLoader.MovePlayerToRoom(targetRoomName);
+                levelLoader.LoadLevel(targetRoomName);
             }
         }
     }
