@@ -20,5 +20,26 @@ namespace Digital_Subcurrent
             float newY = startPos.y + Mathf.Sin(Time.time * floatSpeed) * floatAmplitude;
             transform.position = new Vector3(startPos.x, newY, startPos.z);
         }
+
+        public void OnCollect()
+        {
+            // 播放收集音效
+            PlaySound();
+            // 銷毀自己
+            Destroy(gameObject);
+        }
+
+        private void PlaySound()
+        {
+            // 創建一個臨時音效物件
+            GameObject audioPlayer = new GameObject("TempAudioPlayer");
+            AudioSource tempAudio = audioPlayer.AddComponent<AudioSource>();
+            tempAudio.clip = GetComponent<AudioSource>().clip;
+            tempAudio.volume = 0.5f;
+            tempAudio.Play();
+
+            // 自動銷毀音效物件
+            Destroy(audioPlayer, tempAudio.clip.length);
+        }
     }
 }
