@@ -47,10 +47,10 @@ namespace Digital_Subcurrent
             floorValueGrid = ConvertGridToValueGrid(floorGrid);
 
             // 4. 輸出結果
-            PrintGrid(objectGrid, "Object Grid");
-            PrintGrid(floorGrid, "Floor Grid");
-            PrintValueGrid(objectValueGrid, "Object Value Grid");
-            PrintValueGrid(floorValueGrid, "Floor Value Grid");
+            //PrintGrid(objectGrid, "Object Grid");
+            //PrintGrid(floorGrid, "Floor Grid");
+            //PrintValueGrid(objectValueGrid, "Object Value Grid");
+            //PrintValueGrid(floorValueGrid, "Floor Value Grid");
         }
 
         public int[,] GetObjectMatrix()

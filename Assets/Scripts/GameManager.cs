@@ -8,6 +8,7 @@ namespace Digital_Subcurrent
     public class GameManager : MonoBehaviour
     {
         public static GameManager Instance; // Singleton
+        public int defaultLoadLevel = 1;
 
         private int[,] objectMatrix;
         private int[,] floorMatrix;
@@ -17,6 +18,7 @@ namespace Digital_Subcurrent
         private Vector2Int playerMatrixPosition;
         private Vector2Int tempBoxMPosition;
         private Vector2 gridSize = new Vector2(1, 1); // 每格的世界座標大小
+        private LevelLoader levelLoader;
 
         void Awake()
         {
@@ -31,6 +33,14 @@ namespace Digital_Subcurrent
             }
             Instance = this;
             DontDestroyOnLoad(gameObject); // 保持跨場景持續
+        }
+
+        void Start()
+        {
+            levelLoader = LevelLoader.Instance;
+            StartCoroutine(levelLoader.LoadLevel("SL-" + defaultLoadLevel));
+            // 初始化遊戲
+            //InitializeGame();
         }
 
         // 初始化矩陣

@@ -35,6 +35,7 @@ namespace Digital_Subcurrent
 
                 if (objectToValueMap.TryGetValue(obj.tag, out int value))
                 {
+                    Debug.Log($"GameObject '{obj?.tag ?? "null"}'" + $" 對應的數值為 {value}");
                     return value;
                 }
                 else

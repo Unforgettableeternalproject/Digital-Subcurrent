@@ -7,12 +7,23 @@ namespace Digital_Subcurrent
 {
     public class LevelLoader : MonoBehaviour
     {
+        public static LevelLoader Instance;
         public Transform player;
         public TransitionManager transitionManager;
         private Dictionary<string, Transform> roomEntryPoints;
 
-        void Start()
+        void Awake()
         {
+            if (Instance == null)
+            {
+                Instance = this;
+            }
+            else
+            {
+                Destroy(gameObject);
+                return;
+            }
+
             roomEntryPoints = new Dictionary<string, Transform>();
             // 尋找所有房間的 EntryPoint
             foreach (Transform room in transform)
@@ -23,7 +34,21 @@ namespace Digital_Subcurrent
                     roomEntryPoints.Add(room.name, entryPoint);
                 }
             }
-            StartCoroutine(LoadLevel("SL-1"));
+        }
+
+        void Start()
+        {
+            //roomEntryPoints = new Dictionary<string, Transform>();
+            //// 尋找所有房間的 EntryPoint
+            //foreach (Transform room in transform)
+            //{
+            //    Transform entryPoint = room.Find("EntryPoint");
+            //    if (entryPoint != null)
+            //    {
+            //        roomEntryPoints.Add(room.name, entryPoint);
+            //    }
+            //}
+            //StartCoroutine(LoadLevel("SL-1"));
         }
 
         public IEnumerator LoadLevel(string levelName)

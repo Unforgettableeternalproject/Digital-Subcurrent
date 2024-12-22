@@ -9,7 +9,7 @@ namespace Digital_Subcurrent
 
         void Start()
         {
-            levelLoader = FindFirstObjectByType<LevelLoader>();
+            levelLoader = LevelLoader.Instance;
             if (levelLoader == null)
             {
                 Debug.LogError("LevelLoader not found!");
