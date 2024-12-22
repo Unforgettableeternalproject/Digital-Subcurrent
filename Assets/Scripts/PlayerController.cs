@@ -15,7 +15,7 @@ namespace Digital_Subcurrent
         private bool hasKey = false; // 玩家是否擁有鑰匙
 
         private Animator animator;
-        private GameManager gameManager;
+        private GameManager gameManager;　　
 
         private void Start()
         {

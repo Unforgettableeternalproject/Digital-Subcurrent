@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,7 +14,7 @@ namespace Digital_Subcurrent
         void Start()
         {
             roomEntryPoints = new Dictionary<string, Transform>();
-            // ´M§ä©Ò¦³©Ğ¶¡ªº EntryPoint
+            // å°‹æ‰¾æ‰€æœ‰æˆ¿é–“çš„ EntryPoint
             foreach (Transform room in transform)
             {
                 Transform entryPoint = room.Find("EntryPoint");
@@ -35,7 +35,7 @@ namespace Digital_Subcurrent
                 return;
             }
 
-            // ±q¸Ó©Ğ¶¡ª«¥ó¤¤§ì LoadMapInfo
+            // å¾è©²æˆ¿é–“ç‰©ä»¶ä¸­æŠ“ LoadMapInfo
             var loadMapInfo = levelTransform.GetComponent<TilemapTagArray>();
             if (loadMapInfo == null)
             {
@@ -43,24 +43,24 @@ namespace Digital_Subcurrent
                 return;
             }
 
-            // 1. ²£¥Í©Ğ¶¡ªº¯x°}¸ê®Æ
-            loadMapInfo.GenerateMapData();
-            // ³o·|²£¥Í objectMatrix, floorMatrix (¥i¥H¦s¦b¥¦ªºÄİ©Ê¸Ì)
+            // 4. è¨­å®šç©å®¶çš„ä½ç½®
+            MovePlayerToRoom(levelName);
 
-            // 2. ®³¨ì³o¨Ç¸ê®Æ
+            // 1. ç”¢ç”Ÿæˆ¿é–“çš„çŸ©é™£è³‡æ–™
+            loadMapInfo.GenerateMapData();
+            // é€™æœƒç”¢ç”Ÿ objectMatrix, floorMatrix (å¯ä»¥å­˜åœ¨å®ƒçš„å±¬æ€§è£¡)
+
+            // 2. æ‹¿åˆ°é€™äº›è³‡æ–™
             int[,] objectMatrix = loadMapInfo.GetObjectMatrix();
             int[,] floorMatrix = loadMapInfo.GetFloorMatrix();
 
-            // 3. §â¸ê®Æ¥æµ¹ GameManager
+            // 3. æŠŠè³‡æ–™äº¤çµ¦ GameManager
             GameManager.Instance.InitializeGame(objectMatrix, floorMatrix);
-
-            // 4. ³]©wª±®aªº¦ì¸m
-            MovePlayerToRoom(levelName);
 
             Debug.Log($"Finish loading {levelName}");
         }
 
-        // ¶Ç°eª±®a¨ì«ü©w©Ğ¶¡
+        // å‚³é€ç©å®¶åˆ°æŒ‡å®šæˆ¿é–“
         public void MovePlayerToRoom(string roomName)
         {
             if (roomEntryPoints.ContainsKey(roomName))
