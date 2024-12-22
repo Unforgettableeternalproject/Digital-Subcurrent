@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -104,9 +104,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 240
-        width: 16
-        height: 16
+        y: 224
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -125,10 +125,10 @@ TextureImporter:
       name: TX Tileset Futuristic_1
       rect:
         serializedVersion: 2
-        x: 16
-        y: 240
-        width: 16
-        height: 16
+        x: 32
+        y: 224
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,8 +137,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bfd07539c3f161e4ba803a7f1edbd02d
-      internalID: 717634173
+      spriteID: 9dbe8787e7f729f49a04cb3bea000dcf
+      internalID: -1749374672
       vertices: []
       indices: 
       edges: []
@@ -147,10 +147,10 @@ TextureImporter:
       name: TX Tileset Futuristic_2
       rect:
         serializedVersion: 2
-        x: 32
-        y: 240
-        width: 16
-        height: 16
+        x: 64
+        y: 224
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,8 +159,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd71a2a2fa4f90549b79a6261c041abe
-      internalID: 1134884410
+      spriteID: 372dad7adceaf6b4398d2268300e736a
+      internalID: -1652611890
       vertices: []
       indices: 
       edges: []
@@ -169,10 +169,10 @@ TextureImporter:
       name: TX Tileset Futuristic_3
       rect:
         serializedVersion: 2
-        x: 48
-        y: 240
-        width: 16
-        height: 16
+        x: 96
+        y: 224
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,8 +181,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f33737e4dd460ee47ae63a1b214ed559
-      internalID: -2041624593
+      spriteID: 4161ec5033718e041a8b9737423e9893
+      internalID: -475820346
       vertices: []
       indices: 
       edges: []
@@ -191,10 +191,10 @@ TextureImporter:
       name: TX Tileset Futuristic_4
       rect:
         serializedVersion: 2
-        x: 64
-        y: 240
-        width: 16
-        height: 16
+        x: 128
+        y: 224
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,8 +203,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a7e204b02ead5540a25e48246d19bd1
-      internalID: 63014103
+      spriteID: f61a36469e9998e4c9c12c34331d7a6b
+      internalID: 1708370037
       vertices: []
       indices: 
       edges: []
@@ -213,10 +213,10 @@ TextureImporter:
       name: TX Tileset Futuristic_5
       rect:
         serializedVersion: 2
-        x: 80
-        y: 240
-        width: 16
-        height: 16
+        x: 160
+        y: 224
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -225,8 +225,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 52a2ef23aa2615846b5dd21faf5ac1da
-      internalID: -1967531937
+      spriteID: ae4f9cd4a684b414e8f3379e57d5cf88
+      internalID: -499159973
       vertices: []
       indices: 
       edges: []
@@ -235,10 +235,10 @@ TextureImporter:
       name: TX Tileset Futuristic_6
       rect:
         serializedVersion: 2
-        x: 96
-        y: 240
-        width: 16
-        height: 16
+        x: 192
+        y: 224
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -247,8 +247,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6bc10d9135b9ca941a4029f0affef86e
-      internalID: -592798350
+      spriteID: 7969e4f859e500147a20fb89f8a88923
+      internalID: -2147171070
       vertices: []
       indices: 
       edges: []
@@ -257,10 +257,10 @@ TextureImporter:
       name: TX Tileset Futuristic_7
       rect:
         serializedVersion: 2
-        x: 112
-        y: 240
-        width: 16
-        height: 16
+        x: 224
+        y: 224
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -269,8 +269,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 08467aa11ad671d41bf96db1be25dd7a
-      internalID: 2074086407
+      spriteID: c652e7ec6df59b842aa843e56cd4b576
+      internalID: -880192058
       vertices: []
       indices: 
       edges: []
@@ -279,10 +279,10 @@ TextureImporter:
       name: TX Tileset Futuristic_8
       rect:
         serializedVersion: 2
-        x: 128
-        y: 240
-        width: 16
-        height: 16
+        x: 0
+        y: 192
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -291,8 +291,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fea43d9b70cff784c9cbf1610a3a5200
-      internalID: -1314804856
+      spriteID: 4428874c92cec7a4d821ab509fa40fc4
+      internalID: -1117057315
       vertices: []
       indices: 
       edges: []
@@ -301,10 +301,10 @@ TextureImporter:
       name: TX Tileset Futuristic_9
       rect:
         serializedVersion: 2
-        x: 144
-        y: 240
-        width: 16
-        height: 16
+        x: 32
+        y: 192
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -313,8 +313,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7444f42c512eb464a87fbf60bbe13b6d
-      internalID: 904776119
+      spriteID: d381689bc393504488bba77c3f6e22b9
+      internalID: -879247066
       vertices: []
       indices: 
       edges: []
@@ -323,10 +323,10 @@ TextureImporter:
       name: TX Tileset Futuristic_10
       rect:
         serializedVersion: 2
-        x: 160
-        y: 240
-        width: 16
-        height: 16
+        x: 64
+        y: 192
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -335,8 +335,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1bbd46c79955bb3488edb9bf53d0bca9
-      internalID: -2053646503
+      spriteID: 9c9e5468e4101744a940298c6fe6c1a8
+      internalID: -1261285609
       vertices: []
       indices: 
       edges: []
@@ -345,10 +345,10 @@ TextureImporter:
       name: TX Tileset Futuristic_11
       rect:
         serializedVersion: 2
-        x: 176
-        y: 240
-        width: 16
-        height: 16
+        x: 96
+        y: 192
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -357,8 +357,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 569a96eb905fc214dad15da4cf1ef225
-      internalID: 328416157
+      spriteID: 9a92a384ab9cfbf4b9ebc49c28050c13
+      internalID: 2008255258
       vertices: []
       indices: 
       edges: []
@@ -367,10 +367,10 @@ TextureImporter:
       name: TX Tileset Futuristic_12
       rect:
         serializedVersion: 2
-        x: 192
-        y: 240
-        width: 16
-        height: 16
+        x: 128
+        y: 192
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -379,8 +379,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: af987eb2d1df6084fbf42d3b4b4a09db
-      internalID: 667634840
+      spriteID: 993de78be8982e54ca390b0b28606369
+      internalID: -819433723
       vertices: []
       indices: 
       edges: []
@@ -389,10 +389,10 @@ TextureImporter:
       name: TX Tileset Futuristic_13
       rect:
         serializedVersion: 2
-        x: 208
-        y: 240
-        width: 16
-        height: 16
+        x: 160
+        y: 192
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -401,8 +401,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1a2ac72d1b8747647959b20b12fde7a9
-      internalID: 853407518
+      spriteID: 4b5e237a352d96545bafe800e919892e
+      internalID: -458894920
       vertices: []
       indices: 
       edges: []
@@ -411,10 +411,10 @@ TextureImporter:
       name: TX Tileset Futuristic_14
       rect:
         serializedVersion: 2
-        x: 224
-        y: 240
-        width: 16
-        height: 16
+        x: 192
+        y: 192
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -423,8 +423,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7e4efc7b413123f41bc43efa12980974
-      internalID: -1046538997
+      spriteID: 7b54e3ff0007ee04eb080d834573624b
+      internalID: 1326340713
       vertices: []
       indices: 
       edges: []
@@ -433,10 +433,10 @@ TextureImporter:
       name: TX Tileset Futuristic_15
       rect:
         serializedVersion: 2
-        x: 240
-        y: 240
-        width: 16
-        height: 16
+        x: 224
+        y: 192
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -445,8 +445,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5fb6a6a40bfbfaf40a2a0f5447851aba
-      internalID: 1500318845
+      spriteID: e08bbc05b59668c4ebdf0e9d2f5c74dd
+      internalID: -1639915847
       vertices: []
       indices: 
       edges: []
@@ -456,9 +456,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 224
-        width: 16
-        height: 16
+        y: 160
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -467,8 +467,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a4e596eaeb2fad47b04547f03b5f151
-      internalID: 749247186
+      spriteID: 9c439dcb8e948654c86104fd00f1e294
+      internalID: -2017915983
       vertices: []
       indices: 
       edges: []
@@ -477,10 +477,10 @@ TextureImporter:
       name: TX Tileset Futuristic_17
       rect:
         serializedVersion: 2
-        x: 16
-        y: 224
-        width: 16
-        height: 16
+        x: 32
+        y: 160
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -489,8 +489,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1965453fe10fbaa45bdd3296845cf9f6
-      internalID: -127062046
+      spriteID: 45ac706639177ea489f03a343e6a77ae
+      internalID: 240751412
       vertices: []
       indices: 
       edges: []
@@ -499,10 +499,10 @@ TextureImporter:
       name: TX Tileset Futuristic_18
       rect:
         serializedVersion: 2
-        x: 32
-        y: 224
-        width: 16
-        height: 16
+        x: 64
+        y: 160
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -511,8 +511,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bc689660cd6a6644a84ea13b232ae22c
-      internalID: 1472106859
+      spriteID: 269ce81d717f6ab4c90d3d3c63244bbd
+      internalID: -1402305369
       vertices: []
       indices: 
       edges: []
@@ -521,10 +521,10 @@ TextureImporter:
       name: TX Tileset Futuristic_19
       rect:
         serializedVersion: 2
-        x: 48
-        y: 224
-        width: 16
-        height: 16
+        x: 96
+        y: 160
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -533,8 +533,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: be6ca1337c0d7f94db9c1e154533b2d3
-      internalID: 1579894373
+      spriteID: 83d19bafdaeb18f40961ac252dc2ae03
+      internalID: -662873025
       vertices: []
       indices: 
       edges: []
@@ -543,10 +543,10 @@ TextureImporter:
       name: TX Tileset Futuristic_20
       rect:
         serializedVersion: 2
-        x: 64
-        y: 224
-        width: 16
-        height: 16
+        x: 128
+        y: 160
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -555,8 +555,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d605ed96672d4814e9af1927e40a3d2d
-      internalID: -1920893369
+      spriteID: c73ed3a1eb46dd94c9614237426a4cb7
+      internalID: 1064957434
       vertices: []
       indices: 
       edges: []
@@ -565,10 +565,10 @@ TextureImporter:
       name: TX Tileset Futuristic_21
       rect:
         serializedVersion: 2
-        x: 80
-        y: 224
-        width: 16
-        height: 16
+        x: 160
+        y: 160
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -577,8 +577,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b88c4b8cb9134f4a92a9f473bb9ff59
-      internalID: 1762414372
+      spriteID: ac1e18095bd47674a964b83ae1d06e7d
+      internalID: -1082071613
       vertices: []
       indices: 
       edges: []
@@ -587,10 +587,10 @@ TextureImporter:
       name: TX Tileset Futuristic_22
       rect:
         serializedVersion: 2
-        x: 96
-        y: 224
-        width: 16
-        height: 16
+        x: 192
+        y: 160
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -599,8 +599,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7fe3edfaccf180842b8650fbba301471
-      internalID: 1443739198
+      spriteID: a750a8a23bb3a7f4d887fabd31045717
+      internalID: 591528851
       vertices: []
       indices: 
       edges: []
@@ -609,10 +609,10 @@ TextureImporter:
       name: TX Tileset Futuristic_23
       rect:
         serializedVersion: 2
-        x: 112
-        y: 224
-        width: 16
-        height: 16
+        x: 224
+        y: 160
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -621,8 +621,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 76a8830e3d6791d47a774beb523525e9
-      internalID: -732208506
+      spriteID: 92a136fe9ec196e418f3b09b0a9f614b
+      internalID: 1729520201
       vertices: []
       indices: 
       edges: []
@@ -631,10 +631,10 @@ TextureImporter:
       name: TX Tileset Futuristic_24
       rect:
         serializedVersion: 2
-        x: 128
-        y: 224
-        width: 16
-        height: 16
+        x: 0
+        y: 128
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -643,8 +643,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9828c9213df3d874ca5f4ac45dab02c5
-      internalID: 1418502415
+      spriteID: 76adf73c08d33f84081f66ac66acb9fc
+      internalID: 1637192469
       vertices: []
       indices: 
       edges: []
@@ -653,10 +653,10 @@ TextureImporter:
       name: TX Tileset Futuristic_25
       rect:
         serializedVersion: 2
-        x: 144
-        y: 224
-        width: 16
-        height: 16
+        x: 32
+        y: 128
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -665,8 +665,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 53c1d367bd3aafb46968b592c3f5778d
-      internalID: 181504984
+      spriteID: 5c9e40dd300fe6f4b9f5ceec011e489a
+      internalID: -1619109731
       vertices: []
       indices: 
       edges: []
@@ -675,10 +675,10 @@ TextureImporter:
       name: TX Tileset Futuristic_26
       rect:
         serializedVersion: 2
-        x: 160
-        y: 224
-        width: 16
-        height: 16
+        x: 64
+        y: 128
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -687,8 +687,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b84d482f7afe3149aac915b4acdbe9a
-      internalID: -308132745
+      spriteID: c9a2fcee542896f4a8b6f7d3ebe4d6ab
+      internalID: 1654689837
       vertices: []
       indices: 
       edges: []
@@ -697,10 +697,10 @@ TextureImporter:
       name: TX Tileset Futuristic_27
       rect:
         serializedVersion: 2
-        x: 176
-        y: 224
-        width: 16
-        height: 16
+        x: 96
+        y: 128
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -709,8 +709,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7d4b6e8b3fbdb6a409a643469b31395f
-      internalID: 529820337
+      spriteID: 513440dd6ad99f34da389203bc506a84
+      internalID: 1816313189
       vertices: []
       indices: 
       edges: []
@@ -719,10 +719,10 @@ TextureImporter:
       name: TX Tileset Futuristic_28
       rect:
         serializedVersion: 2
-        x: 192
-        y: 224
-        width: 16
-        height: 16
+        x: 128
+        y: 128
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -731,8 +731,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b9f7296e855242a46b1abf06994c0fd7
-      internalID: 1089751696
+      spriteID: f03b6f06a48f7e44aa1ee8f10df9ddb5
+      internalID: 2009860739
       vertices: []
       indices: 
       edges: []
@@ -741,10 +741,10 @@ TextureImporter:
       name: TX Tileset Futuristic_29
       rect:
         serializedVersion: 2
-        x: 208
-        y: 224
-        width: 16
-        height: 16
+        x: 160
+        y: 128
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -753,8 +753,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d183ac1ab4e0d24292fd85237274fcf
-      internalID: -583248037
+      spriteID: f55186f527c402449b8c8e1b5563509d
+      internalID: 674843345
       vertices: []
       indices: 
       edges: []
@@ -763,10 +763,10 @@ TextureImporter:
       name: TX Tileset Futuristic_30
       rect:
         serializedVersion: 2
-        x: 224
-        y: 224
-        width: 16
-        height: 16
+        x: 192
+        y: 128
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -775,8 +775,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ae760437da6d294ab684254348dd5d9
-      internalID: -1231895893
+      spriteID: cf9f45c0e6e911f47b8acc2529ac8ef7
+      internalID: 1087259707
       vertices: []
       indices: 
       edges: []
@@ -785,10 +785,10 @@ TextureImporter:
       name: TX Tileset Futuristic_31
       rect:
         serializedVersion: 2
-        x: 240
-        y: 224
-        width: 16
-        height: 16
+        x: 224
+        y: 128
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -797,8 +797,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9477a835682e8ef42a2261f6c30624d7
-      internalID: 1155553037
+      spriteID: 23f8564a35059154c92dd1a78b437afb
+      internalID: -1987136387
       vertices: []
       indices: 
       edges: []
@@ -808,9 +808,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 208
-        width: 16
-        height: 16
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -819,8 +819,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 76b02188f39ff77429280ae18faa02e2
-      internalID: 1838268694
+      spriteID: 39212200223fb7944af40aa39bf720ee
+      internalID: 216486216
       vertices: []
       indices: 
       edges: []
@@ -829,10 +829,10 @@ TextureImporter:
       name: TX Tileset Futuristic_33
       rect:
         serializedVersion: 2
-        x: 16
-        y: 208
-        width: 16
-        height: 16
+        x: 32
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -841,8 +841,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6639b9072cd9f4c41884e5667aa8b153
-      internalID: -303779714
+      spriteID: 5b8e790f147739d4aa4e0dc1bbac1724
+      internalID: -196122775
       vertices: []
       indices: 
       edges: []
@@ -851,10 +851,10 @@ TextureImporter:
       name: TX Tileset Futuristic_34
       rect:
         serializedVersion: 2
-        x: 32
-        y: 208
-        width: 16
-        height: 16
+        x: 64
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -863,8 +863,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b76073fa9171be148a985e6d5b58c51d
-      internalID: 445222331
+      spriteID: e45338124a3c4e545ba56cffdc463909
+      internalID: 240292190
       vertices: []
       indices: 
       edges: []
@@ -873,10 +873,10 @@ TextureImporter:
       name: TX Tileset Futuristic_35
       rect:
         serializedVersion: 2
-        x: 48
-        y: 208
-        width: 16
-        height: 16
+        x: 96
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -885,8 +885,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4bdda15bbba7e2d4c99344b947d91cd9
-      internalID: -155887305
+      spriteID: ade17e2390788d246a51abeb4b5fcbf2
+      internalID: 1923245329
       vertices: []
       indices: 
       edges: []
@@ -895,10 +895,10 @@ TextureImporter:
       name: TX Tileset Futuristic_36
       rect:
         serializedVersion: 2
-        x: 64
-        y: 208
-        width: 16
-        height: 16
+        x: 128
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -907,8 +907,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a86af84bf19eb6549a91a52d670b82bd
-      internalID: -2015934362
+      spriteID: 565a156a9b52adc438364584a9093e6a
+      internalID: 678795109
       vertices: []
       indices: 
       edges: []
@@ -917,10 +917,10 @@ TextureImporter:
       name: TX Tileset Futuristic_37
       rect:
         serializedVersion: 2
-        x: 80
-        y: 208
-        width: 16
-        height: 16
+        x: 160
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -929,8 +929,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 223e2cd4963b9c6459dfa14b0a22c561
-      internalID: -610302054
+      spriteID: a0a8418f807cf4e4088461a7d8a0a5ba
+      internalID: -1416847593
       vertices: []
       indices: 
       edges: []
@@ -939,10 +939,10 @@ TextureImporter:
       name: TX Tileset Futuristic_38
       rect:
         serializedVersion: 2
-        x: 96
-        y: 208
-        width: 16
-        height: 16
+        x: 192
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -951,8 +951,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3374a18d47908354bbd7290e5bc4d748
-      internalID: 1456331449
+      spriteID: 256393929df8e104eb6e3ab82dc6fc34
+      internalID: 1744689671
       vertices: []
       indices: 
       edges: []
@@ -961,10 +961,10 @@ TextureImporter:
       name: TX Tileset Futuristic_39
       rect:
         serializedVersion: 2
-        x: 112
-        y: 208
-        width: 16
-        height: 16
+        x: 224
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -973,8 +973,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e8fa562e360e7584094e6ed3ecdc8fab
-      internalID: -1663917309
+      spriteID: 0dd6b81a0cf698d4797f8ad0414066ea
+      internalID: -974796721
       vertices: []
       indices: 
       edges: []
@@ -983,10 +983,10 @@ TextureImporter:
       name: TX Tileset Futuristic_40
       rect:
         serializedVersion: 2
-        x: 128
-        y: 208
-        width: 16
-        height: 16
+        x: 0
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -995,8 +995,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c0c77fb6ec6a1444f8a3cdb105d03ece
-      internalID: -512047695
+      spriteID: 6f662fc499679d94ab4c42d33ecc13cf
+      internalID: 1935780846
       vertices: []
       indices: 
       edges: []
@@ -1005,10 +1005,10 @@ TextureImporter:
       name: TX Tileset Futuristic_41
       rect:
         serializedVersion: 2
-        x: 144
-        y: 208
-        width: 16
-        height: 16
+        x: 32
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1017,8 +1017,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9fb9639bdf5993048a215610e9492b97
-      internalID: 1866631310
+      spriteID: 057e25df8fd019a4aa0141c49b745ba3
+      internalID: -400618685
       vertices: []
       indices: 
       edges: []
@@ -1027,10 +1027,10 @@ TextureImporter:
       name: TX Tileset Futuristic_42
       rect:
         serializedVersion: 2
-        x: 160
-        y: 208
-        width: 16
-        height: 16
+        x: 64
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1039,8 +1039,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 342cd836bb4cc864c8c6f84febd36058
-      internalID: 1922680094
+      spriteID: 485dda12ddc9e324db81b0aee702328c
+      internalID: 296373302
       vertices: []
       indices: 
       edges: []
@@ -1049,10 +1049,10 @@ TextureImporter:
       name: TX Tileset Futuristic_43
       rect:
         serializedVersion: 2
-        x: 176
-        y: 208
-        width: 16
-        height: 16
+        x: 96
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1061,8 +1061,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a0657c13c9a6df84e80323bf2c6db5c3
-      internalID: -393369686
+      spriteID: 8cea7e60dcf77a24ebe0187497010ea3
+      internalID: 147917546
       vertices: []
       indices: 
       edges: []
@@ -1071,10 +1071,10 @@ TextureImporter:
       name: TX Tileset Futuristic_44
       rect:
         serializedVersion: 2
-        x: 192
-        y: 208
-        width: 16
-        height: 16
+        x: 128
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1083,8 +1083,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4ee0724c544ede646a0d079cdf3ce6d8
-      internalID: -631622910
+      spriteID: 14dc2a8c53020754a8e8344b3f2409df
+      internalID: 238531609
       vertices: []
       indices: 
       edges: []
@@ -1093,10 +1093,10 @@ TextureImporter:
       name: TX Tileset Futuristic_45
       rect:
         serializedVersion: 2
-        x: 208
-        y: 208
-        width: 16
-        height: 16
+        x: 160
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1105,8 +1105,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f0e09c656527e5b49bca8e0815f47482
-      internalID: 247004761
+      spriteID: 818136750b7dd9643a6ec130fc287d8c
+      internalID: 1787264128
       vertices: []
       indices: 
       edges: []
@@ -1115,10 +1115,10 @@ TextureImporter:
       name: TX Tileset Futuristic_46
       rect:
         serializedVersion: 2
-        x: 224
-        y: 208
-        width: 16
-        height: 16
+        x: 192
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1127,8 +1127,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5a71d6f0dde61f2449b516a5a96021ea
-      internalID: -222598366
+      spriteID: f17c6095976232643aa2d7747642a2a6
+      internalID: 1975919146
       vertices: []
       indices: 
       edges: []
@@ -1137,10 +1137,10 @@ TextureImporter:
       name: TX Tileset Futuristic_47
       rect:
         serializedVersion: 2
-        x: 240
-        y: 208
-        width: 16
-        height: 16
+        x: 224
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1149,8 +1149,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c45fa52d73aed36408f64b9aa687a000
-      internalID: -849160759
+      spriteID: ce2a21ffeb0eca24cb34be3d2326c42d
+      internalID: -981377892
       vertices: []
       indices: 
       edges: []
@@ -1160,9 +1160,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 192
-        width: 16
-        height: 16
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1171,8 +1171,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 760e865ba12860e449eaae3434199a7c
-      internalID: 610022694
+      spriteID: 9ab323aefc9db6f4ba46eed8c3fd3c8f
+      internalID: -233951271
       vertices: []
       indices: 
       edges: []
@@ -1181,10 +1181,10 @@ TextureImporter:
       name: TX Tileset Futuristic_49
       rect:
         serializedVersion: 2
-        x: 16
-        y: 192
-        width: 16
-        height: 16
+        x: 32
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1193,8 +1193,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 819ba6b10102b6045aced046ab43aa3c
-      internalID: 77208819
+      spriteID: 06f529f42e572634eb862f09f7b27eb1
+      internalID: 1501860907
       vertices: []
       indices: 
       edges: []
@@ -1203,10 +1203,10 @@ TextureImporter:
       name: TX Tileset Futuristic_50
       rect:
         serializedVersion: 2
-        x: 32
-        y: 192
-        width: 16
-        height: 16
+        x: 64
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1215,8 +1215,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 942c66d2f4c5b0c4dba57313ec2c253c
-      internalID: -1297636083
+      spriteID: f749b7d7099d6d446a908eeae7883100
+      internalID: -2142851501
       vertices: []
       indices: 
       edges: []
@@ -1225,10 +1225,10 @@ TextureImporter:
       name: TX Tileset Futuristic_51
       rect:
         serializedVersion: 2
-        x: 48
-        y: 192
-        width: 16
-        height: 16
+        x: 96
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1237,8 +1237,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f4815038af273c34a827f4ab654765b6
-      internalID: 1045711285
+      spriteID: aceeeaf9709c5064c9a483f1ca834528
+      internalID: -82545963
       vertices: []
       indices: 
       edges: []
@@ -1247,10 +1247,10 @@ TextureImporter:
       name: TX Tileset Futuristic_52
       rect:
         serializedVersion: 2
-        x: 64
-        y: 192
-        width: 16
-        height: 16
+        x: 128
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1259,8 +1259,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5596f61fe2af0f4fac0a448e0be0454
-      internalID: -873405367
+      spriteID: 185637bd958d00547ba64b8ee994414e
+      internalID: -1126776759
       vertices: []
       indices: 
       edges: []
@@ -1269,10 +1269,10 @@ TextureImporter:
       name: TX Tileset Futuristic_53
       rect:
         serializedVersion: 2
-        x: 80
-        y: 192
-        width: 16
-        height: 16
+        x: 160
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1281,8 +1281,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 47d92b751e49089418922b37e08e0036
-      internalID: -357267122
+      spriteID: 82755b5cce914c04bba361bb0997c626
+      internalID: -560607629
       vertices: []
       indices: 
       edges: []
@@ -1291,10 +1291,10 @@ TextureImporter:
       name: TX Tileset Futuristic_54
       rect:
         serializedVersion: 2
-        x: 96
-        y: 192
-        width: 16
-        height: 16
+        x: 192
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1303,8 +1303,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a6038c8c45bc35d43a93d79224bd25ef
-      internalID: -1344674629
+      spriteID: 0d87ae9e5353b1a42b976c26312f7565
+      internalID: 1139895716
       vertices: []
       indices: 
       edges: []
@@ -1313,10 +1313,10 @@ TextureImporter:
       name: TX Tileset Futuristic_55
       rect:
         serializedVersion: 2
-        x: 112
-        y: 192
-        width: 16
-        height: 16
+        x: 224
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1325,8 +1325,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 65f0aad92236efe4c8a905bc3dbbbc3c
-      internalID: -917429997
+      spriteID: eb6dff3770051114891d7053b856cc4a
+      internalID: -140170310
       vertices: []
       indices: 
       edges: []
@@ -1335,10 +1335,10 @@ TextureImporter:
       name: TX Tileset Futuristic_56
       rect:
         serializedVersion: 2
-        x: 128
-        y: 192
-        width: 16
-        height: 16
+        x: 0
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1347,8 +1347,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 60e97f47308730f4ba200b0437affeb4
-      internalID: -310454615
+      spriteID: 4235747f2a7555046b16af9dcbe8e96c
+      internalID: 1060744980
       vertices: []
       indices: 
       edges: []
@@ -1357,10 +1357,10 @@ TextureImporter:
       name: TX Tileset Futuristic_57
       rect:
         serializedVersion: 2
-        x: 144
-        y: 192
-        width: 16
-        height: 16
+        x: 32
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1369,8 +1369,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e4358a3d98ffada449d84bb06828f488
-      internalID: 562603581
+      spriteID: 2f21d9cc9c6aeb74eb60ea5b3ccdf27b
+      internalID: 2040729990
       vertices: []
       indices: 
       edges: []
@@ -1379,10 +1379,10 @@ TextureImporter:
       name: TX Tileset Futuristic_58
       rect:
         serializedVersion: 2
-        x: 160
-        y: 192
-        width: 16
-        height: 16
+        x: 64
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1391,8 +1391,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 65eaa0beb8e3b654fbb1bdaf511078a7
-      internalID: -807952381
+      spriteID: 0a3bd5773f232cf449ff96a903300280
+      internalID: 1648725239
       vertices: []
       indices: 
       edges: []
@@ -1401,10 +1401,10 @@ TextureImporter:
       name: TX Tileset Futuristic_59
       rect:
         serializedVersion: 2
-        x: 176
-        y: 192
-        width: 16
-        height: 16
+        x: 96
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1413,8 +1413,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 476f7160e64107b419effa2998415626
-      internalID: 1928170622
+      spriteID: c244cc8758a9f5541a1bad11f785c6dc
+      internalID: 1563452939
       vertices: []
       indices: 
       edges: []
@@ -1423,10 +1423,10 @@ TextureImporter:
       name: TX Tileset Futuristic_60
       rect:
         serializedVersion: 2
-        x: 192
-        y: 192
-        width: 16
-        height: 16
+        x: 128
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1435,8 +1435,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 89ea69a613658d44fb8475bca44bdf08
-      internalID: 2057285640
+      spriteID: 6b217e8793c34f24299265338dec5a35
+      internalID: 1829408493
       vertices: []
       indices: 
       edges: []
@@ -1445,10 +1445,10 @@ TextureImporter:
       name: TX Tileset Futuristic_61
       rect:
         serializedVersion: 2
-        x: 208
-        y: 192
-        width: 16
-        height: 16
+        x: 160
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1457,8 +1457,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9a886d06c9d92924790ebfc12317b69b
-      internalID: 732060744
+      spriteID: 39c9e81de5b55954a8ff3ed47fd0b863
+      internalID: -1951831452
       vertices: []
       indices: 
       edges: []
@@ -1467,10 +1467,10 @@ TextureImporter:
       name: TX Tileset Futuristic_62
       rect:
         serializedVersion: 2
-        x: 224
-        y: 192
-        width: 16
-        height: 16
+        x: 192
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1479,8 +1479,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f88ad14b0ed241c468b37c9c9df213f4
-      internalID: 2083742612
+      spriteID: fe8611354efd4664ab8da52598df6195
+      internalID: 1856674084
       vertices: []
       indices: 
       edges: []
@@ -1489,4212 +1489,10 @@ TextureImporter:
       name: TX Tileset Futuristic_63
       rect:
         serializedVersion: 2
-        x: 240
-        y: 192
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fd9271fa62111b94ea9970c44bd6f484
-      internalID: 456225767
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_64
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 176
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2870ae997b260bc44a4e742c8b402941
-      internalID: -1051103055
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_65
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 176
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 90ff0f1ad8fcd274f831d2d39d9248fd
-      internalID: -999790094
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_66
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 176
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 14b442962df7b944fb0fd5fc59759a44
-      internalID: 381550889
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_67
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 176
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 711fc75bdbdbcf94287c09818d7d8f5b
-      internalID: -1741747660
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_68
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 176
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ca62652d10f85854dad8953d0b5c3f30
-      internalID: -94866028
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_69
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 176
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8084674780009034a81f0c408eba9136
-      internalID: -537300342
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_70
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 176
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 237987d31a6eddd48aaf52d886735828
-      internalID: 1477977011
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_71
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 176
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e3738508deafb314784b765ef7f108ea
-      internalID: 1970858455
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_72
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 176
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 171c0c49f1719a34e8b5d7dbd95747de
-      internalID: 1628151097
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_73
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 176
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 55d356d6ed16d994fb2f8fc942ffcd04
-      internalID: 2063753192
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_74
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 176
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3b2a14470ef67c74c83404d22c41a537
-      internalID: -1041498855
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_75
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 176
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eded57711672bb64a9f0b1e6044af17e
-      internalID: -2005133651
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_76
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 176
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7e0822379f2451147a14ed92c4e6427c
-      internalID: -129933163
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_77
-      rect:
-        serializedVersion: 2
-        x: 208
-        y: 176
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fb14f28e38c3af24c96b1a7468219e6a
-      internalID: 1230040314
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_78
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 176
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2cc5e861eacfa874bb7f015443dc0231
-      internalID: -184709529
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_79
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 176
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 44f92abfb17e5724fa51625dfa8ce6d1
-      internalID: -1955588173
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_80
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 160
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2e5de2d56a34e254c899780ab08cf8e7
-      internalID: 241690667
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_81
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 160
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 763db99af86ba4841ab6295c1b7809ac
-      internalID: 2024055152
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_82
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 160
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c2bb70246ca7e1c4f991861ba93fbf0c
-      internalID: 1093005651
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_83
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 160
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1f814412dd541aa4da4914ed274e974d
-      internalID: -1260553445
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_84
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 160
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eee8486421cd7264b89799f86bdaaba5
-      internalID: -746645115
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_85
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 160
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 17c7fe3ea1457774791cad41c9613bd7
-      internalID: -50649760
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_86
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 160
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 48ecd4a7789b35a4a9f897076187f8ab
-      internalID: 863444927
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_87
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 160
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a86074ea1bb042f4a945d013f87a376d
-      internalID: 1473935270
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_88
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 160
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b6c8ba44d7816f043855628a2f478eea
-      internalID: 1900251047
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_89
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 160
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 745ccf659e2a2f14f83f863987569dd2
-      internalID: -225653255
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_90
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 160
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 883167cf0c43e214dae37468d3e4740c
-      internalID: 654891740
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_91
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 160
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 83f6cc8880c29ed48a8df3d415ed15b7
-      internalID: 1005976457
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_92
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 160
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 478af070a40877544a5d209cac26ec51
-      internalID: 182146816
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_93
-      rect:
-        serializedVersion: 2
-        x: 208
-        y: 160
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6040f67b66f47be4e9b03598bca5257a
-      internalID: 1070323029
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_94
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 160
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 349ffd0196990764ba4abd33537ef24d
-      internalID: 470961996
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_95
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 160
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d96e75057d0da2b4aad77a88a89e15d7
-      internalID: -905518394
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_96
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d9e939e38c7600a4fbb097f5c4669b2d
-      internalID: 1175766422
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_97
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2882225c80e3d9b479535e13d4dec130
-      internalID: 617846036
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_98
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5167158c090fc054596f710ed82f3e0d
-      internalID: -341778251
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_99
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f51a0e8d81b741f408a3198f3ab05e2d
-      internalID: -1742864992
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_100
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 80f4cd4f1efaaff41bf1acf20ebcb7ae
-      internalID: -1932471020
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_101
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b82cebe7c9977d046b66273020601808
-      internalID: 2096002127
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_102
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7f3ec02658bed2e4bb021874947266fc
-      internalID: -387154720
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_103
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 659a91e62f0df2142b044204b15a3230
-      internalID: -838626131
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_104
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ced4494bc6a60724d807b404040e6588
-      internalID: 1852626425
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_105
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 70c219c4b4e4d2b4c963dec3c06c83e6
-      internalID: 1209843536
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_106
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9b4f2be92883b1e428ba0555ae36e083
-      internalID: 463841679
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_107
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 511c3962e138dc34cadf4a925e8e54ee
-      internalID: 1950583494
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_108
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 684f8ff34bcbe6e4699c1fa7c17da2e8
-      internalID: 573236296
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_109
-      rect:
-        serializedVersion: 2
-        x: 208
-        y: 144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 998388539930aad44a774bb44dcc50f1
-      internalID: -858187204
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_110
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 66062dc4a079db7439ec2abd2a518842
-      internalID: -509878855
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_111
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d105d738d399a8b4cac474adae2199f1
-      internalID: -987814254
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_112
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 128
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3a6fc49b428131947838a0a550a575d3
-      internalID: -1810755195
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_113
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 128
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bd245c26f1b01b845adbef7d3d7e0685
-      internalID: 1536772530
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_114
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 128
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 75e6f3dd135de9f4aac2350d32be8ef4
-      internalID: -502454405
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_115
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 128
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ba6e7477b8c7b4a4cab33f00e2ac2e7c
-      internalID: 2017539254
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_116
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 128
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 51e8cca7388317b4eaaadc404934361c
-      internalID: 678890464
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_117
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 128
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ecc05a396983f7d43b17739d79748367
-      internalID: -1669203552
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_118
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 128
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 228b62e0aed891b479481ef2cf3ceb43
-      internalID: -860178009
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_119
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 128
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4ed2be1351772e4488a0cddbc89ac41d
-      internalID: 1565160653
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_120
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 128
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e08600aee115cd04ca5a379e262593f7
-      internalID: -1616663882
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_121
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 128
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2bbd33fd19a541f46bbf1b91e3513980
-      internalID: -2034820501
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_122
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 128
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 060f085b1f35c2345a2ed1e5910e1388
-      internalID: 1413913473
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_123
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 128
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4afb50b3658c1564696e61feac76ddbb
-      internalID: -977917738
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_124
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 128
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 62ec005dd3784cd4d9075d30aab7b486
-      internalID: -1412105720
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_125
-      rect:
-        serializedVersion: 2
-        x: 208
-        y: 128
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 82ef2979b364f17428465c61f9dbca31
-      internalID: 1116474766
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_126
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 128
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b97e842a201a326448c6b9e10c6cc3f8
-      internalID: -381891111
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_127
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 128
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 26f248f1b82450442ae3b7e806857694
-      internalID: -893090829
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_128
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 112
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: befd4490b217cf6479ced71213d39fef
-      internalID: 1600571958
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_129
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 112
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bb50f07c00afff744a5784c8a12a44c7
-      internalID: -999216783
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_130
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 112
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 89143bf7daf4d5a48bafeba0d63886b0
-      internalID: 1036443640
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_131
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 112
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 213e6bc8ed2f48b48944fe3d49e54204
-      internalID: 1838804888
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_132
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 112
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2aa3bb927aa597f4a96e57831f8c3864
-      internalID: -994242314
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_133
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 112
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 85300e98e1802f949ad6e140e5f7109b
-      internalID: -541865467
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_134
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 112
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f8637cdee64f7574bb4394ce1f9ae16d
-      internalID: 1410990011
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_135
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 112
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d029ad4c1435a024ab52771dc0222a7a
-      internalID: 389601350
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_136
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 112
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 30ad4b86de3c3f14caa8a903c8c5dcc1
-      internalID: 1778615066
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_137
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 112
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f0421038822937b4e918536323312684
-      internalID: 1848077583
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_138
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 112
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 91e633cfeef9b8440a704847139b2b39
-      internalID: -1382353806
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_139
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 112
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 646e1117ce3c90243833d3c19f822eab
-      internalID: 765507164
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_140
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 112
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8f91e908ce8eb734db68507685bb068a
-      internalID: 416614237
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_141
-      rect:
-        serializedVersion: 2
-        x: 208
-        y: 112
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7e74c8d5488d6b0498ae13781f5d1a85
-      internalID: -1889046909
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_142
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 112
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a94135fec60b4eb4280597c88cdf737a
-      internalID: 1042102812
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_143
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 112
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3723c6c9597cf564dbcb52927bac6fb6
-      internalID: -1901150196
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_144
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 96
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c97767f5ce33d19429c4bf76f57c1327
-      internalID: 1028465205
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_145
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 96
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2716e7a01734931488be8b1d8f4e368a
-      internalID: -1185238925
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_146
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 96
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0156af5757192594d92b5e5d5e32c2dc
-      internalID: -1188867415
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_147
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 96
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 17a4fe02f6a639641ad82c622146c2ab
-      internalID: 1450273437
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_148
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 96
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0542841579937cc44b80e7f1fad826a0
-      internalID: -2054306548
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_149
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 96
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7b7504febc4bd1f45b7b1d32c94b06b1
-      internalID: -1003846355
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_150
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 96
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3f40539dac7242b4bb9dcc1be33beadf
-      internalID: 250991460
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_151
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 96
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: da06a70e90e247a46a8ebe1c29db1566
-      internalID: 1820264508
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_152
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 96
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 07b2348517991284e967ee69381f76e8
-      internalID: 584165556
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_153
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 96
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7c1036ca5284f1a4382d608127626e43
-      internalID: 2097432595
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_154
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 96
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3f13e98cfaf373740b0088f92902e5ce
-      internalID: -832933862
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_155
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 96
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7377fc8cead072c49b927aa7b139d3fd
-      internalID: 55377827
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_156
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 96
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8c80d131a051b22458d7290c86a141c7
-      internalID: -1901781541
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_157
-      rect:
-        serializedVersion: 2
-        x: 208
-        y: 96
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fb09d11bfbbb91f47831da94477174cc
-      internalID: 1285337131
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_158
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 96
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ef6b25b012ab87a42952b394eb7b94d9
-      internalID: 699441739
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_159
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 96
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7693f3f65f49da546822595d453110b6
-      internalID: 540122340
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_160
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 112c01de4d6dd01428d41f534d95f585
-      internalID: 1653194719
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_161
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 11eb442333c018342af5dc170b720c73
-      internalID: -1469615596
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_162
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 166c42844af78fd4abd9723ca1738f9d
-      internalID: 858542425
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_163
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b89403af5b43e5d4c8faf640a16a73f4
-      internalID: 1629908860
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_164
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0df680368f643d542af3a0d3db8110e6
-      internalID: -314192545
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_165
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eb4bbc43a7e09ea4c8eae3ecd475d09c
-      internalID: 1294722157
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_166
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dcf4030c0e8726641b24a1f64dd1585b
-      internalID: -1398670944
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_167
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2c31311a932f08746a0146d2c6fbb5d8
-      internalID: 1862548929
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_168
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 74a92f46ecf287a429c01126f93a92ff
-      internalID: -55625480
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_169
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f58966e9498730f4eaaebd59bb171af1
-      internalID: 869174922
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_170
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 57ba97e80ee5b2b40af82cf8cbf7d5f4
-      internalID: 925500773
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_171
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7f72317f9aa550d45aa565651af8c64e
-      internalID: 1214860338
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_172
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7811e8d29d00ed84a935179adbcf6ecd
-      internalID: -280944451
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_173
-      rect:
-        serializedVersion: 2
-        x: 208
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9de5273d2e6c726419c081fa9930d108
-      internalID: -1474131013
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_174
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 61fbd54193a0c0c4f96a18d71342c173
-      internalID: -752495963
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_175
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2bbe9ef7429d7e6439c917678e193aae
-      internalID: 1665573737
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_176
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 64
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5854b406db4cc9b4695ca1fac8ca5ccb
-      internalID: -1458882786
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_177
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 64
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 580a957bf807718409070ca832da91ae
-      internalID: -778946419
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_178
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 64
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4c12061da05464f438df76a0478f9def
-      internalID: 60738517
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_179
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 64
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cff0373d03094874c9c45b6c853658e3
-      internalID: 289240136
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_180
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 64
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f32565f72bed7dc468fb6da70d1dba17
-      internalID: -867447841
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_181
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 64
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bbe2fedb87cc52f4fa7585625661de64
-      internalID: 1384104705
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_182
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 64
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d8178d9cd1b1a8a4eb49e577395fd9d0
-      internalID: 279551041
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_183
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 64
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 912bea8e3b82cd540a1856e4807d5cfe
-      internalID: -339778610
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_184
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 64
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 59bab131a7e6b9b46821affb0e88896b
-      internalID: -1225880267
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_185
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 64
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3fd541b4f0205f5488cadd0ec08f6f37
-      internalID: -455730500
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_186
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 64
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7fa3873ae4fa78348a7e670eb2285d10
-      internalID: -350362050
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_187
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 64
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 573a1eb2834b4c94286882b4be6a2086
-      internalID: 1887930400
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_188
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 64
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3fa66042f1b1fcb4dbcee557468e5236
-      internalID: 1895752309
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_189
-      rect:
-        serializedVersion: 2
-        x: 208
-        y: 64
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2f7f11315f13e3d4496dc6c7e9bedcd8
-      internalID: -634569627
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_190
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 64
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1b8b086044615e84285b35aa7b911a30
-      internalID: 1844894348
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_191
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 64
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d1f5e36e6869e804eb4c6c642558117a
-      internalID: -1832929989
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_192
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dd498ccef9507fc41bf6da434a59d07b
-      internalID: 391059703
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_193
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b8d34490cefc60c488e01845ebbf85fb
-      internalID: 1369180925
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_194
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3da811926c1be77408b845e8bbcdac5c
-      internalID: 325775394
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_195
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 10ce855e3716e7c4495822dc882dc2ed
-      internalID: 117977666
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_196
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8c672938e94d7274192415ce7d2821d7
-      internalID: 18965940
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_197
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b5ebd8a069162c543b049f0217ac2530
-      internalID: -953871489
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_198
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 264d4453159185741a40a67f69463be7
-      internalID: 162132896
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_199
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4a4d3e0f7da2f5e4c98f94735dcc1a6d
-      internalID: 1568726058
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_200
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 018c938fc517aa04a926ea1a89f06e0a
-      internalID: 263519318
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_201
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3e908730bcc498f4eb9cf9dbb44e8526
-      internalID: -1073978831
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_202
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 77767c557c026c746890e6e195e7cc7f
-      internalID: -1852730677
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_203
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d02e8e19494da2d4f941be4aa2cd0314
-      internalID: -1135326492
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_204
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 46ef5dac8d146314a868ab14dd74ebd8
-      internalID: 973945347
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_205
-      rect:
-        serializedVersion: 2
-        x: 208
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a1c6af13427d3624a997a26e1b6db826
-      internalID: 1006414245
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_206
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e31497729bf42b84aa983f838f58d5bd
-      internalID: -700483427
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_207
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e9baa3e56dda07546ab2a7145727b4e1
-      internalID: 1237994955
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_208
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 95acbca654b8385439b488b28a76821a
-      internalID: 1340874655
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_209
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8987d344148c03640b40199c796ab045
-      internalID: 1809456774
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_210
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 520c0af5a7e1a8e46bdf640c235a109a
-      internalID: -461552921
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_211
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9c261f186c53ad04cab3be3855a32d6e
-      internalID: 1189020778
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_212
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5f8895089848e114abef1c4a3b33c875
-      internalID: 22952329
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_213
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2bfd54dfeb3d05648b595e560b70b9c7
-      internalID: 2064793692
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_214
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f3aadd436b05d0d44890a89c9a6c409a
-      internalID: -1266749272
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_215
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c6327df2a07e7fe4ca2e172ba3103cf8
-      internalID: -1112951536
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_216
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f6b4ed63cb8650043b058834bb25ae9e
-      internalID: 38934555
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_217
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f8a34d9ce0026e542b734815592053a1
-      internalID: 1965423242
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_218
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: de01836b92a40b5469b8ac2f95fca99f
-      internalID: -1460970649
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_219
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f6116caf74f1f4344887e32354a472a3
-      internalID: -337287659
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_220
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1606f0fef47ded84a9a70945aa4f3342
-      internalID: 1785226250
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_221
-      rect:
-        serializedVersion: 2
-        x: 208
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ea9e46187dbcc064397d00c786851ab7
-      internalID: 807019502
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_222
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0ba163355b27d194b87ce89203ac79c1
-      internalID: 1327458354
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_223
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5ecfbefd88fbac746ae03329b3b5578d
-      internalID: 591320748
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_224
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1d06aa220d79b464489670e6c0053467
-      internalID: -322661883
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_225
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 94f16bd1ca439f24aaa69255833f58b4
-      internalID: -1859400037
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_226
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bb697ec9d5a070a43be4ffed5cfce5f9
-      internalID: 783057328
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_227
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 355cf054994c3a842a58dd226d08cf17
-      internalID: 534668210
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_228
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: aeb9fa156ffbfb6419bdd4e014615005
-      internalID: 19391312
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_229
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fa2db768656dcaf4ba528cae5b8c22f6
-      internalID: -1672268185
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_230
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 814250ddba7cd184fa055f1b11c6f5d6
-      internalID: 105570665
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_231
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 739b2f50c0e126746b309d5bab19c164
-      internalID: -1988671245
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_232
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 441dfc601840cea4e9d7e7879c2af8d5
-      internalID: 165304042
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_233
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0ffcf8232b450ac44a865d183be094e8
-      internalID: 283801237
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_234
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dcabf59cbd0c34449a1a0b2fdc518568
-      internalID: 218580618
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_235
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 63b84b6d47f454f42bf4679e5bb9636a
-      internalID: 1157023365
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_236
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 81062d8572c48ea498a72de176d328ca
-      internalID: -731562827
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_237
-      rect:
-        serializedVersion: 2
-        x: 208
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 119cff3e10ae92d46b1affbac7450e0e
-      internalID: -1981003218
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_238
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 89ad9682ae8f23a40bf4c7696eae4e7d
-      internalID: 215866164
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_239
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b482a1e5a0fab8147bf65a0262ce6997
-      internalID: -604967144
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_240
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 684452d46ebe953458fa1005ac15d900
-      internalID: 744226403
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_241
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dcc5c915e4ef17b4494a0e00a5abaa93
-      internalID: 708189049
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_242
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7456e4c89e763cb468c7d68f247ff7e3
-      internalID: 1937593374
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_243
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 43a9d5870311f2e4fa8b587efe2bef7a
-      internalID: 456262720
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_244
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 395264001d406e840ab929f2e0357b5f
-      internalID: 498808568
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_245
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1288b711457a82a4a8ddc63262395ae9
-      internalID: -1375434299
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_246
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c9ed23818f466d54e84be394f7fd3042
-      internalID: 710414205
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_247
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c65d074f6a3bf0a4c8d661786187082f
-      internalID: -143841008
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_248
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1b4e181749701634cae1e3cf365db8ec
-      internalID: -2107949242
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_249
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2deb9560cf9adf4429c44de1621cd41d
-      internalID: -1617038726
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_250
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4b591639cc907db4faf37e7beac076f1
-      internalID: -2030452203
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_251
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cb659c66d78e1324091563f46d890216
-      internalID: 651869215
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_252
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4fdc4898c24b9f44fa9d0e407cdcf67a
-      internalID: 2106096668
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_253
-      rect:
-        serializedVersion: 2
-        x: 208
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e0ab9daa59c24b4448600681a2cc7ec4
-      internalID: -1559266995
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_254
-      rect:
-        serializedVersion: 2
         x: 224
         y: 0
-        width: 16
-        height: 16
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5703,30 +1501,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ff906a21db492884c9f48ff378f7247d
-      internalID: 2017556837
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Tileset Futuristic_255
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 15e323f5b1dd70a43ae8606be07a03be
-      internalID: -499052793
+      spriteID: 63d71081be9ebd046aa81821b6e8a634
+      internalID: -1689427744
       vertices: []
       indices: 
       edges: []
@@ -5735,7 +1511,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: bf02f1a7aef768a4e9810405d4d2a5e0
+    spriteID: c444281b4d0989e41b0e352e3ba9c0c7
     internalID: 0
     vertices: []
     indices: 
@@ -5746,261 +1522,69 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       TX Tileset Futuristic_0: 8188484078449847561
-      TX Tileset Futuristic_1: 717634173
-      TX Tileset Futuristic_10: -2053646503
-      TX Tileset Futuristic_100: -1932471020
-      TX Tileset Futuristic_101: 2096002127
-      TX Tileset Futuristic_102: -387154720
-      TX Tileset Futuristic_103: -838626131
-      TX Tileset Futuristic_104: 1852626425
-      TX Tileset Futuristic_105: 1209843536
-      TX Tileset Futuristic_106: 463841679
-      TX Tileset Futuristic_107: 1950583494
-      TX Tileset Futuristic_108: 573236296
-      TX Tileset Futuristic_109: -858187204
-      TX Tileset Futuristic_11: 328416157
-      TX Tileset Futuristic_110: -509878855
-      TX Tileset Futuristic_111: -987814254
-      TX Tileset Futuristic_112: -1810755195
-      TX Tileset Futuristic_113: 1536772530
-      TX Tileset Futuristic_114: -502454405
-      TX Tileset Futuristic_115: 2017539254
-      TX Tileset Futuristic_116: 678890464
-      TX Tileset Futuristic_117: -1669203552
-      TX Tileset Futuristic_118: -860178009
-      TX Tileset Futuristic_119: 1565160653
-      TX Tileset Futuristic_12: 667634840
-      TX Tileset Futuristic_120: -1616663882
-      TX Tileset Futuristic_121: -2034820501
-      TX Tileset Futuristic_122: 1413913473
-      TX Tileset Futuristic_123: -977917738
-      TX Tileset Futuristic_124: -1412105720
-      TX Tileset Futuristic_125: 1116474766
-      TX Tileset Futuristic_126: -381891111
-      TX Tileset Futuristic_127: -893090829
-      TX Tileset Futuristic_128: 1600571958
-      TX Tileset Futuristic_129: -999216783
-      TX Tileset Futuristic_13: 853407518
-      TX Tileset Futuristic_130: 1036443640
-      TX Tileset Futuristic_131: 1838804888
-      TX Tileset Futuristic_132: -994242314
-      TX Tileset Futuristic_133: -541865467
-      TX Tileset Futuristic_134: 1410990011
-      TX Tileset Futuristic_135: 389601350
-      TX Tileset Futuristic_136: 1778615066
-      TX Tileset Futuristic_137: 1848077583
-      TX Tileset Futuristic_138: -1382353806
-      TX Tileset Futuristic_139: 765507164
-      TX Tileset Futuristic_14: -1046538997
-      TX Tileset Futuristic_140: 416614237
-      TX Tileset Futuristic_141: -1889046909
-      TX Tileset Futuristic_142: 1042102812
-      TX Tileset Futuristic_143: -1901150196
-      TX Tileset Futuristic_144: 1028465205
-      TX Tileset Futuristic_145: -1185238925
-      TX Tileset Futuristic_146: -1188867415
-      TX Tileset Futuristic_147: 1450273437
-      TX Tileset Futuristic_148: -2054306548
-      TX Tileset Futuristic_149: -1003846355
-      TX Tileset Futuristic_15: 1500318845
-      TX Tileset Futuristic_150: 250991460
-      TX Tileset Futuristic_151: 1820264508
-      TX Tileset Futuristic_152: 584165556
-      TX Tileset Futuristic_153: 2097432595
-      TX Tileset Futuristic_154: -832933862
-      TX Tileset Futuristic_155: 55377827
-      TX Tileset Futuristic_156: -1901781541
-      TX Tileset Futuristic_157: 1285337131
-      TX Tileset Futuristic_158: 699441739
-      TX Tileset Futuristic_159: 540122340
-      TX Tileset Futuristic_16: 749247186
-      TX Tileset Futuristic_160: 1653194719
-      TX Tileset Futuristic_161: -1469615596
-      TX Tileset Futuristic_162: 858542425
-      TX Tileset Futuristic_163: 1629908860
-      TX Tileset Futuristic_164: -314192545
-      TX Tileset Futuristic_165: 1294722157
-      TX Tileset Futuristic_166: -1398670944
-      TX Tileset Futuristic_167: 1862548929
-      TX Tileset Futuristic_168: -55625480
-      TX Tileset Futuristic_169: 869174922
-      TX Tileset Futuristic_17: -127062046
-      TX Tileset Futuristic_170: 925500773
-      TX Tileset Futuristic_171: 1214860338
-      TX Tileset Futuristic_172: -280944451
-      TX Tileset Futuristic_173: -1474131013
-      TX Tileset Futuristic_174: -752495963
-      TX Tileset Futuristic_175: 1665573737
-      TX Tileset Futuristic_176: -1458882786
-      TX Tileset Futuristic_177: -778946419
-      TX Tileset Futuristic_178: 60738517
-      TX Tileset Futuristic_179: 289240136
-      TX Tileset Futuristic_18: 1472106859
-      TX Tileset Futuristic_180: -867447841
-      TX Tileset Futuristic_181: 1384104705
-      TX Tileset Futuristic_182: 279551041
-      TX Tileset Futuristic_183: -339778610
-      TX Tileset Futuristic_184: -1225880267
-      TX Tileset Futuristic_185: -455730500
-      TX Tileset Futuristic_186: -350362050
-      TX Tileset Futuristic_187: 1887930400
-      TX Tileset Futuristic_188: 1895752309
-      TX Tileset Futuristic_189: -634569627
-      TX Tileset Futuristic_19: 1579894373
-      TX Tileset Futuristic_190: 1844894348
-      TX Tileset Futuristic_191: -1832929989
-      TX Tileset Futuristic_192: 391059703
-      TX Tileset Futuristic_193: 1369180925
-      TX Tileset Futuristic_194: 325775394
-      TX Tileset Futuristic_195: 117977666
-      TX Tileset Futuristic_196: 18965940
-      TX Tileset Futuristic_197: -953871489
-      TX Tileset Futuristic_198: 162132896
-      TX Tileset Futuristic_199: 1568726058
-      TX Tileset Futuristic_2: 1134884410
-      TX Tileset Futuristic_20: -1920893369
-      TX Tileset Futuristic_200: 263519318
-      TX Tileset Futuristic_201: -1073978831
-      TX Tileset Futuristic_202: -1852730677
-      TX Tileset Futuristic_203: -1135326492
-      TX Tileset Futuristic_204: 973945347
-      TX Tileset Futuristic_205: 1006414245
-      TX Tileset Futuristic_206: -700483427
-      TX Tileset Futuristic_207: 1237994955
-      TX Tileset Futuristic_208: 1340874655
-      TX Tileset Futuristic_209: 1809456774
-      TX Tileset Futuristic_21: 1762414372
-      TX Tileset Futuristic_210: -461552921
-      TX Tileset Futuristic_211: 1189020778
-      TX Tileset Futuristic_212: 22952329
-      TX Tileset Futuristic_213: 2064793692
-      TX Tileset Futuristic_214: -1266749272
-      TX Tileset Futuristic_215: -1112951536
-      TX Tileset Futuristic_216: 38934555
-      TX Tileset Futuristic_217: 1965423242
-      TX Tileset Futuristic_218: -1460970649
-      TX Tileset Futuristic_219: -337287659
-      TX Tileset Futuristic_22: 1443739198
-      TX Tileset Futuristic_220: 1785226250
-      TX Tileset Futuristic_221: 807019502
-      TX Tileset Futuristic_222: 1327458354
-      TX Tileset Futuristic_223: 591320748
-      TX Tileset Futuristic_224: -322661883
-      TX Tileset Futuristic_225: -1859400037
-      TX Tileset Futuristic_226: 783057328
-      TX Tileset Futuristic_227: 534668210
-      TX Tileset Futuristic_228: 19391312
-      TX Tileset Futuristic_229: -1672268185
-      TX Tileset Futuristic_23: -732208506
-      TX Tileset Futuristic_230: 105570665
-      TX Tileset Futuristic_231: -1988671245
-      TX Tileset Futuristic_232: 165304042
-      TX Tileset Futuristic_233: 283801237
-      TX Tileset Futuristic_234: 218580618
-      TX Tileset Futuristic_235: 1157023365
-      TX Tileset Futuristic_236: -731562827
-      TX Tileset Futuristic_237: -1981003218
-      TX Tileset Futuristic_238: 215866164
-      TX Tileset Futuristic_239: -604967144
-      TX Tileset Futuristic_24: 1418502415
-      TX Tileset Futuristic_240: 744226403
-      TX Tileset Futuristic_241: 708189049
-      TX Tileset Futuristic_242: 1937593374
-      TX Tileset Futuristic_243: 456262720
-      TX Tileset Futuristic_244: 498808568
-      TX Tileset Futuristic_245: -1375434299
-      TX Tileset Futuristic_246: 710414205
-      TX Tileset Futuristic_247: -143841008
-      TX Tileset Futuristic_248: -2107949242
-      TX Tileset Futuristic_249: -1617038726
-      TX Tileset Futuristic_25: 181504984
-      TX Tileset Futuristic_250: -2030452203
-      TX Tileset Futuristic_251: 651869215
-      TX Tileset Futuristic_252: 2106096668
-      TX Tileset Futuristic_253: -1559266995
-      TX Tileset Futuristic_254: 2017556837
-      TX Tileset Futuristic_255: -499052793
-      TX Tileset Futuristic_26: -308132745
-      TX Tileset Futuristic_27: 529820337
-      TX Tileset Futuristic_28: 1089751696
-      TX Tileset Futuristic_29: -583248037
-      TX Tileset Futuristic_3: -2041624593
-      TX Tileset Futuristic_30: -1231895893
-      TX Tileset Futuristic_31: 1155553037
-      TX Tileset Futuristic_32: 1838268694
-      TX Tileset Futuristic_33: -303779714
-      TX Tileset Futuristic_34: 445222331
-      TX Tileset Futuristic_35: -155887305
-      TX Tileset Futuristic_36: -2015934362
-      TX Tileset Futuristic_37: -610302054
-      TX Tileset Futuristic_38: 1456331449
-      TX Tileset Futuristic_39: -1663917309
-      TX Tileset Futuristic_4: 63014103
-      TX Tileset Futuristic_40: -512047695
-      TX Tileset Futuristic_41: 1866631310
-      TX Tileset Futuristic_42: 1922680094
-      TX Tileset Futuristic_43: -393369686
-      TX Tileset Futuristic_44: -631622910
-      TX Tileset Futuristic_45: 247004761
-      TX Tileset Futuristic_46: -222598366
-      TX Tileset Futuristic_47: -849160759
-      TX Tileset Futuristic_48: 610022694
-      TX Tileset Futuristic_49: 77208819
-      TX Tileset Futuristic_5: -1967531937
-      TX Tileset Futuristic_50: -1297636083
-      TX Tileset Futuristic_51: 1045711285
-      TX Tileset Futuristic_52: -873405367
-      TX Tileset Futuristic_53: -357267122
-      TX Tileset Futuristic_54: -1344674629
-      TX Tileset Futuristic_55: -917429997
-      TX Tileset Futuristic_56: -310454615
-      TX Tileset Futuristic_57: 562603581
-      TX Tileset Futuristic_58: -807952381
-      TX Tileset Futuristic_59: 1928170622
-      TX Tileset Futuristic_6: -592798350
-      TX Tileset Futuristic_60: 2057285640
-      TX Tileset Futuristic_61: 732060744
-      TX Tileset Futuristic_62: 2083742612
-      TX Tileset Futuristic_63: 456225767
-      TX Tileset Futuristic_64: -1051103055
-      TX Tileset Futuristic_65: -999790094
-      TX Tileset Futuristic_66: 381550889
-      TX Tileset Futuristic_67: -1741747660
-      TX Tileset Futuristic_68: -94866028
-      TX Tileset Futuristic_69: -537300342
-      TX Tileset Futuristic_7: 2074086407
-      TX Tileset Futuristic_70: 1477977011
-      TX Tileset Futuristic_71: 1970858455
-      TX Tileset Futuristic_72: 1628151097
-      TX Tileset Futuristic_73: 2063753192
-      TX Tileset Futuristic_74: -1041498855
-      TX Tileset Futuristic_75: -2005133651
-      TX Tileset Futuristic_76: -129933163
-      TX Tileset Futuristic_77: 1230040314
-      TX Tileset Futuristic_78: -184709529
-      TX Tileset Futuristic_79: -1955588173
-      TX Tileset Futuristic_8: -1314804856
-      TX Tileset Futuristic_80: 241690667
-      TX Tileset Futuristic_81: 2024055152
-      TX Tileset Futuristic_82: 1093005651
-      TX Tileset Futuristic_83: -1260553445
-      TX Tileset Futuristic_84: -746645115
-      TX Tileset Futuristic_85: -50649760
-      TX Tileset Futuristic_86: 863444927
-      TX Tileset Futuristic_87: 1473935270
-      TX Tileset Futuristic_88: 1900251047
-      TX Tileset Futuristic_89: -225653255
-      TX Tileset Futuristic_9: 904776119
-      TX Tileset Futuristic_90: 654891740
-      TX Tileset Futuristic_91: 1005976457
-      TX Tileset Futuristic_92: 182146816
-      TX Tileset Futuristic_93: 1070323029
-      TX Tileset Futuristic_94: 470961996
-      TX Tileset Futuristic_95: -905518394
-      TX Tileset Futuristic_96: 1175766422
-      TX Tileset Futuristic_97: 617846036
-      TX Tileset Futuristic_98: -341778251
-      TX Tileset Futuristic_99: -1742864992
+      TX Tileset Futuristic_1: -1749374672
+      TX Tileset Futuristic_10: -1261285609
+      TX Tileset Futuristic_11: 2008255258
+      TX Tileset Futuristic_12: -819433723
+      TX Tileset Futuristic_13: -458894920
+      TX Tileset Futuristic_14: 1326340713
+      TX Tileset Futuristic_15: -1639915847
+      TX Tileset Futuristic_16: -2017915983
+      TX Tileset Futuristic_17: 240751412
+      TX Tileset Futuristic_18: -1402305369
+      TX Tileset Futuristic_19: -662873025
+      TX Tileset Futuristic_2: -1652611890
+      TX Tileset Futuristic_20: 1064957434
+      TX Tileset Futuristic_21: -1082071613
+      TX Tileset Futuristic_22: 591528851
+      TX Tileset Futuristic_23: 1729520201
+      TX Tileset Futuristic_24: 1637192469
+      TX Tileset Futuristic_25: -1619109731
+      TX Tileset Futuristic_26: 1654689837
+      TX Tileset Futuristic_27: 1816313189
+      TX Tileset Futuristic_28: 2009860739
+      TX Tileset Futuristic_29: 674843345
+      TX Tileset Futuristic_3: -475820346
+      TX Tileset Futuristic_30: 1087259707
+      TX Tileset Futuristic_31: -1987136387
+      TX Tileset Futuristic_32: 216486216
+      TX Tileset Futuristic_33: -196122775
+      TX Tileset Futuristic_34: 240292190
+      TX Tileset Futuristic_35: 1923245329
+      TX Tileset Futuristic_36: 678795109
+      TX Tileset Futuristic_37: -1416847593
+      TX Tileset Futuristic_38: 1744689671
+      TX Tileset Futuristic_39: -974796721
+      TX Tileset Futuristic_4: 1708370037
+      TX Tileset Futuristic_40: 1935780846
+      TX Tileset Futuristic_41: -400618685
+      TX Tileset Futuristic_42: 296373302
+      TX Tileset Futuristic_43: 147917546
+      TX Tileset Futuristic_44: 238531609
+      TX Tileset Futuristic_45: 1787264128
+      TX Tileset Futuristic_46: 1975919146
+      TX Tileset Futuristic_47: -981377892
+      TX Tileset Futuristic_48: -233951271
+      TX Tileset Futuristic_49: 1501860907
+      TX Tileset Futuristic_5: -499159973
+      TX Tileset Futuristic_50: -2142851501
+      TX Tileset Futuristic_51: -82545963
+      TX Tileset Futuristic_52: -1126776759
+      TX Tileset Futuristic_53: -560607629
+      TX Tileset Futuristic_54: 1139895716
+      TX Tileset Futuristic_55: -140170310
+      TX Tileset Futuristic_56: 1060744980
+      TX Tileset Futuristic_57: 2040729990
+      TX Tileset Futuristic_58: 1648725239
+      TX Tileset Futuristic_59: 1563452939
+      TX Tileset Futuristic_6: -2147171070
+      TX Tileset Futuristic_60: 1829408493
+      TX Tileset Futuristic_61: -1951831452
+      TX Tileset Futuristic_62: 1856674084
+      TX Tileset Futuristic_63: -1689427744
+      TX Tileset Futuristic_7: -880192058
+      TX Tileset Futuristic_8: -1117057315
+      TX Tileset Futuristic_9: -879247066
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
