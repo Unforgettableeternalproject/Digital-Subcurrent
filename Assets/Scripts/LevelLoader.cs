@@ -23,16 +23,16 @@ namespace Digital_Subcurrent
                     roomEntryPoints.Add(room.name, entryPoint);
                 }
             }
-            LoadLevel("SL-1");
+            StartCoroutine(LoadLevel("SL-1"));
         }
 
-        public void LoadLevel(string levelName)
+        public IEnumerator LoadLevel(string levelName)
         {
             Transform levelTransform = transform.Find(levelName);
             if (levelTransform == null)
             {
                 Debug.LogError($"Level {levelName} not found!");
-                return;
+                yield return 0;
             }
 
             // 從該房間物件中抓 LoadMapInfo
@@ -40,11 +40,13 @@ namespace Digital_Subcurrent
             if (loadMapInfo == null)
             {
                 Debug.LogError($"LoadMapInfo not found in {levelName}!");
-                return;
+                yield return 0;
             }
 
             // 4. 設定玩家的位置
             MovePlayerToRoom(levelName);
+
+            yield return new WaitForEndOfFrame();
 
             // 1. 產生房間的矩陣資料
             loadMapInfo.GenerateMapData();
@@ -65,11 +67,8 @@ namespace Digital_Subcurrent
         {
             if (roomEntryPoints.ContainsKey(roomName))
             {
-                System.Action loadRoomAction = () =>
-                {
-                    Transform entryPoint = roomEntryPoints[roomName];
-                    player.position = entryPoint.position;
-                };
+                Transform entryPoint = roomEntryPoints[roomName];
+                player.position = entryPoint.position;
                // StartCoroutine(transitionManager.TransitionToRoom(loadRoomAction));
             }
             else

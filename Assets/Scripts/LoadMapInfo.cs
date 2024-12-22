@@ -45,6 +45,12 @@ namespace Digital_Subcurrent
             // 3. 使用 M2WConvertHelper 將 GameObject 轉換為數值並存入新的二維陣列
             objectValueGrid = ConvertGridToValueGrid(objectGrid);
             floorValueGrid = ConvertGridToValueGrid(floorGrid);
+
+            // 4. 輸出結果
+            PrintGrid(objectGrid, "Object Grid");
+            PrintGrid(floorGrid, "Floor Grid");
+            PrintValueGrid(objectValueGrid, "Object Value Grid");
+            PrintValueGrid(floorValueGrid, "Floor Value Grid");
         }
 
         public int[,] GetObjectMatrix()

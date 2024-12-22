@@ -12,7 +12,7 @@ namespace Digital_Subcurrent
         public GameObject openDoor;   // 開啟門的 prefab
         public Transform doorPosition; // 門的位置 (同一位置切換)
 
-        public GameManager gameManager;
+        private GameManager gameManager;
 
         private Color curColor;
         private Color targetColor;
@@ -20,6 +20,11 @@ namespace Digital_Subcurrent
         private void Awake()
         {
             targetColor = runes[0].color;
+        }
+
+        private void Start()
+        {
+            gameManager = GameManager.Instance;
         }
 
         private void OnTriggerEnter2D(Collider2D other)
