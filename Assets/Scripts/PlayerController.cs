@@ -115,6 +115,9 @@ namespace Digital_Subcurrent
                 if (gameManager.HasDoor(new Vector2(direction.x, -direction.y)))
                 {
                     isMoving = false;
+                    transform.position = targetPosition;
+                    canMove=true;
+                    animator.SetInteger("Direction", 0);
                 }
                 gameManager.UpdatePlayer(new Vector2(direction.x, -direction.y));
 
