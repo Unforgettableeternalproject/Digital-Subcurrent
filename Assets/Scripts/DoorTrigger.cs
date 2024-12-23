@@ -4,7 +4,7 @@ namespace Digital_Subcurrent
 {
     public class DoorTrigger : MonoBehaviour
     {
-        private string targetRoomName; // ¥Ø¼Ğ©Ğ¶¡ªº¦WºÙ
+        private string targetRoomName; // ç›®æ¨™æˆ¿é–“çš„åç¨±
         private LevelLoader levelLoader;
 
         void Start()
@@ -14,10 +14,10 @@ namespace Digital_Subcurrent
             {
                 Debug.LogError("LevelLoader not found!");
             }
-            // Àò¨ú·í«eªùªº©Ğ¶¡ ID¡A¨Ò¦p³q¹Lªù©Ò¦bªº¤÷ª«¥ó¦W¦r
+            // ç²å–ç•¶å‰é–€çš„æˆ¿é–“ IDï¼Œä¾‹å¦‚é€šéé–€æ‰€åœ¨çš„çˆ¶ç‰©ä»¶åå­—
             var currentRoomId = transform.parent.parent.name;
 
-            // °²³]©Ğ¶¡©R¦W¬° SL-1, SL-2, SL-3 ...
+            // å‡è¨­æˆ¿é–“å‘½åç‚º SL-1, SL-2, SL-3 ...
             int currentRoomNumber = int.Parse(currentRoomId.Split('-')[1]);
             targetRoomName = "SL-" + (currentRoomNumber + 1);
         }

@@ -5,7 +5,7 @@ using System;
 namespace Digital_Subcurrent
 {
     public class M2WConvertHelper
-    { 
+    {
         private Dictionary<string, int> objectToValueMap;
 
         private void InitializeObjectToValueMap()
@@ -22,32 +22,35 @@ namespace Digital_Subcurrent
             };
         }
 
-         // ¨ú±o GameObject ¹ïÀ³ªº¼Æ­È
+        // å–å¾— GameObject å°æ‡‰çš„æ•¸å€¼
         public int GetValue(GameObject obj)
         {
-            try { 
+            try
+            {
                 InitializeObjectToValueMap();
                 if (obj == null)
                 {
-                    Debug.LogWarning("GameObject ¬°ªÅ¡A¦^¶Ç¹w³]­È 0");
+                    Debug.LogWarning("GameObject ç‚ºç©ºï¼Œå›å‚³é è¨­å€¼ 0");
                     return 0;
                 }
 
                 if (objectToValueMap.TryGetValue(obj.tag, out int value))
                 {
-                    Debug.Log($"GameObject '{obj?.tag ?? "null"}'" + $" ¹ïÀ³ªº¼Æ­È¬° {value}");
+                    Debug.Log($"GameObject '{obj?.tag ?? "null"}'" + $" å°æ‡‰çš„æ•¸å€¼ç‚º {value}");
                     return value;
                 }
                 else
                 {
-                    Debug.LogWarning($"GameObject '{obj?.tag ?? "null"}' ¥¼§ä¨ì¹ïÀ³ªº¼Æ­È¡A¦^¶Ç¹w³]­È 0");
-                    return 0; // ¹w³]¦^¶Ç 0¡A¦pªG§ä¤£¨ì¹ïÀ³ªº GameObject
+                    Debug.LogWarning($"GameObject '{obj?.tag ?? "null"}' æœªæ‰¾åˆ°å°æ‡‰çš„æ•¸å€¼ï¼Œå›å‚³é è¨­å€¼ 0");
+                    return 0; // é è¨­å›å‚³ 0ï¼Œå¦‚æœæ‰¾ä¸åˆ°å°æ‡‰çš„ GameObject
                 }
-            }catch (Exception e){
+            }
+            catch (Exception e)
+            {
                 Debug.LogError(e);
                 return 0;
             }
         }
-        
+
     }
 }

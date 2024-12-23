@@ -21,7 +21,7 @@ namespace Digital_Subcurrent
             if (!isHovered)
             {
                 Debug.Log("Player stepped on the glass floor!");
-                PlaySound(); // ¼½©ñ­µ®Ä
+                PlaySound(); // æ’­æ”¾éŸ³æ•ˆ
                 isHovered = true;
             }
         }
@@ -31,9 +31,9 @@ namespace Digital_Subcurrent
             if (isHovered)
             {
                 Transform parentContainer = transform.parent;
-                // ¤Á´«¬°¤w¶ñº¡ªº¦aªO
+                // åˆ‡æ›ç‚ºå·²å¡«æ»¿çš„åœ°æ¿
                 Instantiate(holePrefab, transform.position, Quaternion.identity, parentContainer);
-                Destroy(gameObject);       // ²¾°£¬Á¼ş¦aªO
+                Destroy(gameObject);       // ç§»é™¤ç»ç’ƒåœ°æ¿
 
                 isHovered = false;
             }
@@ -41,14 +41,14 @@ namespace Digital_Subcurrent
 
         private void PlaySound()
         {
-            // ³Ğ«Ø¤@­ÓÁ{®É­µ®Äª«¥ó
+            // å‰µå»ºä¸€å€‹è‡¨æ™‚éŸ³æ•ˆç‰©ä»¶
             GameObject audioPlayer = new GameObject("TempAudioPlayer");
             AudioSource tempAudio = audioPlayer.AddComponent<AudioSource>();
             tempAudio.clip = GetComponent<AudioSource>().clip;
             tempAudio.volume = 0.5f;
             tempAudio.Play();
 
-            // ¦Û°Ê¾P·´­µ®Äª«¥ó
+            // è‡ªå‹•éŠ·æ¯€éŸ³æ•ˆç‰©ä»¶
             Destroy(audioPlayer, tempAudio.clip.length);
         }
     }

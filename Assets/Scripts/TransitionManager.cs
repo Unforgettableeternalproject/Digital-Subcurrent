@@ -6,21 +6,21 @@ namespace Digital_Subcurrent
 {
     public class TransitionManager : MonoBehaviour
     {
-        public Image fadeImage; // ¶Â«Ì­I´º
-        public Slider progressBar; // ¶i«×±ø
-        public Text loadingText; // ¸ü¤J¤å¦r´£¥Ü¡]¥i¿ï¡^
-        public float fadeDuration = 1f; // ²H¤J²H¥X®É¶¡
+        public Image fadeImage; // é»‘å±èƒŒæ™¯
+        public Slider progressBar; // é€²åº¦æ¢
+        public Text loadingText; // è¼‰å…¥æ–‡å­—æç¤ºï¼ˆå¯é¸ï¼‰
+        public float fadeDuration = 1f; // æ·¡å…¥æ·¡å‡ºæ™‚é–“
 
-        // ¤Á´«©Ğ¶¡¥D¤èªk
+        // åˆ‡æ›æˆ¿é–“ä¸»æ–¹æ³•
         public IEnumerator TransitionToRoom(System.Action loadRoomAction)
         {
-            // Step 1: ²H¤J¶Â«Ì
+            // Step 1: æ·¡å…¥é»‘å±
             yield return StartCoroutine(FadeIn());
 
-            // Step 2: Åã¥Ü¶i«×±ø¨Ã¼ÒÀÀ¥[¸ü
+            // Step 2: é¡¯ç¤ºé€²åº¦æ¢ä¸¦æ¨¡æ“¬åŠ è¼‰
             yield return StartCoroutine(ShowLoadingProgress(loadRoomAction));
 
-            // Step 3: ²H¥X¶Â«Ì
+            // Step 3: æ·¡å‡ºé»‘å±
             yield return StartCoroutine(FadeOut());
         }
 
@@ -31,7 +31,7 @@ namespace Digital_Subcurrent
             {
                 elapsedTime += Time.deltaTime;
                 float alpha = elapsedTime / fadeDuration;
-                fadeImage.color = new Color(0, 0, 0, alpha); // º¥º¥ÅÜ¶Â
+                fadeImage.color = new Color(0, 0, 0, alpha); // æ¼¸æ¼¸è®Šé»‘
                 yield return null;
             }
         }
@@ -43,33 +43,33 @@ namespace Digital_Subcurrent
             {
                 elapsedTime -= Time.deltaTime;
                 float alpha = elapsedTime / fadeDuration;
-                fadeImage.color = new Color(0, 0, 0, alpha); // º¥º¥ÅÜ³z©ú
+                fadeImage.color = new Color(0, 0, 0, alpha); // æ¼¸æ¼¸è®Šé€æ˜
                 yield return null;
             }
         }
 
         private IEnumerator ShowLoadingProgress(System.Action loadRoomAction)
         {
-            // Åã¥Ü¶i«×±ø
+            // é¡¯ç¤ºé€²åº¦æ¢
             progressBar.gameObject.SetActive(true);
-            loadingText.gameObject.SetActive(true); // ¥i¿ï
+            loadingText.gameObject.SetActive(true); // å¯é¸
 
             float fakeProgress = 0f;
 
-            // ¼ÒÀÀ¸ü¤J¶i«×
+            // æ¨¡æ“¬è¼‰å…¥é€²åº¦
             while (fakeProgress < 1f)
             {
-                fakeProgress += Time.deltaTime * 0.5f; // °²³]¸ü¤J³t«×
+                fakeProgress += Time.deltaTime * 0.5f; // å‡è¨­è¼‰å…¥é€Ÿåº¦
                 progressBar.value = fakeProgress;
                 yield return null;
             }
 
-            // ¯u¥¿°õ¦æ©Ğ¶¡¤Á´«
+            // çœŸæ­£åŸ·è¡Œæˆ¿é–“åˆ‡æ›
             loadRoomAction?.Invoke();
 
-            // ÁôÂÃ¶i«×±ø
+            // éš±è—é€²åº¦æ¢
             progressBar.gameObject.SetActive(false);
-            loadingText.gameObject.SetActive(false); // ¥i¿ï
+            loadingText.gameObject.SetActive(false); // å¯é¸
         }
     }
 }
