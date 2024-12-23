@@ -15,6 +15,7 @@ namespace Digital_Subcurrent
                 { "Player", 1 },
                 { "Box", 2 },
                 { "Key", 3 },
+                { "Terminal", 4 },
                 { "Obstacle", -1 },
                 { "Exit", -2 },
                 { "Hole", 1 },

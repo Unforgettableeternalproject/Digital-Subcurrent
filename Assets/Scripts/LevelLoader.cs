@@ -36,6 +36,11 @@ namespace Digital_Subcurrent
             }
         }
 
+        //void Start()
+        //{
+        //    transitionManager = TransitionManager.Instance;
+        //}
+
         public IEnumerator LoadLevel(string levelName)
         {
             Transform levelTransform = transform.Find(levelName);
@@ -53,7 +58,9 @@ namespace Digital_Subcurrent
                 yield return 0;
             }
 
-            // 4. 設定玩家的位置
+            transitionManager.StartTransition();
+
+            // 0. 設定玩家的位置
             MovePlayerToRoom(levelName);
 
             yield return new WaitForEndOfFrame();

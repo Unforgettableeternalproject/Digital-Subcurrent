@@ -20,7 +20,7 @@ namespace Digital_Subcurrent
         private void OnTriggerEnter2D(Collider2D other)
         {
             Debug.Log("Test");
-            gameManager.DoorOpened();
+            gameManager.UnlockDoor();
             PlayerController player = other.GetComponent<PlayerController>();
             if (player != null && player.HasKey())
             {

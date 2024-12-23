@@ -6,70 +6,119 @@ namespace Digital_Subcurrent
 {
     public class TransitionManager : MonoBehaviour
     {
-        public Image fadeImage; // 黑屏背景
-        public Slider progressBar; // 進度條
-        public Text loadingText; // 載入文字提示（可選）
-        public float fadeDuration = 1f; // 淡入淡出時間
+        public static TransitionManager Instance;
 
-        // 切換房間主方法
-        public IEnumerator TransitionToRoom(System.Action loadRoomAction)
+        [Header("UI Components")]
+        public ProgressBarCircle progressBar; // 進度條
+        public CanvasGroup blackScreen; // 黑畫面的 CanvasGroup
+        public Text transitionText; // 動態文字
+
+        [Header("Settings")]
+        public float fadeDuration = 1.0f; // 黑畫面淡入/淡出時間
+        public float transitionDuration = 2.0f; // 加載過渡時間
+        public string[] descriptions; // 過渡時的文字描述
+
+        private bool isTransitioning = false;
+
+        void Awake()
         {
-            // Step 1: 淡入黑屏
-            yield return StartCoroutine(FadeIn());
-
-            // Step 2: 顯示進度條並模擬加載
-            yield return StartCoroutine(ShowLoadingProgress(loadRoomAction));
-
-            // Step 3: 淡出黑屏
-            yield return StartCoroutine(FadeOut());
+            if (Instance == null)
+            {
+                Instance = this;
+            }
+            else
+            {
+                Destroy(gameObject);
+                return;
+            }
         }
 
-        private IEnumerator FadeIn()
+        private void Start()
         {
+            if (progressBar != null)
+                progressBar.BarValue = 0; // 初始化進度條
+            if (blackScreen != null)
+                blackScreen.alpha = 0; // 確保黑畫面是透明的
+        }
+
+        public void StartTransition()
+        {
+            
+            if (!isTransitioning)
+            {
+                StartCoroutine(TransitionRoutine());
+            }
+        }
+
+        private IEnumerator TransitionRoutine()
+        {
+            progressBar.ShowProgressBar();
+            isTransitioning = true;
+
+            // 隨機選擇過渡描述
+            if (descriptions.Length > 0)
+            {
+                transitionText.text = descriptions[Random.Range(0, descriptions.Length)];
+            }
+
+            // 淡入黑畫面
+            yield return StartCoroutine(FadeBlackScreen(1));
+
+            // 開始加載場景並更新進度條
+            StartCoroutine(UpdateTransitionText()); // 動態文字動畫
+            yield return StartCoroutine(UpdateProgressBar());
+
+            // 加載完成，淡出黑畫面
+            yield return StartCoroutine(FadeBlackScreen(0));
+
+            isTransitioning = false;
+            progressBar.HideProgressBar();
+        }
+
+        private IEnumerator FadeBlackScreen(float targetAlpha)
+        {
+            float startAlpha = blackScreen.alpha;
             float elapsedTime = 0f;
+
             while (elapsedTime < fadeDuration)
             {
                 elapsedTime += Time.deltaTime;
-                float alpha = elapsedTime / fadeDuration;
-                fadeImage.color = new Color(0, 0, 0, alpha); // 漸漸變黑
+                blackScreen.alpha = Mathf.Lerp(startAlpha, targetAlpha, elapsedTime / fadeDuration);
+                yield return null;
+            }
+
+            blackScreen.alpha = targetAlpha;
+        }
+
+        private IEnumerator UpdateProgressBar()
+        {
+            float elapsedTime = 0f;
+
+            while (elapsedTime < transitionDuration)
+            {
+                elapsedTime += Time.deltaTime;
+                float progress = Mathf.Clamp01(elapsedTime / transitionDuration) * 100f;
+
+                if (progressBar != null)
+                {
+                    progressBar.BarValue = progress;
+                }
+
                 yield return null;
             }
         }
 
-        private IEnumerator FadeOut()
+        private IEnumerator UpdateTransitionText()
         {
-            float elapsedTime = fadeDuration;
-            while (elapsedTime > 0)
+            string baseText = transitionText.text;
+            int dotCount = 0;
+
+            while (isTransitioning)
             {
-                elapsedTime -= Time.deltaTime;
-                float alpha = elapsedTime / fadeDuration;
-                fadeImage.color = new Color(0, 0, 0, alpha); // 漸漸變透明
-                yield return null;
+                transitionText.text = baseText + new string('.', dotCount);
+                dotCount = (dotCount + 1) % 4; // 循環顯示「...」
+                yield return new WaitForSeconds(0.5f); // 每 0.5 秒更新一次
             }
-        }
-
-        private IEnumerator ShowLoadingProgress(System.Action loadRoomAction)
-        {
-            // 顯示進度條
-            progressBar.gameObject.SetActive(true);
-            loadingText.gameObject.SetActive(true); // 可選
-
-            float fakeProgress = 0f;
-
-            // 模擬載入進度
-            while (fakeProgress < 1f)
-            {
-                fakeProgress += Time.deltaTime * 0.5f; // 假設載入速度
-                progressBar.value = fakeProgress;
-                yield return null;
-            }
-
-            // 真正執行房間切換
-            loadRoomAction?.Invoke();
-
-            // 隱藏進度條
-            progressBar.gameObject.SetActive(false);
-            loadingText.gameObject.SetActive(false); // 可選
         }
     }
 }

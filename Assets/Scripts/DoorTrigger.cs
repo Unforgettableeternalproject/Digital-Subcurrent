@@ -15,11 +15,12 @@ namespace Digital_Subcurrent
                 Debug.LogError("LevelLoader not found!");
             }
             // 獲取當前門的房間 ID，例如通過門所在的父物件名字
-            var currentRoomId = transform.parent.parent.name;
-
+            var currentRoomId = transform.parent.parent.parent.name;
+            Debug.Log($"Current room ID: {currentRoomId}");
             // 假設房間命名為 SL-1, SL-2, SL-3 ...
+            string currentRoomName = currentRoomId.Split('-')[0];
             int currentRoomNumber = int.Parse(currentRoomId.Split('-')[1]);
-            targetRoomName = "SL-" + (currentRoomNumber + 1);
+            targetRoomName = $"{currentRoomName}-" + (currentRoomNumber + 1);
         }
 
         void OnTriggerEnter2D(Collider2D other)
@@ -28,7 +29,7 @@ namespace Digital_Subcurrent
             {
                 Debug.Log($"Player entered door to {targetRoomName}");
                 StartCoroutine(levelLoader.LoadLevel(targetRoomName));
-                ///levelLoader.LoadLevel(targetRoomName);
+                //levelLoader.LoadLevel(targetRoomName);
             }
         }
     }

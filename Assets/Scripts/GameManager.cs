@@ -21,6 +21,8 @@ namespace Digital_Subcurrent
         private Vector2 gridSize = new Vector2(1, 1); // 每格的世界座標大小
         private LevelLoader levelLoader;
 
+        private bool doorUnlocked = false;
+
         void Awake()
         {
             if (Instance == null)
@@ -78,6 +80,11 @@ namespace Digital_Subcurrent
             Vector2Int targetPosition = playerMatrixPosition + Vector2Int.RoundToInt(direction);
             if(IsOutOfBounds(targetPosition) || objectMatrix[targetPosition.y, targetPosition.x] < 0 || floorMatrix[targetPosition.y, targetPosition.x] == 1)
             {
+                if(objectMatrix[targetPosition.y, targetPosition.x] == -2 && doorUnlocked)
+                {
+                    doorUnlocked = false;
+                    return true;
+                }
                 return false;
             }
             Debug.Log($"objectMatrix[{targetPosition.x}, {targetPosition.y}] = {objectMatrix[targetPosition.y, targetPosition.x]}");
@@ -118,6 +125,21 @@ namespace Digital_Subcurrent
                 return true;
             }
             return false;
+        }
+
+        public bool HasDoor(Vector2 direction)
+        {
+            Vector2Int targetPosition = playerMatrixPosition + Vector2Int.RoundToInt(direction);
+            if (objectMatrix[targetPosition.y, targetPosition.x] == -2)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public void UnlockDoor()
+        {
+            doorUnlocked = true;
         }
 
         public BoxController GetBox(Vector2 worldPosition)
@@ -182,21 +204,6 @@ namespace Digital_Subcurrent
             Vector2Int original = tempBoxMPosition;
             tempBoxMPosition += Vector2Int.RoundToInt(direction);
             UpdateMatrix(original, tempBoxMPosition, 2);
-        }
-
-        public void DoorOpened()
-        {
-            //找到objectMatrix中-2的位置並將其替換為0
-            for (int x = 0; x < objectMatrix.GetLength(0); x++)
-            {
-                for (int y = 0; y < objectMatrix.GetLength(1); y++)
-                {
-                    if (objectMatrix[x, y] == -2)
-                    {
-                        objectMatrix[x, y] = 0;
-                    }
-                }
-            }
         }
 
         private void PrintMatrix(int[,] matrix)
