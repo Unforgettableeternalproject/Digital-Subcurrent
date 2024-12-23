@@ -8,6 +8,7 @@ namespace Digital_Subcurrent
     public class GameManager : MonoBehaviour
     {
         public static GameManager Instance; // Singleton
+        public string stageID = "SL";
         public int defaultLoadLevel = 1;
 
         private int[,] objectMatrix;
@@ -38,7 +39,7 @@ namespace Digital_Subcurrent
         void Start()
         {
             levelLoader = LevelLoader.Instance;
-            StartCoroutine(levelLoader.LoadLevel("SL-" + defaultLoadLevel));
+            StartCoroutine(levelLoader.LoadLevel(stageID + "-" + defaultLoadLevel));
             // 初始化遊戲
             //InitializeGame();
         }
