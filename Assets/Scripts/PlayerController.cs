@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Digital_Subcurrent
 {
-    public class PlayerController : MonoBehaviour
+    public class PlayerController : MonoBehaviour , IRewindable
     {
         public float moveSpeed = 5f; // 每格移動速度
         public Vector2 gridSize = new Vector2(1, 1); // 格子大小
@@ -15,7 +15,14 @@ namespace Digital_Subcurrent
         private bool hasKey = false; // 玩家是否擁有鑰匙
 
         private Animator animator;
-        private GameManager gameManager;　　
+        private GameManager gameManager;
+
+        private string uniqueId;
+
+        private void Awake()
+        {
+            uniqueId = $"{gameObject.name}_{GetInstanceID()}";
+        }
 
         private void Start()
         {
@@ -45,6 +52,11 @@ namespace Digital_Subcurrent
                 {
                     TryMove(inputDir);
                 }
+            }
+
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                gameManager.LoadState();
             }
         }
 
@@ -160,6 +172,41 @@ namespace Digital_Subcurrent
         {
             return hasKey;
         }
+
+        // 實作 IRewindable 介面
+        public RewindData SaveData()
+        {
+            RewindData data = new RewindData();
+            data.position = transform.position;
+            return data;
+        }
+
+        public void LoadData(RewindData data)
+        {
+            transform.position = data.position;
+        }
+
+
+        public string GetUniqueId()
+        {
+            return uniqueId;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         //private Vector2 GetInputDirection()
         //{
         //    Vector2 dir = Vector2.zero;

@@ -76,7 +76,7 @@ namespace Digital_Subcurrent
         {
             Debug.Log($"Moving direction: {direction}");
             Vector2Int targetPosition = playerMatrixPosition + Vector2Int.RoundToInt(direction);
-            if(IsOutOfBounds(targetPosition) || objectMatrix[targetPosition.y, targetPosition.x] < 0 || floorMatrix[targetPosition.y, targetPosition.x] == 1)
+            if (IsOutOfBounds(targetPosition) || objectMatrix[targetPosition.y, targetPosition.x] < 0 || floorMatrix[targetPosition.y, targetPosition.x] == 1)
             {
                 return false;
             }
@@ -100,11 +100,13 @@ namespace Digital_Subcurrent
         public bool HasBox(Vector2 direction)
         {
             Vector2Int targetPosition = playerMatrixPosition + Vector2Int.RoundToInt(direction);
-            if (objectMatrix[targetPosition.y, targetPosition.x] == 2) {
+            if (objectMatrix[targetPosition.y, targetPosition.x] == 2)
+            {
                 tempBoxMPosition = targetPosition;
                 return true;
-            }else
-            {   
+            }
+            else
+            {
                 tempBoxMPosition = new Vector2Int(-1, -1);
                 return false;
             }
@@ -128,7 +130,7 @@ namespace Digital_Subcurrent
                 // 在該位置檢測是否有碰撞的物件 (假設箱子有 "Box" Layer 或 Tag)
                 Collider2D hit = Physics2D.OverlapPoint(worldPosition);
                 if (hit != null && hit.CompareTag("Box")) // 使用 Tag 過濾箱子
-        {
+                {
                     // 返回該物件的 BoxController
                     return hit.GetComponent<BoxController>();
                 }
@@ -150,7 +152,7 @@ namespace Digital_Subcurrent
         // 更新矩陣
         public void UpdateMatrix(Vector2Int original, Vector2Int updated, int value)
         {
-            if(value == 2) // 填洞
+            if (value == 2) // 填洞
             {
                 if (floorMatrix[updated.y, updated.x] == 1)
                 {
@@ -175,6 +177,7 @@ namespace Digital_Subcurrent
             Vector2Int original = playerMatrixPosition;
             playerMatrixPosition += Vector2Int.RoundToInt(direction);
             UpdateMatrix(original, playerMatrixPosition, 1);
+            SaveState();
         }
 
         public void UpdateBox(Vector2 direction)
@@ -232,41 +235,81 @@ namespace Digital_Subcurrent
 
         public void SaveState()
         {
-            // 深拷貝矩陣
+            // 1. 複製地圖陣列
             int[,] floorCopy = (int[,])floorMatrix.Clone();
             int[,] objectCopy = (int[,])objectMatrix.Clone();
 
+            // 2. 建立一個新的 GameState
             GameState currentState = new GameState
             {
                 FloorMatrix = floorCopy,
                 ObjectMatrix = objectCopy,
-                PlayerPosition = playerMatrixPosition
+                PlayerPosition = playerMatrixPosition,
             };
+
+            //掃描整個scene，可能有效能問題
+            // 3. 收集所有 IRewindable 物件的狀態
+            var rewindables = FindObjectsOfType<MonoBehaviour>().OfType<IRewindable>();
+            foreach (var r in rewindables)
+            {
+                RewindData data = r.SaveData();
+                string uid = r.GetUniqueId();
+                currentState.RewindDataList.Add(new RewindDataGroup
+                {
+                    uniqueId = uid,
+                    data = data
+                });
+            }
+
+            // 4. 推進堆疊
             stateStack.Push(currentState);
+            Debug.Log("GameManager: SaveState done. Stack size = " + stateStack.Count);
         }
 
         public void LoadState()
         {
-            if (stateStack.Count > 0)
+            // 沒有狀態可回溯就直接跳出
+            if (stateStack.Count <= 0)
             {
-                GameState previousState = stateStack.Pop();
-
-                // 還原矩陣
-                floorMatrix = (int[,])previousState.FloorMatrix.Clone();
-                objectMatrix = (int[,])previousState.ObjectMatrix.Clone();
-
-                // 還原玩家位置
-                playerMatrixPosition = previousState.PlayerPosition;
-
-                // 更新遊戲中所有物件的狀態
-                //UpdateGameObjects();
+                Debug.LogWarning("No state available to load!");
+                return;
             }
+
+            // 1. 彈出狀態
+            GameState previousState = stateStack.Pop();
+
+            // 2. 還原地圖矩陣
+            floorMatrix = (int[,])previousState.FloorMatrix.Clone();
+            objectMatrix = (int[,])previousState.ObjectMatrix.Clone();
+            playerMatrixPosition = previousState.PlayerPosition;
+
+            Debug.Log("GameManager: LoadState - Restored matrix and player pos.");
+
+            // 3. 還原所有 IRewindable 物件的狀態
+            var rewindables = FindObjectsOfType<MonoBehaviour>().OfType<IRewindable>();
+            foreach (var r in rewindables)
+            {
+                string uid = r.GetUniqueId();
+                // 找到對應的 RewindDataGroup
+                var match = previousState.RewindDataList.Find(g => g.uniqueId == uid);
+                if (match != null)
+                {
+                    r.LoadData(match.data);
+                }
+                else
+                {
+                    // 可能剛生成或其他原因，不在先前的狀態裡
+                    // 可視需求處理
+                }
+            }
+
+            Debug.Log("GameManager: LoadState done. Stack size = " + stateStack.Count);
         }
 
         public void ResetRoom()
         {
             if (stateStack.Count > 0)
-        {
+            {
                 // 還原矩陣
                 floorMatrix = (int[,])initialState.FloorMatrix.Clone();
                 objectMatrix = (int[,])initialState.ObjectMatrix.Clone();
@@ -284,12 +327,4 @@ namespace Digital_Subcurrent
         }
     }
 
-    public class GameState
-    {
-        public int[,] FloorMatrix { get; set; }
-        public int[,] ObjectMatrix { get; set; }
-        public Vector2Int PlayerPosition { get; set; }
-
-        // 可能有更多
-    }
 }
