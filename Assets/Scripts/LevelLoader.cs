@@ -36,21 +36,6 @@ namespace Digital_Subcurrent
             }
         }
 
-        void Start()
-        {
-            //roomEntryPoints = new Dictionary<string, Transform>();
-            //// 尋找所有房間的 EntryPoint
-            //foreach (Transform room in transform)
-            //{
-            //    Transform entryPoint = room.Find("EntryPoint");
-            //    if (entryPoint != null)
-            //    {
-            //        roomEntryPoints.Add(room.name, entryPoint);
-            //    }
-            //}
-            //StartCoroutine(LoadLevel("SL-1"));
-        }
-
         public IEnumerator LoadLevel(string levelName)
         {
             Transform levelTransform = transform.Find(levelName);

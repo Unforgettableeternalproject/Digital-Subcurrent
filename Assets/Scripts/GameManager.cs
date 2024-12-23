@@ -159,6 +159,12 @@ namespace Digital_Subcurrent
                     Debug.Log("Fill hole");
                 }
             }
+
+            if (floorMatrix[original.y, original.x] == 2) // 玻璃
+            {
+                UpdateFloor(original, 1);
+            }
+
             objectMatrix[original.y, original.x] = 0;
             objectMatrix[updated.y, updated.x] = value;
             Debug.Log($"PlayerM = {playerMatrixPosition}");
