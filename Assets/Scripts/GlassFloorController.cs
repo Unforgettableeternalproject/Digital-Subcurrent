@@ -4,12 +4,18 @@ using UnityEngine;
 
 namespace Digital_Subcurrent
 {
-    public class GlassFloorController : MonoBehaviour
+    public class GlassFloorController : MonoBehaviour , IRewindable
     {
         public GameObject holePrefab;
         private GameManager gameManager;
 
         private bool isHovered = false;
+        private string uniqueId;
+
+        private void Awake()
+        {
+            uniqueId = $"{gameObject.name}_{GetInstanceID()}";
+        }
 
         void Start()
         {
@@ -50,6 +56,33 @@ namespace Digital_Subcurrent
 
             // 自動銷毀音效物件
             Destroy(audioPlayer, tempAudio.clip.length);
+        }
+
+        public RewindDataBase SaveData()
+        {
+            var data = new GlassFloorRewindData();
+            data.position = transform.position;
+            data.isHovered = isHovered;
+            return data;
+        }
+
+        public void LoadData(RewindDataBase data)
+        {
+            if (data is GlassFloorRewindData rdata)
+            {
+                transform.position = rdata.position;
+                isHovered = rdata.isHovered;
+            }
+            else
+            {
+                //嘿嘿 見鬼了
+                Debug.LogWarning($"{nameof(GlassFloorController)}: LoadData() 收到的資料不是 GlassFloorController!");
+            }
+        }
+
+        public string GetUniqueId()
+        {
+            return uniqueId;
         }
     }
 }

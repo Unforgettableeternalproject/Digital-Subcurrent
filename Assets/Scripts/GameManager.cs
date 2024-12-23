@@ -249,12 +249,12 @@ namespace Digital_Subcurrent
                 PlayerPosition = playerMatrixPosition,
             };
 
-            //掃描整個scene，可能有效能問題
+            //掃描整個scene，要不是我們東西少不然可能有效能問題
             // 3. 收集所有 IRewindable 物件的狀態
             var rewindables = FindObjectsOfType<MonoBehaviour>().OfType<IRewindable>();
             foreach (var r in rewindables)
             {
-                RewindData data = r.SaveData();
+                RewindDataBase data = r.SaveData();
                 string uid = r.GetUniqueId();
                 currentState.RewindDataList.Add(new RewindDataGroup
                 {
@@ -281,24 +281,13 @@ namespace Digital_Subcurrent
             // 1. 彈出狀態
             GameState previousState = stateStack.Pop();
 
-            // A bug here
+            
             // 2. 還原地圖矩陣
             floorMatrix = (int[,])previousState.FloorMatrix.Clone();
             objectMatrix = (int[,])previousState.ObjectMatrix.Clone();
             playerMatrixPosition = previousState.PlayerPosition;
             
-            // 打印當前objectMatrix的情況
-            string matrixString = "Rewind objectMatrix:\n";
-            for (int i = 0; i < objectMatrix.GetLength(0); i++)
-            {
-                for (int j = 0; j < objectMatrix.GetLength(1); j++)
-                {
-                    matrixString += objectMatrix[i, j] + " ";
-                }
-                matrixString += "\n";
-            }
-            Debug.Log(matrixString);
-            Debug.Log($"PlayerM = {playerMatrixPosition}" + "Revert");
+
             // Debug.Log("GameManager: LoadState - Restored matrix and player pos.");
 
             // 3. 還原所有 IRewindable 物件的狀態

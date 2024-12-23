@@ -5,12 +5,13 @@ using UnityEngine;
 //when something get into the alta, make the runes glow
 namespace Digital_Subcurrent
 {
-    public class HoleController : MonoBehaviour
+    public class HoleController : MonoBehaviour, IRewindable
     {
         public GameObject filledFloorPrefab; // 已填滿的地板Prefab
         private GameManager gameManager;       // 遊戲管理器
 
         private bool isFilled = false;
+        private string uniqueId;
 
         private void Start()
         {
@@ -47,6 +48,33 @@ namespace Digital_Subcurrent
 
             // 自動銷毀音效物件
             Destroy(audioPlayer, tempAudio.clip.length);
+        }
+
+        public RewindDataBase SaveData()
+        {
+            var data = new HoleRewindData();
+            data.position = transform.position;
+            data.isFilled = isFilled;
+            return data;
+        }
+
+        public void LoadData(RewindDataBase data)
+        {
+            if (data is HoleRewindData fdata)
+            {
+                transform.position = fdata.position;
+                isFilled = fdata.isFilled;
+            }
+            else
+            {
+                //嘿嘿 見鬼了
+                Debug.LogWarning($"{nameof(HoleController)}: LoadData() 收到的資料不是 HoleController!");
+            }
+        }
+
+        public string GetUniqueId()
+        {
+            return uniqueId;
         }
     }
 }

@@ -6,7 +6,7 @@ namespace Digital_Subcurrent
 {
     using UnityEngine;
 
-    public class BoxController : MonoBehaviour 
+    public class BoxController : MonoBehaviour, IRewindable
     {
         public Vector2 gridSize = new Vector2(1, 1); // 格子大小
         public float moveSpeed = 5f; // 移動速度
@@ -15,7 +15,12 @@ namespace Digital_Subcurrent
         private CollisionHandler collisionHandler;
 
         private GameManager gameManager;
+        private string uniqueId;
 
+        private void Awake()
+        {
+            uniqueId = $"{gameObject.name}_{GetInstanceID()}";
+        }
         private void Start()
         {
             gameManager = GameManager.Instance;
@@ -72,6 +77,25 @@ namespace Digital_Subcurrent
 
             // 自動銷毀音效物件
             Destroy(audioPlayer, tempAudio.clip.length);
+        }
+
+        // 實作 IRewindable 介面
+        public RewindDataBase SaveData()
+        {
+            var data = new RewindDataBase();
+            data.position = transform.position;
+            return data;
+        }
+
+        public void LoadData(RewindDataBase data)
+        {
+            transform.position = data.position;
+        }
+
+
+        public string GetUniqueId()
+        {
+            return uniqueId;
         }
     }
 

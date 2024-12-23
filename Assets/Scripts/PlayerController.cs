@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Digital_Subcurrent
 {
-    public class PlayerController : MonoBehaviour , IRewindable
+    public class PlayerController : MonoBehaviour, IRewindable
     {
         public float moveSpeed = 5f; // 每格移動速度
         public Vector2 gridSize = new Vector2(1, 1); // 格子大小
@@ -178,16 +178,27 @@ namespace Digital_Subcurrent
         }
 
         // 實作 IRewindable 介面
-        public RewindData SaveData()
+        public RewindDataBase SaveData()
         {
-            RewindData data = new RewindData();
+            var data = new PlayerRewindData();
             data.position = transform.position;
+            data.hasKey = hasKey;
             return data;
         }
 
-        public void LoadData(RewindData data)
+        public void LoadData(RewindDataBase data)
         {
-            transform.position = data.position;
+            if (data is PlayerRewindData pdata)
+            {
+                transform.position = pdata.position;
+                hasKey = pdata.hasKey;
+            }
+            else
+            {
+                //如果跑出這個我真的會不知道怎麼修
+                Debug.LogWarning($"{nameof(PlayerController)}: LoadData() 收到的資料不是 PlayerRewindData!");
+            }
+
         }
 
 

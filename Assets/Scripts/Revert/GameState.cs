@@ -10,6 +10,7 @@ namespace Digital_Subcurrent
         public Vector2Int PlayerPosition { get; set; }
 
         // 每個物件的回溯資料清單
+        // 怕你看不懂，每個物件對應 (uniqueId, RewindDataBase)
         public List<RewindDataGroup> RewindDataList { get; set; }
 
         public GameState()
