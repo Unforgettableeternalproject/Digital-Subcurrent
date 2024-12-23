@@ -163,10 +163,10 @@ TextureImporter:
       name: TX DSProps_0
       rect:
         serializedVersion: 2
-        x: 31
-        y: 255
+        x: 15
+        y: 256
         width: 34
-        height: 43
+        height: 42
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,10 +185,10 @@ TextureImporter:
       name: TX ExitGateClosed
       rect:
         serializedVersion: 2
-        x: 93
-        y: 254
-        width: 66
-        height: 43
+        x: 96
+        y: 256
+        width: 64
+        height: 46
       alignment: 9
       pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,10 +229,10 @@ TextureImporter:
       name: TX DSProps_3
       rect:
         serializedVersion: 2
-        x: 31
+        x: 10
         y: 192
-        width: 34
-        height: 43
+        width: 44
+        height: 47
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -251,10 +251,10 @@ TextureImporter:
       name: TX ExitGateOpened
       rect:
         serializedVersion: 2
-        x: 95
-        y: 191
-        width: 66
-        height: 43
+        x: 96
+        y: 192
+        width: 64
+        height: 46
       alignment: 9
       pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -273,7 +273,7 @@ TextureImporter:
       name: TX DSProps_6
       rect:
         serializedVersion: 2
-        x: 31
+        x: 63
         y: 159
         width: 34
         height: 29
@@ -295,7 +295,7 @@ TextureImporter:
       name: TX DSProps_7
       rect:
         serializedVersion: 2
-        x: 95
+        x: 127
         y: 159
         width: 34
         height: 29
@@ -317,7 +317,7 @@ TextureImporter:
       name: TXMIppy3
       rect:
         serializedVersion: 2
-        x: 223
+        x: 191
         y: 130
         width: 34
         height: 29
@@ -339,7 +339,7 @@ TextureImporter:
       name: TX DSCratePink
       rect:
         serializedVersion: 2
-        x: 32
+        x: 64
         y: 96
         width: 32
         height: 48
@@ -361,8 +361,8 @@ TextureImporter:
       name: TX DSCrateGreen
       rect:
         serializedVersion: 2
-        x: 96
-        y: 96
+        x: 128
+        y: 97
         width: 32
         height: 48
       alignment: 9
@@ -405,8 +405,8 @@ TextureImporter:
       name: TX Mippy1
       rect:
         serializedVersion: 2
-        x: 159
-        y: 67
+        x: 223
+        y: 65
         width: 34
         height: 30
       alignment: 0
@@ -428,9 +428,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 256
-        y: 64
+        y: 96
         width: 32
-        height: 32
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -537,7 +537,7 @@ TextureImporter:
       name: TX TerminalSide
       rect:
         serializedVersion: 2
-        x: 225
+        x: 214
         y: 31
         width: 10
         height: 34
@@ -687,6 +687,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: TX DSProps_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 128
+        width: 32
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b901d4cb5021c745a19dedd7b682929
+      internalID: -116524177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -706,6 +728,7 @@ TextureImporter:
       TX DSCrateGreen: 4772863455783907693
       TX DSCratePink: 2061055441969817885
       TX DSProps_0: -3766189508100943100
+      TX DSProps_1: -116524177
       TX DSProps_3: 6086523007658520385
       TX DSProps_6: -1914937778848481348
       TX DSProps_7: 4542417822550353619
