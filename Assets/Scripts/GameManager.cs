@@ -235,6 +235,7 @@ namespace Digital_Subcurrent
             return (int[,])objectMatrix.Clone();
         }
 
+        //所有 IRewindable 物件由 GameManager 或集中器 自行維護一個 List
         private List<IRewindable> allRewindables = new List<IRewindable>();
 
         public void RegisterRewindable(IRewindable obj)
@@ -265,7 +266,8 @@ namespace Digital_Subcurrent
 
             //掃描整個scene，要不是我們東西少不然可能有效能問題
             // 3. 收集所有 IRewindable 物件的狀態
-            foreach (var r in rewindables)
+            
+            foreach (var r in allRewindables)
             {
                 RewindDataBase data = r.SaveData();
                 string uid = r.GetUniqueId();
@@ -304,8 +306,8 @@ namespace Digital_Subcurrent
             // Debug.Log("GameManager: LoadState - Restored matrix and player pos.");
 
             // 3. 還原所有 IRewindable 物件的狀態
-            var rewindables = FindObjectsOfType<MonoBehaviour>().OfType<IRewindable>();
-            foreach (var r in rewindables)
+            //var rewindables = FindObjectsOfType<MonoBehaviour>().OfType<IRewindable>();
+            foreach (var r in allRewindables)
             {
                 string uid = r.GetUniqueId();
                 // 找到對應的 RewindDataGroup

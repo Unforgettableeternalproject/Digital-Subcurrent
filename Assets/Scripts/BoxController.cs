@@ -49,6 +49,7 @@ namespace Digital_Subcurrent
                 PlaySound();
                 targetPosition = boxPosition + direction * gridSize;
                 isMoving = true;
+                
                 return true; // 推動成功
             }
 
@@ -84,9 +85,10 @@ namespace Digital_Subcurrent
         // 實作 IRewindable 介面
         public RewindDataBase SaveData()
         {
-            var data = new RewindDataBase();
+            var data = new BoxRewindData();
             data.position = transform.position;
-            isActive = gameObject.activeSelf;
+            data.isMoving = isMoving;
+            data.isActive = gameObject.activeSelf;
             return data;
         }
 
@@ -95,7 +97,8 @@ namespace Digital_Subcurrent
             if (data is BoxRewindData bdata) 
             {
                 transform.position = bdata.position;
-                gameObject.SetActive(isActive);
+                isMoving = bdata.isMoving;
+                gameObject.SetActive(bdata.isActive);
             }
         }
 

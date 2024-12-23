@@ -25,6 +25,7 @@ namespace Digital_Subcurrent
     public class BoxRewindData : RewindDataBase
     {
         public bool isActive;
+        public bool isMoving;
     }
 
     public class GlassFloorRewindData : RewindDataBase 
