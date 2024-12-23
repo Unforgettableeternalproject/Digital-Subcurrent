@@ -66,21 +66,25 @@ namespace Digital_Subcurrent
             Vector2 dir = Vector2.zero;
             if (Input.GetKey(KeyCode.A))
             {
+                gameManager.SaveState();
                 dir = Vector2.left;
                 animator.SetInteger("Direction", 3); // 左
             }
             else if (Input.GetKey(KeyCode.D))
             {
+                gameManager.SaveState();
                 dir = Vector2.right;
                 animator.SetInteger("Direction", 2); // 右
             }
             else if (Input.GetKey(KeyCode.W))
             {
+                gameManager.SaveState();
                 dir = Vector2.up;
                 animator.SetInteger("Direction", 1); // 上
             }
             else if (Input.GetKey(KeyCode.S))
             {
+                gameManager.SaveState();
                 dir = Vector2.down;
                 animator.SetInteger("Direction", 0); // 下
             }

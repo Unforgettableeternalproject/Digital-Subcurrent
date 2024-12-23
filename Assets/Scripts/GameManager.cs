@@ -169,7 +169,10 @@ namespace Digital_Subcurrent
 
             objectMatrix[original.y, original.x] = 0;
             objectMatrix[updated.y, updated.x] = value;
-            Debug.Log($"PlayerM = {playerMatrixPosition}");
+
+            // SaveState();
+            // Debug.Log("Update matrix");
+            
         }
 
         public void UpdatePlayer(Vector2 direction)
@@ -177,7 +180,6 @@ namespace Digital_Subcurrent
             Vector2Int original = playerMatrixPosition;
             playerMatrixPosition += Vector2Int.RoundToInt(direction);
             UpdateMatrix(original, playerMatrixPosition, 1);
-            SaveState();
         }
 
         public void UpdateBox(Vector2 direction)
@@ -264,6 +266,7 @@ namespace Digital_Subcurrent
             // 4. 推進堆疊
             stateStack.Push(currentState);
             Debug.Log("GameManager: SaveState done. Stack size = " + stateStack.Count);
+            Debug.Log($"PlayerM = {playerMatrixPosition}" + "Save");
         }
 
         public void LoadState()
@@ -278,12 +281,25 @@ namespace Digital_Subcurrent
             // 1. 彈出狀態
             GameState previousState = stateStack.Pop();
 
+            // A bug here
             // 2. 還原地圖矩陣
             floorMatrix = (int[,])previousState.FloorMatrix.Clone();
             objectMatrix = (int[,])previousState.ObjectMatrix.Clone();
             playerMatrixPosition = previousState.PlayerPosition;
-
-            Debug.Log("GameManager: LoadState - Restored matrix and player pos.");
+            
+            // 打印當前objectMatrix的情況
+            string matrixString = "Rewind objectMatrix:\n";
+            for (int i = 0; i < objectMatrix.GetLength(0); i++)
+            {
+                for (int j = 0; j < objectMatrix.GetLength(1); j++)
+                {
+                    matrixString += objectMatrix[i, j] + " ";
+                }
+                matrixString += "\n";
+            }
+            Debug.Log(matrixString);
+            Debug.Log($"PlayerM = {playerMatrixPosition}" + "Revert");
+            // Debug.Log("GameManager: LoadState - Restored matrix and player pos.");
 
             // 3. 還原所有 IRewindable 物件的狀態
             var rewindables = FindObjectsOfType<MonoBehaviour>().OfType<IRewindable>();
@@ -303,7 +319,10 @@ namespace Digital_Subcurrent
                 }
             }
 
-            Debug.Log("GameManager: LoadState done. Stack size = " + stateStack.Count);
+            // Debug.Log("GameManager: LoadState done. Stack size = " + stateStack.Count);
+
+
+            
         }
 
         public void ResetRoom()
