@@ -35,6 +35,7 @@ namespace Digital_Subcurrent
 
                 PlaySound(); // 播放音效
                 Transform parentContainer = transform.parent;
+                
                 // 切換為已填滿的地板
                 Instantiate(filledFloorPrefab, transform.position, Quaternion.identity, parentContainer);
 
