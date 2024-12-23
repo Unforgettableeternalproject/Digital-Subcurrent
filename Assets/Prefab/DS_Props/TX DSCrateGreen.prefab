@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 2918540260486145802}
   - component: {fileID: 8223407725367189721}
   - component: {fileID: 1476077373346048702}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: TX DSCrateGreen
-  m_TagString: Untagged
+  m_TagString: Box
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,10 +125,10 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.56, y: -0.5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0.03125, w: 0.625}
-    pivot: {x: 0.5, y: 0.35}
+    pivot: {x: 1.05, y: 0.62}
     oldSize: {x: 1, y: 1.5}
     newSize: {x: 1, y: 1.5}
     adaptiveTilingThreshold: 0.5
