@@ -22,6 +22,7 @@ namespace Digital_Subcurrent
         private void Awake()
         {
             uniqueId = $"{gameObject.name}_{GetInstanceID()}";
+            GameManager.Instance.RegisterRewindable(this);
         }
 
         private void Start()

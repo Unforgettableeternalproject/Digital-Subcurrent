@@ -11,6 +11,7 @@ namespace Digital_Subcurrent
         public Vector2 gridSize = new Vector2(1, 1); // 格子大小
         public float moveSpeed = 5f; // 移動速度
         private bool isMoving = false;
+        public bool isActive = true;
         private Vector2 targetPosition;
         private CollisionHandler collisionHandler;
 
@@ -20,6 +21,7 @@ namespace Digital_Subcurrent
         private void Awake()
         {
             uniqueId = $"{gameObject.name}_{GetInstanceID()}";
+            GameManager.Instance.RegisterRewindable(this);
         }
         private void Start()
         {
@@ -84,12 +86,17 @@ namespace Digital_Subcurrent
         {
             var data = new RewindDataBase();
             data.position = transform.position;
+            isActive = gameObject.activeSelf;
             return data;
         }
 
         public void LoadData(RewindDataBase data)
         {
-            transform.position = data.position;
+            if (data is BoxRewindData bdata) 
+            {
+                transform.position = bdata.position;
+                gameObject.SetActive(isActive);
+            }
         }
 
 

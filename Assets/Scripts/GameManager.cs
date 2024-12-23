@@ -172,7 +172,7 @@ namespace Digital_Subcurrent
 
             // SaveState();
             // Debug.Log("Update matrix");
-            
+
         }
 
         public void UpdatePlayer(Vector2 direction)
@@ -235,6 +235,20 @@ namespace Digital_Subcurrent
             return (int[,])objectMatrix.Clone();
         }
 
+        private List<IRewindable> allRewindables = new List<IRewindable>();
+
+        public void RegisterRewindable(IRewindable obj)
+        {
+            if (!allRewindables.Contains(obj))
+                allRewindables.Add(obj);
+        }
+
+        public void UnregisterRewindable(IRewindable obj)
+        {
+            if (allRewindables.Contains(obj))
+                allRewindables.Remove(obj);
+        }
+
         public void SaveState()
         {
             // 1. 複製地圖陣列
@@ -251,7 +265,6 @@ namespace Digital_Subcurrent
 
             //掃描整個scene，要不是我們東西少不然可能有效能問題
             // 3. 收集所有 IRewindable 物件的狀態
-            var rewindables = FindObjectsOfType<MonoBehaviour>().OfType<IRewindable>();
             foreach (var r in rewindables)
             {
                 RewindDataBase data = r.SaveData();
@@ -281,12 +294,12 @@ namespace Digital_Subcurrent
             // 1. 彈出狀態
             GameState previousState = stateStack.Pop();
 
-            
+
             // 2. 還原地圖矩陣
             floorMatrix = (int[,])previousState.FloorMatrix.Clone();
             objectMatrix = (int[,])previousState.ObjectMatrix.Clone();
             playerMatrixPosition = previousState.PlayerPosition;
-            
+
 
             // Debug.Log("GameManager: LoadState - Restored matrix and player pos.");
 
@@ -311,27 +324,14 @@ namespace Digital_Subcurrent
             // Debug.Log("GameManager: LoadState done. Stack size = " + stateStack.Count);
 
 
-            
+
         }
 
         public void ResetRoom()
         {
-            if (stateStack.Count > 0)
-            {
-                // 還原矩陣
-                floorMatrix = (int[,])initialState.FloorMatrix.Clone();
-                objectMatrix = (int[,])initialState.ObjectMatrix.Clone();
+            stateStack.Clear();
 
-                // 還原玩家位置
-                playerMatrixPosition = initialState.PlayerPosition;
-
-                // 更新遊戲中所有物件的狀態
-                //UpdateGameObjects();
-
-                // 清空堆疊並保存初始狀態
-                stateStack.Clear();
-                stateStack.Push(initialState);
-            }
+            StartCoroutine(levelLoader.LoadLevel("SL-1"));
         }
     }
 

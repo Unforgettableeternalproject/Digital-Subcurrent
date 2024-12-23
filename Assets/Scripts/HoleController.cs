@@ -11,7 +11,14 @@ namespace Digital_Subcurrent
         private GameManager gameManager;       // 遊戲管理器
 
         private bool isFilled = false;
+        public bool isActive = true;
         private string uniqueId;
+
+        private void Awake()
+        {
+            uniqueId = $"{gameObject.name}_{GetInstanceID()}";
+            GameManager.Instance.RegisterRewindable(this);
+        }
 
         private void Start()
         {
@@ -30,8 +37,12 @@ namespace Digital_Subcurrent
                 Transform parentContainer = transform.parent;
                 // 切換為已填滿的地板
                 Instantiate(filledFloorPrefab, transform.position, Quaternion.identity, parentContainer);
-                Destroy(other.gameObject); // 移除箱子
-                Destroy(gameObject);       // 移除空洞
+
+
+                other.gameObject.SetActive(false);
+                this.gameObject.SetActive(false);
+                // Destroy(other.gameObject); // 移除箱子
+                // Destroy(gameObject);       // 移除空洞
 
                 isFilled = true;
             }
@@ -55,6 +66,7 @@ namespace Digital_Subcurrent
             var data = new HoleRewindData();
             data.position = transform.position;
             data.isFilled = isFilled;
+            data.isActive = gameObject.activeSelf;
             return data;
         }
 
@@ -64,6 +76,7 @@ namespace Digital_Subcurrent
             {
                 transform.position = fdata.position;
                 isFilled = fdata.isFilled;
+                gameObject.SetActive(fdata.isActive);
             }
             else
             {
