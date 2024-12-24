@@ -11,5 +11,15 @@ namespace Digital_Subcurrent
 
         [TextArea(3, 10)]
         public string[] sentences;
+
+        public bool isLeft;
+
+        // «Øºc¦¡
+        public Dialogue(string name, string[] sentences, bool isLeft)
+        {
+            this.name = name;
+            this.sentences = sentences;
+            this.isLeft = isLeft;
+        }
     }
 }
