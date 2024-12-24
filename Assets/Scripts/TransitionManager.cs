@@ -41,19 +41,13 @@ namespace Digital_Subcurrent
                 blackScreen.alpha = 0; // 確保黑畫面是透明的
         }
 
-        public IEnumerator CoroutineStart(float delay = 0.1f)
+        public IEnumerator CoroutineStart(float delay = 0.5f)
         {   
-            yield return new WaitForSeconds(delay);
-            StartTransition();
-        }
-
-        public void StartTransition()
-        {
-            
             if (!isTransitioning)
             {
-                StartCoroutine(TransitionRoutine());
+                yield return StartCoroutine(TransitionRoutine());
             }
+            yield return new WaitForSeconds(delay);
         }
 
         private IEnumerator TransitionRoutine()
@@ -67,21 +61,40 @@ namespace Digital_Subcurrent
                 transitionText.text = descriptions[Random.Range(0, descriptions.Length)];
             }
 
+            blackScreen.gameObject.SetActive(true);
+
             // 淡入黑畫面
-            yield return StartCoroutine(FadeBlackScreen(1));
+            yield return StartCoroutine(FadeInBlackScreen(1));
 
             // 開始加載場景並更新進度條
             StartCoroutine(UpdateTransitionText()); // 動態文字動畫
             yield return StartCoroutine(UpdateProgressBar());
 
             // 加載完成，淡出黑畫面
-            yield return StartCoroutine(FadeBlackScreen(0));
+            yield return StartCoroutine(FadeOutBlackScreen(0));
+
+            blackScreen.gameObject.SetActive(false);
 
             isTransitioning = false;
             progressBar.HideProgressBar();
         }
 
-        private IEnumerator FadeBlackScreen(float targetAlpha)
+        private IEnumerator FadeInBlackScreen(float targetAlpha)
+        {
+            float startAlpha = blackScreen.alpha;
+            float elapsedTime = 0f;
+
+            while (elapsedTime < fadeDuration)
+            {
+                elapsedTime += Time.deltaTime;
+                blackScreen.alpha = Mathf.Lerp(startAlpha, targetAlpha, elapsedTime / (fadeDuration / 2));
+                yield return null;
+            }
+
+            blackScreen.alpha = targetAlpha;
+        }
+
+        private IEnumerator FadeOutBlackScreen(float targetAlpha)
         {
             float startAlpha = blackScreen.alpha;
             float elapsedTime = 0f;
