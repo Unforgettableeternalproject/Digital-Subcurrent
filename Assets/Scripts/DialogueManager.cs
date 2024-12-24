@@ -9,13 +9,12 @@ namespace Digital_Subcurrent
     public class DialogueManager : MonoBehaviour
     {
         public static DialogueManager Instance;
-        private bool isTyping = false;
-        private string currentSentence;
 
         public GameObject leftDialogueBox;
         public GameObject rightDialogueBox;
 
-        private Animator animator;
+        private Animator leftAnimator;
+        private Animator rightAnimator;
 
         [Range(0.01f, 0.2f)]
         public float typingSpeed = 0.05f;
@@ -29,6 +28,15 @@ namespace Digital_Subcurrent
         private TextMeshProUGUI rightNameText;
         private TextMeshProUGUI rightDialogueText;
         private Button rightContinueButton;
+
+        private bool isTyping = false;
+        private string currentSentence;
+
+        private StoryManager storyManager;
+
+        // 預設角色名稱
+        private const string LeftCharacterName = "YOU";
+        private const string RightCharacterName = "MIPPY";
 
         void Awake()
         {
@@ -45,17 +53,20 @@ namespace Digital_Subcurrent
 
         void Start()
         {
+            storyManager = StoryManager.Instance;
             sentences = new Queue<string>();
 
             // 動態查找左側對話框內部組件
             leftNameText = leftDialogueBox.transform.Find("Name").GetComponent<TextMeshProUGUI>();
             leftDialogueText = leftDialogueBox.transform.Find("Dialogue").GetComponent<TextMeshProUGUI>();
             leftContinueButton = leftDialogueBox.transform.Find("ContinueButton").GetComponent<Button>();
+            leftAnimator = leftDialogueBox.GetComponent<Animator>();
 
             // 動態查找右側對話框內部組件
             rightNameText = rightDialogueBox.transform.Find("Name").GetComponent<TextMeshProUGUI>();
             rightDialogueText = rightDialogueBox.transform.Find("Dialogue").GetComponent<TextMeshProUGUI>();
             rightContinueButton = rightDialogueBox.transform.Find("ContinueButton").GetComponent<Button>();
+            rightAnimator = rightDialogueBox.GetComponent<Animator>();
 
             // 為繼續按鈕添加事件
             leftContinueButton.onClick.AddListener(DisplayNextSentence);
@@ -64,50 +75,18 @@ namespace Digital_Subcurrent
 
         public void StartDialogue(Dialogue dialogue)
         {
-
-            // 翻轉對話框並初始化
-            if (dialogue.isLeft)
-            {
-                SetActiveDialogueBox(leftDialogueBox, rightDialogueBox, dialogue.name);
-                animator = leftDialogueBox.GetComponent<Animator>();
-            }
-            else
-            {
-                SetActiveDialogueBox(rightDialogueBox, leftDialogueBox, dialogue.name);
-                animator = rightDialogueBox.GetComponent<Animator>();
-            }
-
-            animator.SetBool("IsOpen", true);
-
             sentences.Clear();
-            foreach (string sentence in dialogue.sentences)
+            foreach (string line in dialogue.sentences)
             {
-                sentences.Enqueue(sentence);
+                sentences.Enqueue(line);
             }
 
             DisplayNextSentence();
         }
 
-        private void SetActiveDialogueBox(GameObject activeBox, GameObject inactiveBox, string speakerName)
-        {
-            activeBox.SetActive(true);
-            inactiveBox.SetActive(false);
-
-            if (activeBox == leftDialogueBox)
-            {
-                leftNameText.text = speakerName;
-                leftDialogueText.text = "";
-            }
-            else
-            {
-                rightNameText.text = speakerName;
-                rightDialogueText.text = "";
-            }
-        }
-
         public void DisplayNextSentence()
         {
-            if (sentences.Count == 0)
+            if (sentences.Count <= 0)
             {
                 EndDialogue();
                 return;
@@ -115,19 +94,43 @@ namespace Digital_Subcurrent
 
             currentSentence = sentences.Dequeue();
             StopAllCoroutines();
-            StartCoroutine(TypeSentence(currentSentence));
+
+            // 判斷開頭是 L: 或 R: 並切換對話框
+            if (currentSentence.StartsWith("L:"))
+            {
+                SetActiveDialogueBox(leftDialogueBox, rightDialogueBox, currentSentence.Substring(2), LeftCharacterName);
+                leftAnimator.SetBool("IsOpen", true);
+                rightAnimator.SetBool("IsOpen", false);
+            }
+            else if (currentSentence.StartsWith("R:"))
+            {
+                SetActiveDialogueBox(rightDialogueBox, leftDialogueBox, currentSentence.Substring(2), RightCharacterName);
+                rightAnimator.SetBool("IsOpen", true);
+                leftAnimator.SetBool("IsOpen", false);
+            }
         }
 
+        private void SetActiveDialogueBox(GameObject activeBox, GameObject inactiveBox, string dialogueText, string characterName)
+        {
+            TextMeshProUGUI activeNameText = activeBox == leftDialogueBox ? leftNameText : rightNameText;
+            TextMeshProUGUI activeDialogueText = activeBox == leftDialogueBox ? leftDialogueText : rightDialogueText;
 
-        IEnumerator TypeSentence(string sentence)
+            activeBox.SetActive(true);
+
+            inactiveBox.SetActive(false);
+
+            activeNameText.text = characterName;
+            StartCoroutine(TypeSentence(dialogueText, activeDialogueText));
+        }
+
+        IEnumerator TypeSentence(string sentence, TextMeshProUGUI dialogueText)
         {
             isTyping = true;
-            TextMeshProUGUI activeDialogueText = leftDialogueBox.activeSelf ? leftDialogueText : rightDialogueText;
-            activeDialogueText.text = "";
+            dialogueText.text = "";
 
             foreach (char letter in sentence.ToCharArray())
             {
-                activeDialogueText.text += letter;
+                dialogueText.text += letter;
                 yield return new WaitForSeconds(typingSpeed);
             }
 
@@ -136,8 +139,13 @@ namespace Digital_Subcurrent
 
         void EndDialogue()
         {
-            animator.SetBool("IsOpen", false);
-            StartCoroutine(StoryManager.Instance.PlayCutscene());
+            leftDialogueBox.SetActive(true);
+            rightDialogueBox.SetActive(true);
+            leftAnimator.SetBool("IsOpen", false);
+            rightAnimator.SetBool("IsOpen", false);
+            leftDialogueBox.SetActive(false);
+            rightDialogueBox.SetActive(false);
+            StartCoroutine(storyManager.PlayCutscene());
         }
 
         void Update()
@@ -152,7 +160,7 @@ namespace Digital_Subcurrent
                 {
                     StopAllCoroutines();
                     TextMeshProUGUI activeDialogueText = leftDialogueBox.activeSelf ? leftDialogueText : rightDialogueText;
-                    activeDialogueText.text = currentSentence;
+                    activeDialogueText.text = currentSentence.Substring(2);
                     isTyping = false;
                 }
             }
