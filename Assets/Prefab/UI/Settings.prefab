@@ -206,7 +206,7 @@ RectTransform:
   m_Father: {fileID: 5044085605477710051}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0.9, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -317,7 +317,7 @@ RectTransform:
   m_Father: {fileID: 469887618893749305}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0.9, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -664,15 +664,15 @@ MonoBehaviour:
   m_FillRect: {fileID: 6160347116263200850}
   m_HandleRect: {fileID: 3451137932965679677}
   m_Direction: 0
-  m_MinValue: -80
+  m_MinValue: -40
   m_MaxValue: 0
   m_WholeNumbers: 0
-  m_Value: -5
+  m_Value: -4
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4549132847043499549}
-        m_TargetAssemblyTypeName: SettingMenu, Assembly-CSharp
+      - m_Target: {fileID: 6176650398036001870}
+        m_TargetAssemblyTypeName: Digital_Subcurrent.SettingMenu, Assembly-CSharp
         m_MethodName: SetSFXVolume
         m_Mode: 0
         m_Arguments:
@@ -790,8 +790,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 5591784737328813390}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.9, y: 0}
+  m_AnchorMax: {x: 0.9, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1004,7 +1004,7 @@ RectTransform:
   m_Father: {fileID: 2975691882032777125}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0.9, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1483,6 +1483,7 @@ GameObject:
   - component: {fileID: 8083365465121926420}
   - component: {fileID: 8299481223707826171}
   - component: {fileID: 5765523886368910964}
+  - component: {fileID: 1692357017401939539}
   m_Layer: 5
   m_Name: Resume
   m_TagString: Untagged
@@ -1592,7 +1593,34 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8299481223707826171}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6176650398036001870}
+        m_TargetAssemblyTypeName: Digital_Subcurrent.SettingMenu, Assembly-CSharp
+        m_MethodName: CloseSettingMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1692357017401939539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4786215648949470847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b39f5b5d6eac79b4db1c995dbe7ccc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverSound: {fileID: 8300000, guid: 12aba1b111dceca41b67fae8a0deef08, type: 3}
+  clickSound: {fileID: 8300000, guid: b7dc9a2bae3f6f6419b7be9246a10d3b, type: 3}
+  audioSource: {fileID: 0}
 --- !u!1 &5962264492274705874
 GameObject:
   m_ObjectHideFlags: 0
@@ -1991,14 +2019,14 @@ GameObject:
   - component: {fileID: 4435470575684459080}
   - component: {fileID: 4581772930584475028}
   - component: {fileID: 5910081066147221432}
-  - component: {fileID: 4549132847043499549}
+  - component: {fileID: 6176650398036001870}
   m_Layer: 5
   m_Name: Settings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4435470575684459080
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2066,7 +2094,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &4549132847043499549
+--- !u!114 &6176650398036001870
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2075,10 +2103,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6687025524908551772}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9991e6a44dc8388429dd3c3e40f23f96, type: 3}
+  m_Script: {fileID: 11500000, guid: c2633e1622871274494fd6011974faa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioMixer: {fileID: 0}
+  audioMixer: {fileID: 24100000, guid: a2c88ff1cd4135346bad905654d992b1, type: 2}
 --- !u!1 &6918439862669277145
 GameObject:
   m_ObjectHideFlags: 0
@@ -2111,8 +2139,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 4835422403937485092}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.9, y: 0}
+  m_AnchorMax: {x: 0.9, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2261,8 +2289,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2050072379945716449}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.9, y: 0}
+  m_AnchorMax: {x: 0.9, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2524,15 +2552,15 @@ MonoBehaviour:
   m_FillRect: {fileID: 215615242376005118}
   m_HandleRect: {fileID: 6609792979013531651}
   m_Direction: 0
-  m_MinValue: -80
+  m_MinValue: -40
   m_MaxValue: 0
   m_WholeNumbers: 0
-  m_Value: -5
+  m_Value: -4
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4549132847043499549}
-        m_TargetAssemblyTypeName: SettingMenu, Assembly-CSharp
+      - m_Target: {fileID: 6176650398036001870}
+        m_TargetAssemblyTypeName: Digital_Subcurrent.SettingMenu, Assembly-CSharp
         m_MethodName: SetMasterVolume
         m_Mode: 0
         m_Arguments:
@@ -2664,8 +2692,8 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4549132847043499549}
-        m_TargetAssemblyTypeName: SettingMenu, Assembly-CSharp
+      - m_Target: {fileID: 6176650398036001870}
+        m_TargetAssemblyTypeName: Digital_Subcurrent.SettingMenu, Assembly-CSharp
         m_MethodName: SetFullScreen
         m_Mode: 0
         m_Arguments:
@@ -2760,15 +2788,15 @@ MonoBehaviour:
   m_FillRect: {fileID: 4245464533040755489}
   m_HandleRect: {fileID: 3975554905328893977}
   m_Direction: 0
-  m_MinValue: -80
+  m_MinValue: -40
   m_MaxValue: 0
   m_WholeNumbers: 0
-  m_Value: -5
+  m_Value: -4
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4549132847043499549}
-        m_TargetAssemblyTypeName: SettingMenu, Assembly-CSharp
+      - m_Target: {fileID: 6176650398036001870}
+        m_TargetAssemblyTypeName: Digital_Subcurrent.SettingMenu, Assembly-CSharp
         m_MethodName: SetMusicVolume
         m_Mode: 0
         m_Arguments:

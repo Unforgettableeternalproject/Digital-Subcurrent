@@ -1,11 +1,23 @@
-﻿using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.Audio;
 
 namespace Digital_Subcurrent
 {
-    public class AudioManager : MonoBehaviour
+    public class SettingMenu : MonoBehaviour
     {
         public AudioMixer audioMixer;
+
+        public void OpenSettingMenu()
+        {
+            gameObject.SetActive(true);
+        }
+
+        public void CloseSettingMenu()
+        {
+            gameObject.SetActive(false);
+        }
 
         public void SetMasterVolume(float volume)
         {
@@ -21,6 +33,11 @@ namespace Digital_Subcurrent
         {
             audioMixer.SetFloat("SFXVolume", volume);
         }
-    }
-}
 
+        public void SetFullScreen(bool isFullScreen)
+        {
+            Screen.fullScreen = isFullScreen;
+        }
+    }
+
+}
