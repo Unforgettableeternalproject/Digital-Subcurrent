@@ -8,21 +8,27 @@ namespace Digital_Subcurrent
     public class HoleController : MonoBehaviour
     {
         public GameObject filledFloorPrefab; // 已填滿的地板Prefab
-        public GameManager gameManager;       // 遊戲管理器
+        private GameManager gameManager;       // 遊戲管理器
 
         private bool isFilled = false;
+
+        private void Start()
+        {
+            gameManager = GameManager.Instance;
+        }
 
         // 當箱子進入時觸發
         private void OnTriggerEnter2D(Collider2D other)
         {
+            Debug.Log("Test");
             if (!isFilled && other.CompareTag("Box"))
             {
                 Debug.Log("Box filled the hole!");
 
                 PlaySound(); // 播放音效
-
+                Transform parentContainer = transform.parent;
                 // 切換為已填滿的地板
-                Instantiate(filledFloorPrefab, transform.position, Quaternion.identity);
+                Instantiate(filledFloorPrefab, transform.position, Quaternion.identity, parentContainer);
                 Destroy(other.gameObject); // 移除箱子
                 Destroy(gameObject);       // 移除空洞
 

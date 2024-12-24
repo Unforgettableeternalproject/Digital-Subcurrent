@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d879861b10e73634fbdf39580d3dadca
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 120981
+  packageName: ProgressBar Pack
+  packageVersion: 1.0
+  assetPath: Assets/ProgressBar/Sprites/Spinner.controller
+  uploadId: 251365

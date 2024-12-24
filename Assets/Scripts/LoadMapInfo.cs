@@ -5,10 +5,18 @@ namespace Digital_Subcurrent
 {
     public class TilemapTagArray : MonoBehaviour
     {
-        private Tilemap tilemap;
+        public Tilemap tilemap;
+        public Tilemap wallTilemap;
+        public GameObject wallMarker;
+        private M2WConvertHelper helper = new M2WConvertHelper();
 
-        // 二維陣列儲存每個有效格子上的 GameObject 的 Tag
-        private string[,] tagGrid;
+        // 二維陣列儲存每個有效格子上的 GameObject
+        private GameObject[,] objectGrid;
+        private GameObject[,] floorGrid;
+
+        // 新的二維陣列儲存轉換後的數值
+        private int[,] objectValueGrid;
+        private int[,] floorValueGrid;
 
         // 用來記錄實際 Tilemap 的最小和最大格子座標
         private Vector3Int gridMin;
@@ -17,22 +25,42 @@ namespace Digital_Subcurrent
         void Start()
         {
             // 取得 Tilemap 組件
-            tilemap = GetComponent<Tilemap>();
+            // tilemap = GetComponent<Tilemap>();
 
             if (tilemap == null)
             {
                 Debug.LogError("Tilemap 組件未找到！");
                 return;
             }
+        }
 
+        public void GenerateMapData()
+        {
             // 1. 計算實際上具有 Tile 的邊界範圍
             CalculateTileBounds();
 
             // 2. 初始化陣列並填充資料
-            InitializeTagGrid();
+            InitializeObjectGrid();
 
-            // 3. 列印陣列內容
-            PrintTagGrid();
+            // 3. 使用 M2WConvertHelper 將 GameObject 轉換為數值並存入新的二維陣列
+            objectValueGrid = ConvertGridToValueGrid(objectGrid);
+            floorValueGrid = ConvertGridToValueGrid(floorGrid);
+
+            // 4. 輸出結果
+            //PrintGrid(objectGrid, "Object Grid");
+            //PrintGrid(floorGrid, "Floor Grid");
+            //PrintValueGrid(objectValueGrid, "Object Value Grid");
+            //PrintValueGrid(floorValueGrid, "Floor Value Grid");
+        }
+
+        public int[,] GetObjectMatrix()
+        {
+            return objectValueGrid;
+        }
+
+        public int[,] GetFloorMatrix()
+        {
+            return floorValueGrid;
         }
 
         void CalculateTileBounds()
@@ -55,60 +83,126 @@ namespace Digital_Subcurrent
             Debug.Log($"Tile Bounds Calculated - Min: {gridMin}, Max: {gridMax}");
         }
 
-        void InitializeTagGrid()
+        void InitializeObjectGrid()
         {
-            // 計算二維陣列的大小
             int width = gridMax.x - gridMin.x + 1;
             int height = gridMax.y - gridMin.y + 1;
 
-            tagGrid = new string[width, height];
+            objectGrid = new GameObject[width, height];
+            floorGrid = new GameObject[width, height];
             Debug.Log($"Initialized grid with size: {width} x {height}");
 
-            // 遍歷具有 Tile 的位置並填充 Tag
             for (int x = gridMin.x; x <= gridMax.x; x++)
             {
                 for (int y = gridMin.y; y <= gridMax.y; y++)
                 {
-                    Vector3Int position = new Vector3Int(x, y, 0);
+                    Vector3Int cellPosition = new Vector3Int(x, y, 0);
 
-                    if (tilemap.HasTile(position))
+                    if (tilemap.HasTile(cellPosition))
                     {
-                        // 轉換格子座標到世界座標
-                        Vector3 worldPosition = tilemap.CellToWorld(position);
-                        worldPosition += tilemap.tileAnchor;
+                        // 將 Tilemap 格子座標轉換為世界座標
+                        Vector3Int gridPosition = new Vector3Int(x, y, 0);
+                        Vector3 worldPosition = tilemap.CellToWorld(cellPosition) + tilemap.tileAnchor;
 
-                        // 檢查該位置上的物件
-                        Collider2D collider = Physics2D.OverlapPoint(worldPosition);
-
-                        // 將物件的 Tag 存入陣列
                         int gridX = x - gridMin.x;
                         int gridY = y - gridMin.y;
 
-                        if (collider != null)
+                        // 第一次檢測 (objectLayerMask)
+                        Collider2D objectCollider = Physics2D.OverlapPoint(worldPosition, LayerMask.GetMask("Object"));
+                        if (objectCollider != null)
                         {
-                            tagGrid[gridX, gridY] = collider.gameObject.tag; // 存入 Tag
-                            Debug.Log($"Stored Tag '{collider.gameObject.tag}' at Grid[{gridX}, {gridY}]");
+                            objectGrid[gridX, gridY] = objectCollider.gameObject;
+                            Debug.Log($"Stored Object '{objectCollider.gameObject.name}' at Grid[{gridX}, {gridY}]");
                         }
                         else
                         {
-                            tagGrid[gridX, gridY] = "Empty"; // 若沒有物件則設置預設值
+                            // **檢測牆壁 (Tilemap)**
+                            TileBase wallTile = wallTilemap.GetTile(gridPosition);
+                            if (wallTile != null)
+                            {
+                                // 如果該位置有牆壁 Tile，儲存為牆壁代表物件
+                                objectGrid[gridX, gridY] = wallMarker; // 可用 null 或自定義牆壁標記物件
+                                Debug.Log($"Stored Wall Placeholder at Grid[{gridX}, {gridY}]");
+                            }
+                            else
+                            {
+                                // 如果該位置什麼都沒有，儲存為 null
+                                objectGrid[gridX, gridY] = null;
+                            }
+                        }
+
+                        // 第二次檢測 (floorLayerMask)
+                        Collider2D floorCollider = Physics2D.OverlapPoint(worldPosition, LayerMask.GetMask("Floor"));
+                        if (floorCollider != null)
+                        {
+                            floorGrid[gridX, gridY] = floorCollider.gameObject;
+                            Debug.Log($"Stored Floor Object '{floorCollider.gameObject.name}' at Grid[{gridX}, {gridY}]");
+                        }
+                        else
+                        {
+                            floorGrid[gridX, gridY] = null;
                         }
                     }
                 }
             }
         }
 
-        void PrintTagGrid()
+        int[,] ConvertGridToValueGrid(GameObject[,] inputGrid)
         {
-            for (int y = tagGrid.GetLength(1) - 1; y >= 0; y--) // 從上到下輸出
+            int width = inputGrid.GetLength(0);  // 原始矩陣的列數
+            int height = inputGrid.GetLength(1); // 原始矩陣的行數
+
+            // 初始化旋轉後的矩陣 (-90 度結果)
+            int[,] rotatedGrid = new int[height, width];
+
+            // 將 inputGrid 映射到 rotatedGrid，直接實現 -90 度旋轉
+            for (int x = 0; x < width; x++)
+            {
+                for (int y = 0; y < height; y++)
+                {
+                    GameObject obj = inputGrid[x, y];
+                    if (obj != null)
+                    {
+                        rotatedGrid[height - 1 - y, x] = helper.GetValue(obj);
+                    }
+                    else
+                    {
+                        rotatedGrid[height - 1 - y, x] = 0;
+                    }
+                }
+            }
+
+            return rotatedGrid;
+        }
+
+
+        void PrintGrid(GameObject[,] grid, string gridName = "Grid")
+        {
+            Debug.Log($"----- {gridName} -----");
+            for (int y = grid.GetLength(1) - 1; y >= 0; y--) // 從上到下輸出
             {
                 string row = "";
-                for (int x = 0; x < tagGrid.GetLength(0); x++)
+                for (int x = 0; x < grid.GetLength(0); x++)
                 {
-                    row += $"[{tagGrid[x, y]}] ";
+                    row += grid[x, y] != null ? $"[{grid[x, y].name}] " : "[null] ";
                 }
                 Debug.Log(row);
             }
         }
+
+        void PrintValueGrid(int[,] grid, string gridName = "Value Grid")
+        {
+            Debug.Log($"----- {gridName} -----");
+            for (int y = grid.GetLength(1) - 1; y >= 0; y--) // 從上到下輸出
+            {
+                string row = "";
+                for (int x = 0; x < grid.GetLength(0); x++)
+                {
+                    row += $"[{grid[x, y]}] ";
+                }
+                Debug.Log(row);
+            }
+        }
+
     }
 }

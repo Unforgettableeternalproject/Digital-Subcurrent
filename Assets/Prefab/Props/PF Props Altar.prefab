@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5272759377935191101}
-  m_Layer: 20
+  m_Layer: 21
   m_Name: Rune
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5513986088034516648}
   - component: {fileID: 6250821296113964330}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3738408408698860400}
   - component: {fileID: 2128395779313173791}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -219,7 +219,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8649759686658190389}
   - component: {fileID: 9183256227791019032}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -309,7 +309,7 @@ GameObject:
   - component: {fileID: 8497833242732097597}
   - component: {fileID: 3017392920484783886}
   - component: {fileID: 8905621493737091463}
-  m_Layer: 20
+  m_Layer: 21
   m_Name: PF Props Altar
   m_TagString: Terminal
   m_Icon: {fileID: 0}
@@ -410,6 +410,7 @@ MonoBehaviour:
   openDoor: {fileID: 2055102311959635369, guid: 8e9c401d7a70ec94d956296ea011f594,
     type: 3}
   doorPosition: {fileID: 0}
+  gameManager: {fileID: 0}
 --- !u!61 &3017392920484783886
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -444,7 +445,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 1
-  m_Offset: {x: 0.027235746, y: 1.2067069}
+  m_Offset: {x: 0.005610287, y: 1.0627033}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -454,7 +455,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.6483474, y: 1.1061041}
+  m_Size: {x: 1.029183, y: 0.9332998}
   m_EdgeRadius: 0
 --- !u!82 &8905621493737091463
 AudioSource:
@@ -470,7 +471,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 5d0c0bd24848f3148b7f1d21c7b31d7d, type: 3}
   m_Resource: {fileID: 8300000, guid: 5d0c0bd24848f3148b7f1d21c7b31d7d, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.75
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -564,7 +565,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7947911505844789837}
   - component: {fileID: 7947911505844789838}
-  m_Layer: 20
+  m_Layer: 21
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -651,7 +652,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5081203307395566568}
   - component: {fileID: 6868958710751573116}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}

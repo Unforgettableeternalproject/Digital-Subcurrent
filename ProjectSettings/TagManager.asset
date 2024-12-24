@@ -8,8 +8,10 @@ TagManager:
   - Wall
   - Obstacle
   - Hole
+  - Glass
   - Key
   - Terminal
+  - Exit
   layers:
   - Default
   - TransparentFX
@@ -31,8 +33,8 @@ TagManager:
   - 
   - 
   - 
-  - Layer 1
-  - Layer 2
+  - Floor
+  - Object
   - Layer 3
   - 
   - 

@@ -14,10 +14,11 @@ namespace Digital_Subcurrent
         private Vector2 targetPosition;
         private CollisionHandler collisionHandler;
 
-        public GameManager gameManager;
+        private GameManager gameManager;
 
         private void Start()
         {
+            gameManager = GameManager.Instance;
             targetPosition = transform.position; // 初始化目標位置
             collisionHandler = GetComponent<CollisionHandler>();
         }

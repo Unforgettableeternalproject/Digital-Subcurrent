@@ -15,20 +15,18 @@ namespace Digital_Subcurrent
         private bool hasKey = false; // 玩家是否擁有鑰匙
 
         private Animator animator;
-        public GameManager gameManager;
+        private GameManager gameManager;
 
         private void Start()
         {
             animator = GetComponent<Animator>();
-
+            gameManager = GameManager.Instance;
             if (gameManager == null)
             {
                 Debug.LogError("GameManager is missing in the scene!");
             }
 
             initPosition = transform.position; // 初始化為當前位置
-            gameManager.InitializeGame(initPosition); // 初始化GameManager
-            PrintObjectMatrix();
         }
 
         private void Update()
@@ -113,7 +111,16 @@ namespace Digital_Subcurrent
                         key.OnCollect();
                     }
                 }
+
+                if (gameManager.HasDoor(new Vector2(direction.x, -direction.y)))
+                {
+                    isMoving = false;
+                    transform.position = targetPosition;
+                    canMove=true;
+                    animator.SetInteger("Direction", 0);
+                }
                 gameManager.UpdatePlayer(new Vector2(direction.x, -direction.y));
+
             }
 
             // 打印當前的物件矩陣狀態
@@ -126,7 +133,7 @@ namespace Digital_Subcurrent
             transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
 
             // 判斷是否到達目標格子
-            if (Vector2.Distance(transform.position, targetPosition) < 0.01f)
+            if (Vector2.Distance(transform.position, targetPosition) < 0.01 || !isMoving)
             {
                 transform.position = targetPosition; // 對齊到目標位置
                 isMoving = false; // 移動完成

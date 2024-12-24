@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 24d5ab3d18c91fc41a2213a537e21ee7
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 120981
+  packageName: ProgressBar Pack
+  packageVersion: 1.0
+  assetPath: Assets/ProgressBar/UI ProgressBarCircle.prefab
+  uploadId: 251365

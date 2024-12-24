@@ -8,6 +8,8 @@ namespace Digital_Subcurrent
     public class GameManager : MonoBehaviour
     {
         public static GameManager Instance; // Singleton
+        public string stageID = "SL";
+        public int defaultLoadLevel = 1;
 
         private int[,] objectMatrix;
         private int[,] floorMatrix;
@@ -17,6 +19,9 @@ namespace Digital_Subcurrent
         private Vector2Int playerMatrixPosition;
         private Vector2Int tempBoxMPosition;
         private Vector2 gridSize = new Vector2(1, 1); // 每格的世界座標大小
+        private LevelLoader levelLoader;
+
+        private bool doorUnlocked = false;
 
         void Awake()
         {
@@ -33,33 +38,23 @@ namespace Digital_Subcurrent
             DontDestroyOnLoad(gameObject); // 保持跨場景持續
         }
 
-        // 初始化矩陣
-        public void InitializeGame(Vector2 position)
+        void Start()
         {
-            objectMatrix = new int[,] { 
-                { -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 },
-                { -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1 },
-                { -1, 0, 0, 0, 0, 1, 0, 0, 0, 0, -1 },
-                { -1, 0, 0, 0, 0, 0, 0, 0, 0, 3, -1 },
-                { -1, 0, 0, 0, 0, 0, 2, 0, 0, 0, -1 },
-                { -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1 },
-                { -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1 },
-                { -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1 },
-                { -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 } 
-            };
-            floorMatrix = new int[,] { 
-                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0 },
-                { 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0 },
-                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0 },
-                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 } 
-            };
+            levelLoader = LevelLoader.Instance;
+            StartCoroutine(levelLoader.LoadLevel(stageID + "-" + defaultLoadLevel));
+            // 初始化遊戲
+            //InitializeGame();
+        }
+
+        // 初始化矩陣
+        public void InitializeGame(int[,] oM, int[,] fM)
+        {
+            objectMatrix = oM;
+            floorMatrix = fM;
             playerMatrixPosition = FindPlayerPosition(objectMatrix);
             Debug.Log($"PlayerM = {playerMatrixPosition}");
+
+            PrintMatrix(objectMatrix);
         }
 
         // 找到玩家在矩陣中的位置
@@ -83,11 +78,16 @@ namespace Digital_Subcurrent
         {
             Debug.Log($"Moving direction: {direction}");
             Vector2Int targetPosition = playerMatrixPosition + Vector2Int.RoundToInt(direction);
-            if(IsOutOfBounds(targetPosition) || objectMatrix[targetPosition.y, targetPosition.x] == -1 || floorMatrix[targetPosition.y, targetPosition.x] == 1)
+            if(IsOutOfBounds(targetPosition) || objectMatrix[targetPosition.y, targetPosition.x] < 0 || floorMatrix[targetPosition.y, targetPosition.x] == 1)
             {
+                if(objectMatrix[targetPosition.y, targetPosition.x] == -2 && doorUnlocked)
+                {
+                    doorUnlocked = false;
+                    return true;
+                }
                 return false;
             }
-            Debug.Log($"objectMatric[{targetPosition.x}, {targetPosition.y}] = {objectMatrix[targetPosition.y, targetPosition.x]}");
+            Debug.Log($"objectMatrix[{targetPosition.x}, {targetPosition.y}] = {objectMatrix[targetPosition.y, targetPosition.x]}");
             return true;
         }
 
@@ -96,12 +96,13 @@ namespace Digital_Subcurrent
             if (tempBoxMPosition.x == -1 || tempBoxMPosition.y == -1) return false;
 
             Vector2Int targetPosition = tempBoxMPosition + Vector2Int.RoundToInt(direction);
-            if (IsOutOfBounds(targetPosition) || objectMatrix[targetPosition.y, targetPosition.x] == -1)
+            if (IsOutOfBounds(targetPosition) || objectMatrix[targetPosition.y, targetPosition.x] < 0)
             {
                 return false;
             }
             return true;
         }
+
 
         public bool HasBox(Vector2 direction)
         {
@@ -124,6 +125,21 @@ namespace Digital_Subcurrent
                 return true;
             }
             return false;
+        }
+
+        public bool HasDoor(Vector2 direction)
+        {
+            Vector2Int targetPosition = playerMatrixPosition + Vector2Int.RoundToInt(direction);
+            if (objectMatrix[targetPosition.y, targetPosition.x] == -2)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public void UnlockDoor()
+        {
+            doorUnlocked = true;
         }
 
         public BoxController GetBox(Vector2 worldPosition)
@@ -165,6 +181,12 @@ namespace Digital_Subcurrent
                     Debug.Log("Fill hole");
                 }
             }
+
+            if (floorMatrix[original.y, original.x] == 2) // 玻璃
+            {
+                UpdateFloor(original, 1);
+            }
+
             objectMatrix[original.y, original.x] = 0;
             objectMatrix[updated.y, updated.x] = value;
             Debug.Log($"PlayerM = {playerMatrixPosition}");
@@ -182,6 +204,20 @@ namespace Digital_Subcurrent
             Vector2Int original = tempBoxMPosition;
             tempBoxMPosition += Vector2Int.RoundToInt(direction);
             UpdateMatrix(original, tempBoxMPosition, 2);
+        }
+
+        private void PrintMatrix(int[,] matrix)
+        {
+            string matrixString = "";
+            for (int x = 0; x < matrix.GetLength(0); x++)
+            {
+                for (int y = 0; y < matrix.GetLength(1); y++)
+                {
+                    matrixString += matrix[x, y] + " ";
+                }
+                matrixString += "\n";
+            }
+            Debug.Log(matrixString);
         }
 
         // 檢查邊界
@@ -253,7 +289,7 @@ namespace Digital_Subcurrent
                 stateStack.Push(initialState);
             }
         }
-        }
+    }
 
     public class GameState
     {
