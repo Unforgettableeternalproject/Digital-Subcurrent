@@ -12,6 +12,7 @@ TagManager:
   - Key
   - Terminal
   - Exit
+  - Interactable
   layers:
   - Default
   - TransparentFX
