@@ -13,6 +13,7 @@ namespace Digital_Subcurrent
         private Vector2 targetPosition;
         private bool canMove = true;
         private bool hasKey = false; // 玩家是否擁有鑰匙
+        private bool isBeingTransported = false;
 
         private Animator animator;
         private GameManager gameManager;
@@ -51,6 +52,11 @@ namespace Digital_Subcurrent
         // 處理玩家移動輸入
         private Vector2 HandleMovement()
         {
+            if(isBeingTransported)
+            {
+                return Vector2.zero;
+            }
+            
             Vector2 dir = Vector2.zero;
             if (Input.GetKey(KeyCode.A))
             {
@@ -100,6 +106,19 @@ namespace Digital_Subcurrent
             if (gameManager.PlayerTryMove(new Vector2(direction.x, -direction.y)))
             {
                 targetPosition = playerPosition + direction * gridSize;
+
+                if (gameManager.HasDoor(new Vector2(direction.x, -direction.y)))
+                {
+                    isBeingTransported = true;
+                    isMoving = false;
+                    transform.position = targetPosition;
+                    canMove = true;
+                    animator.SetInteger("Direction", 0);
+                    animator.SetBool("IsMoving", false);
+                    isBeingTransported = false;
+                    return;
+                }
+
                 isMoving = true;
                 canMove = false;
                 if (gameManager.HasKey(new Vector2(direction.x, -direction.y)))
@@ -112,15 +131,7 @@ namespace Digital_Subcurrent
                     }
                 }
 
-                if (gameManager.HasDoor(new Vector2(direction.x, -direction.y)))
-                {
-                    isMoving = false;
-                    transform.position = targetPosition;
-                    canMove=true;
-                    animator.SetInteger("Direction", 0);
-                }
                 gameManager.UpdatePlayer(new Vector2(direction.x, -direction.y));
-
             }
 
             // 打印當前的物件矩陣狀態
