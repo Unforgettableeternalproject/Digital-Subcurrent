@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
@@ -9,14 +9,14 @@ namespace Digital_Subcurrent
         public static TransitionManager Instance;
 
         [Header("UI Components")]
-        public ProgressBarCircle progressBar; // ¶i«×±ø
-        public CanvasGroup blackScreen; // ¶Âµe­±ªº CanvasGroup
-        public Text transitionText; // °ÊºA¤å¦r
+        public ProgressBarCircle progressBar; // é€²åº¦æ¢
+        public CanvasGroup blackScreen; // é»‘ç•«é¢çš„ CanvasGroup
+        public Text transitionText; // å‹•æ…‹æ–‡å­—
 
         [Header("Settings")]
-        public float fadeDuration = 1.0f; // ¶Âµe­±²H¤J/²H¥X®É¶¡
-        public float transitionDuration = 2.0f; // ¥[¸ü¹L´ç®É¶¡
-        public string[] descriptions; // ¹L´ç®Éªº¤å¦r´y­z
+        public float fadeDuration = 1.0f; // é»‘ç•«é¢æ·¡å…¥/æ·¡å‡ºæ™‚é–“
+        public float transitionDuration = 2.0f; // åŠ è¼‰éæ¸¡æ™‚é–“
+        public string[] descriptions; // éæ¸¡æ™‚çš„æ–‡å­—æè¿°
 
         private bool isTransitioning = false;
 
@@ -31,51 +31,82 @@ namespace Digital_Subcurrent
                 Destroy(gameObject);
                 return;
             }
+            //DontDestroyOnLoad(gameObject);
         }
 
         private void Start()
         {
             if (progressBar != null)
-                progressBar.BarValue = 0; // ªì©l¤Æ¶i«×±ø
+                progressBar.BarValue = 0; // åˆå§‹åŒ–é€²åº¦æ¢
             if (blackScreen != null)
-                blackScreen.alpha = 0; // ½T«O¶Âµe­±¬O³z©úªº
+                blackScreen.alpha = 0; // ç¢ºä¿é»‘ç•«é¢æ˜¯é€æ˜çš„
         }
 
-        public void StartTransition()
+        public IEnumerator CoroutineStart(float delay = 0.5f, int mode = 1)
         {
-            
+            StopAllCoroutines();
+            // Mode 1: With ProgressBar
+            // Mode 2: Without ProgressBar
             if (!isTransitioning)
             {
-                StartCoroutine(TransitionRoutine());
+                yield return StartCoroutine(TransitionRoutine(mode));
             }
+            yield return new WaitForSeconds(delay);
         }
 
-        private IEnumerator TransitionRoutine()
+        private IEnumerator TransitionRoutine(int mode)
         {
-            progressBar.ShowProgressBar();
+            if (mode == 1)
+            {
+                progressBar.ShowProgressBar();
+            }
+
             isTransitioning = true;
 
-            // ÀH¾÷¿ï¾Ü¹L´ç´y­z
+            // éš¨æ©Ÿé¸æ“‡éæ¸¡æè¿°
             if (descriptions.Length > 0)
             {
                 transitionText.text = descriptions[Random.Range(0, descriptions.Length)];
             }
 
-            // ²H¤J¶Âµe­±
-            yield return StartCoroutine(FadeBlackScreen(1));
+            blackScreen.gameObject.SetActive(true);
 
-            // ¶}©l¥[¸ü³õ´º¨Ã§ó·s¶i«×±ø
-            StartCoroutine(UpdateTransitionText()); // °ÊºA¤å¦r°Êµe
-            yield return StartCoroutine(UpdateProgressBar());
+            // æ·¡å…¥é»‘ç•«é¢
+            yield return StartCoroutine(FadeInBlackScreen(1));
 
-            // ¥[¸ü§¹¦¨¡A²H¥X¶Âµe­±
-            yield return StartCoroutine(FadeBlackScreen(0));
+            if (mode == 1)
+            {
+                // é–‹å§‹åŠ è¼‰å ´æ™¯ä¸¦æ›´æ–°é€²åº¦æ¢
+                StartCoroutine(UpdateTransitionText()); // å‹•æ…‹æ–‡å­—å‹•ç•«
+                yield return StartCoroutine(UpdateProgressBar());
+
+                // åŠ è¼‰å®Œæˆï¼Œæ·¡å‡ºé»‘ç•«é¢
+                yield return StartCoroutine(FadeOutBlackScreen(0));
+
+                blackScreen.gameObject.SetActive(false);
+
+                progressBar.HideProgressBar();
+            }
 
             isTransitioning = false;
-            progressBar.HideProgressBar();
         }
 
-        private IEnumerator FadeBlackScreen(float targetAlpha)
+        public IEnumerator FadeInBlackScreen(float targetAlpha)
+        {
+            float startAlpha = blackScreen.alpha;
+            float elapsedTime = 0f;
+
+            while (elapsedTime < fadeDuration)
+            {
+                elapsedTime += Time.deltaTime;
+                blackScreen.alpha = Mathf.Lerp(startAlpha, targetAlpha, elapsedTime / (fadeDuration / 2));
+                yield return null;
+            }
+
+            blackScreen.alpha = targetAlpha;
+        }
+
+        private IEnumerator FadeOutBlackScreen(float targetAlpha)
         {
             float startAlpha = blackScreen.alpha;
             float elapsedTime = 0f;
@@ -116,8 +147,8 @@ namespace Digital_Subcurrent
             while (isTransitioning)
             {
                 transitionText.text = baseText + new string('.', dotCount);
-                dotCount = (dotCount + 1) % 4; // ´`ÀôÅã¥Ü¡u...¡v
-                yield return new WaitForSeconds(0.5f); // ¨C 0.5 ¬í§ó·s¤@¦¸
+                dotCount = (dotCount + 1) % 4; // å¾ªç’°é¡¯ç¤ºã€Œ...ã€
+                yield return new WaitForSeconds(0.5f); // æ¯ 0.5 ç§’æ›´æ–°ä¸€æ¬¡
             }
         }
     }

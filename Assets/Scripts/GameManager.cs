@@ -34,8 +34,7 @@ namespace Digital_Subcurrent
                 Destroy(gameObject);
                 return;
             }
-            Instance = this;
-            DontDestroyOnLoad(gameObject); // 保持跨場景持續
+            //DontDestroyOnLoad(gameObject); // 保持跨場景持續
         }
 
         void Start()
@@ -96,7 +95,7 @@ namespace Digital_Subcurrent
             if (tempBoxMPosition.x == -1 || tempBoxMPosition.y == -1) return false;
 
             Vector2Int targetPosition = tempBoxMPosition + Vector2Int.RoundToInt(direction);
-            if (IsOutOfBounds(targetPosition) || objectMatrix[targetPosition.y, targetPosition.x] < 0)
+            if (IsOutOfBounds(targetPosition) || objectMatrix[targetPosition.y, targetPosition.x] < 0 || objectMatrix[targetPosition.y, targetPosition.x] > 1)
             {
                 return false;
             }

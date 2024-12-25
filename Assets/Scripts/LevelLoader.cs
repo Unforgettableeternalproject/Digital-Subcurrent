@@ -58,7 +58,7 @@ namespace Digital_Subcurrent
                 yield return 0;
             }
 
-            transitionManager.StartTransition();
+            StartCoroutine(transitionManager.CoroutineStart());
 
             // 0. 設定玩家的位置
             MovePlayerToRoom(levelName);
