@@ -29,7 +29,7 @@ namespace Digital_Subcurrent
         private TextMeshProUGUI rightDialogueText;
         private Button rightContinueButton;
 
-        private bool isTyping = false, inStory = false;
+        private bool isTyping = false, inStory = false, showCutscene = false;
         private string currentSentence;
 
         private StoryManager storyManager;
@@ -75,6 +75,7 @@ namespace Digital_Subcurrent
 
         public void StartDialogue(Dialogue dialogue)
         {
+            showCutscene = dialogue.showCutscene;
             inStory = true;
             sentences.Clear();
             foreach (string line in dialogue.sentences)
@@ -154,7 +155,15 @@ namespace Digital_Subcurrent
             rightAnimator.SetBool("IsOpen", false);
             leftDialogueBox.SetActive(false);
             rightDialogueBox.SetActive(false);
-            StartCoroutine(storyManager.PlayCutscene());
+
+            if (showCutscene)
+            {
+                StartCoroutine(storyManager.PlayCutscene());
+            }
+            else
+            {
+                storyManager.EndStory();
+            }
         }
 
         void Update()

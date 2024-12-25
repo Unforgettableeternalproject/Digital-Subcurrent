@@ -13,6 +13,13 @@ namespace Digital_Subcurrent
         public SettingMenu settingMenu;
         public CanvasGroup canvasGroup;
 
+        private SceneManagerCUS sceneManagerCUS;
+
+        void Start()
+        {
+            sceneManagerCUS = SceneManagerCUS.Instance;
+        }
+
         void Update() 
         {
             if (Input.GetKeyDown(KeyCode.Escape))
@@ -53,13 +60,15 @@ namespace Digital_Subcurrent
         }
 
         public void ReturnToMain() 
-        { 
+        {
             Resume();
+            sceneManagerCUS.ChangeScene("Menu");
         }
 
         public void ReturnToMap()
         {
             Resume();
+            sceneManagerCUS.ChangeScene("Level");
         }
     }
 

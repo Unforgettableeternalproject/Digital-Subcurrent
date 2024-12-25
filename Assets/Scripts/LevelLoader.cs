@@ -9,7 +9,7 @@ namespace Digital_Subcurrent
     {
         public static LevelLoader Instance;
         public Transform player;
-        public Transform camera;
+        public Transform cameraT;
         public TransitionManager transitionManager;
         private Dictionary<string, Transform> roomEntryPoints;
 
@@ -64,9 +64,9 @@ namespace Digital_Subcurrent
             // 0. 設定玩家的位置
             MovePlayerToRoom(levelName);
 
-            if (camera != null)
+            if (cameraT != null)
             {
-                camera.position = new Vector3(player.position.x, player.position.y, camera.position.z);
+                cameraT.position = new Vector3(player.position.x, player.position.y, cameraT.position.z);
             }
 
             yield return new WaitForEndOfFrame();

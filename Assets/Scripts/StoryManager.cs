@@ -43,10 +43,22 @@ namespace Digital_Subcurrent
 
         public void StartStory(Dialogue dialogue)
         {
-            playerAnimator.SetInteger("Direction", 1);
+            if(dialogue.showCutscene)
+            {
+                playerAnimator.SetInteger("Direction", 1);
+            }else
+            {
+                playerAnimator.SetInteger("Direction", 0);
+            }
+            
             playerAnimator.SetBool("IsMoving", false);
             player.GetComponent<PlayerController>().enabled = false; // 禁用玩家控制
             dialogueManager.StartDialogue(dialogue);
+        }
+
+        public void EndStory()
+        {
+            player.GetComponent<PlayerController>().enabled = true; // 恢復玩家控制
         }
 
         public IEnumerator PlayCutscene()
@@ -58,7 +70,7 @@ namespace Digital_Subcurrent
             playerAnimator.SetInteger("Direction", 3);
             playerAnimator.SetBool("IsMoving", true);
 
-            float duration = 5f;
+            float duration = 2.5f;
             Vector3 startPos = playerT.position;
             Vector3 endPos = targetT.position;
 

@@ -7,16 +7,16 @@ namespace Digital_Subcurrent
     [System.Serializable]
     public class Dialogue
     {
-        public string sequenceName;
-
         [TextArea(3, 10)]
         public string[] sentences;
 
+        public bool showCutscene;
+
         // «Øºc¦¡
-        public Dialogue(string name, string[] sentences)
+        public Dialogue(string[] sentences, bool showCutscene)
         {
-            this.sequenceName = name;
             this.sentences = sentences;
+            this.showCutscene = showCutscene;
         }
     }
 }
