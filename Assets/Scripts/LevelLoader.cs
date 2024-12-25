@@ -9,6 +9,7 @@ namespace Digital_Subcurrent
     {
         public static LevelLoader Instance;
         public Transform player;
+        public Transform camera;
         public TransitionManager transitionManager;
         private Dictionary<string, Transform> roomEntryPoints;
 
@@ -63,6 +64,11 @@ namespace Digital_Subcurrent
             // 0. 設定玩家的位置
             MovePlayerToRoom(levelName);
 
+            if (camera != null)
+            {
+                camera.position = new Vector3(player.position.x, player.position.y, camera.position.z);
+            }
+
             yield return new WaitForEndOfFrame();
 
             // 1. 產生房間的矩陣資料
@@ -84,8 +90,15 @@ namespace Digital_Subcurrent
         {
             if (roomEntryPoints.ContainsKey(roomName))
             {
+                PlayerController playerController = player.GetComponent<PlayerController>();
+                Animator playerAnimator = player.GetComponent<Animator>();
+
+                playerController.enabled = false;
                 Transform entryPoint = roomEntryPoints[roomName];
                 player.position = entryPoint.position;
+                playerAnimator.SetBool("IsMoving", false);
+                playerAnimator.SetInteger("Direction", 0);
+                playerController.enabled = true;
                // StartCoroutine(transitionManager.TransitionToRoom(loadRoomAction));
             }
             else
