@@ -1,5 +1,5 @@
 ﻿### This project provides multilanguage README.md file
-[![Static Badge](https://img.shields.io/badge/lang-en-red)](https://github.com/Unforgettableeternalproject/Digital-Subcurrent/blob/master/README.md) [![Static Badge](https://img.shields.io/badge/lang-zh--tw-yellow)](https://github.com/Unforgettableeternalproject/DB_FinalProject/blob/master/README.zh-tw.md)
+[![Static Badge](https://img.shields.io/badge/lang-en-red)](https://github.com/Unforgettableeternalproject/Digital-Subcurrent/blob/master/README.md) [![Static Badge](https://img.shields.io/badge/lang-zh--tw-yellow)](https://github.com/Unforgettableeternalproject/Digital-Subcurrent/blob/master/README.zh-tw.md)
 
 ---
 
