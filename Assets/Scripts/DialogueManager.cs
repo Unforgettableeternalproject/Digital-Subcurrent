@@ -29,7 +29,7 @@ namespace Digital_Subcurrent
         private TextMeshProUGUI rightDialogueText;
         private Button rightContinueButton;
 
-        private bool isTyping = false;
+        private bool isTyping = false, inStory = false;
         private string currentSentence;
 
         private StoryManager storyManager;
@@ -37,6 +37,10 @@ namespace Digital_Subcurrent
         // 預設角色名稱
         private const string LeftCharacterName = "YOU";
         private const string RightCharacterName = "MIPPY";
+
+        public AudioClip audioClipL;
+        public AudioClip audioClipR;
+        public AudioSource audioSource;
 
         void Awake()
         {
@@ -67,14 +71,11 @@ namespace Digital_Subcurrent
             rightDialogueText = rightDialogueBox.transform.Find("Dialogue").GetComponent<TextMeshProUGUI>();
             rightContinueButton = rightDialogueBox.transform.Find("ContinueButton").GetComponent<Button>();
             rightAnimator = rightDialogueBox.GetComponent<Animator>();
-
-            // 為繼續按鈕添加事件
-            leftContinueButton.onClick.AddListener(DisplayNextSentence);
-            rightContinueButton.onClick.AddListener(DisplayNextSentence);
         }
 
         public void StartDialogue(Dialogue dialogue)
         {
+            inStory = true;
             sentences.Clear();
             foreach (string line in dialogue.sentences)
             {
@@ -86,6 +87,9 @@ namespace Digital_Subcurrent
 
         public void DisplayNextSentence()
         {
+
+            AudioClip actualAudioClip;
+
             if (sentences.Count <= 0)
             {
                 EndDialogue();
@@ -98,19 +102,21 @@ namespace Digital_Subcurrent
             // 判斷開頭是 L: 或 R: 並切換對話框
             if (currentSentence.StartsWith("L:"))
             {
-                SetActiveDialogueBox(leftDialogueBox, rightDialogueBox, currentSentence.Substring(2), LeftCharacterName);
+                actualAudioClip = audioClipL;
+                SetActiveDialogueBox(leftDialogueBox, rightDialogueBox, currentSentence.Substring(2), LeftCharacterName, actualAudioClip);
                 leftAnimator.SetBool("IsOpen", true);
                 rightAnimator.SetBool("IsOpen", false);
             }
             else if (currentSentence.StartsWith("R:"))
             {
-                SetActiveDialogueBox(rightDialogueBox, leftDialogueBox, currentSentence.Substring(2), RightCharacterName);
+                actualAudioClip = audioClipR;
+                SetActiveDialogueBox(rightDialogueBox, leftDialogueBox, currentSentence.Substring(2), RightCharacterName, actualAudioClip);
                 rightAnimator.SetBool("IsOpen", true);
                 leftAnimator.SetBool("IsOpen", false);
             }
         }
 
-        private void SetActiveDialogueBox(GameObject activeBox, GameObject inactiveBox, string dialogueText, string characterName)
+        private void SetActiveDialogueBox(GameObject activeBox, GameObject inactiveBox, string dialogueText, string characterName, AudioClip audio)
         {
             TextMeshProUGUI activeNameText = activeBox == leftDialogueBox ? leftNameText : rightNameText;
             TextMeshProUGUI activeDialogueText = activeBox == leftDialogueBox ? leftDialogueText : rightDialogueText;
@@ -120,10 +126,10 @@ namespace Digital_Subcurrent
             inactiveBox.SetActive(false);
 
             activeNameText.text = characterName;
-            StartCoroutine(TypeSentence(dialogueText, activeDialogueText));
+            StartCoroutine(TypeSentence(dialogueText, activeDialogueText, audio));
         }
 
-        IEnumerator TypeSentence(string sentence, TextMeshProUGUI dialogueText)
+        IEnumerator TypeSentence(string sentence, TextMeshProUGUI dialogueText, AudioClip audio)
         {
             isTyping = true;
             dialogueText.text = "";
@@ -131,6 +137,7 @@ namespace Digital_Subcurrent
             foreach (char letter in sentence.ToCharArray())
             {
                 dialogueText.text += letter;
+                audioSource.PlayOneShot(audio);
                 yield return new WaitForSeconds(typingSpeed);
             }
 
@@ -139,6 +146,8 @@ namespace Digital_Subcurrent
 
         void EndDialogue()
         {
+            inStory = false;
+            Debug.Log("End of conversation.");
             leftDialogueBox.SetActive(true);
             rightDialogueBox.SetActive(true);
             leftAnimator.SetBool("IsOpen", false);
@@ -150,7 +159,7 @@ namespace Digital_Subcurrent
 
         void Update()
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) && inStory)
             {
                 if (!isTyping)
                 {

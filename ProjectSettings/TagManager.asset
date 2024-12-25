@@ -13,6 +13,7 @@ TagManager:
   - Terminal
   - Exit
   - Interactable
+  - Effect
   layers:
   - Default
   - TransparentFX

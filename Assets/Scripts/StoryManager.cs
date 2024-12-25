@@ -8,7 +8,12 @@ namespace Digital_Subcurrent
     {
         public static StoryManager Instance;
         public GameObject player;
+        public GameObject target;
+        public GameObject effect;
         private DialogueManager dialogueManager;
+        private SceneManagerCUS sceneChanger;
+
+        private Animator playerAnimator;
 
         private void Awake()
         {
@@ -24,37 +29,58 @@ namespace Digital_Subcurrent
 
         void Start()
         {
+            sceneChanger = SceneManagerCUS.Instance;
             dialogueManager = DialogueManager.Instance;
+
+            if (player == null)
+            {
+                Debug.LogError("Player not found!");
+            }else
+            {
+                playerAnimator = player.GetComponent<Animator>();
+            }
         }
 
         public void StartStory(Dialogue dialogue)
         {
+            playerAnimator.SetInteger("Direction", 1);
+            playerAnimator.SetBool("IsMoving", false);
             player.GetComponent<PlayerController>().enabled = false; // 禁用玩家控制
             dialogueManager.StartDialogue(dialogue);
         }
 
         public IEnumerator PlayCutscene()
         {
-            //Transform player = GameObject.FindWithTag("Player").transform;
-            //Transform target = GameObject.FindWithTag("PlayerTarget").transform;
+            effect.SetActive(true);
+            Transform playerT = player.transform;
+            Transform targetT = target.transform;
 
-            //float duration = 1f;
-            //Vector3 startPos = player.position;
-            //Vector3 endPos = target.position;
+            playerAnimator.SetInteger("Direction", 3);
+            playerAnimator.SetBool("IsMoving", true);
 
-            //float elapsed = 0f;
-            //while (elapsed < duration)
-            //{
-            //    elapsed += Time.deltaTime;
-            //    player.position = Vector3.Lerp(startPos, endPos, elapsed / duration);
-            //    yield return null;
-            //}
+            float duration = 5f;
+            Vector3 startPos = playerT.position;
+            Vector3 endPos = targetT.position;
 
-            //player.position = endPos
+            float elapsed = 0f;
+            while (elapsed < duration)
+            {
+                elapsed += Time.deltaTime;
+                playerT.position = Vector3.Lerp(startPos, endPos, elapsed / duration);
+                yield return null;
+            }
+
+            playerT.position = endPos;
             //Wait One second
             yield return new WaitForSeconds(1f);
 
-            player.GetComponent<PlayerController>().enabled = true; // 恢復玩家控制
+            ChangeScene();
+            //player.GetComponent<PlayerController>().enabled = true; // 恢復玩家控制
+        }
+
+        private void ChangeScene()
+        {
+            sceneChanger.ChangeScene("IF");
         }
     }
 }

@@ -31,6 +31,7 @@ namespace Digital_Subcurrent
                 Destroy(gameObject);
                 return;
             }
+            //DontDestroyOnLoad(gameObject);
         }
 
         private void Start()
@@ -41,18 +42,25 @@ namespace Digital_Subcurrent
                 blackScreen.alpha = 0; // 確保黑畫面是透明的
         }
 
-        public IEnumerator CoroutineStart(float delay = 0.5f)
-        {   
+        public IEnumerator CoroutineStart(float delay = 0.5f, int mode = 1)
+        {
+            StopAllCoroutines();
+            // Mode 1: With ProgressBar
+            // Mode 2: Without ProgressBar
             if (!isTransitioning)
             {
-                yield return StartCoroutine(TransitionRoutine());
+                yield return StartCoroutine(TransitionRoutine(mode));
             }
             yield return new WaitForSeconds(delay);
         }
 
-        private IEnumerator TransitionRoutine()
+        private IEnumerator TransitionRoutine(int mode)
         {
-            progressBar.ShowProgressBar();
+            if (mode == 1)
+            {
+                progressBar.ShowProgressBar();
+            }
+
             isTransitioning = true;
 
             // 隨機選擇過渡描述
@@ -66,20 +74,24 @@ namespace Digital_Subcurrent
             // 淡入黑畫面
             yield return StartCoroutine(FadeInBlackScreen(1));
 
-            // 開始加載場景並更新進度條
-            StartCoroutine(UpdateTransitionText()); // 動態文字動畫
-            yield return StartCoroutine(UpdateProgressBar());
+            if (mode == 1)
+            {
+                // 開始加載場景並更新進度條
+                StartCoroutine(UpdateTransitionText()); // 動態文字動畫
+                yield return StartCoroutine(UpdateProgressBar());
 
-            // 加載完成，淡出黑畫面
-            yield return StartCoroutine(FadeOutBlackScreen(0));
+                // 加載完成，淡出黑畫面
+                yield return StartCoroutine(FadeOutBlackScreen(0));
 
-            blackScreen.gameObject.SetActive(false);
+                blackScreen.gameObject.SetActive(false);
+
+                progressBar.HideProgressBar();
+            }
 
             isTransitioning = false;
-            progressBar.HideProgressBar();
         }
 
-        private IEnumerator FadeInBlackScreen(float targetAlpha)
+        public IEnumerator FadeInBlackScreen(float targetAlpha)
         {
             float startAlpha = blackScreen.alpha;
             float elapsedTime = 0f;

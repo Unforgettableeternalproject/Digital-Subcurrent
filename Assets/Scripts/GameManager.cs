@@ -34,8 +34,7 @@ namespace Digital_Subcurrent
                 Destroy(gameObject);
                 return;
             }
-            Instance = this;
-            DontDestroyOnLoad(gameObject); // 保持跨場景持續
+            //DontDestroyOnLoad(gameObject); // 保持跨場景持續
         }
 
         void Start()
