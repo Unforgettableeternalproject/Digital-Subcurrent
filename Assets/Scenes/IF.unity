@@ -12210,7 +12210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 566153740}
-  cameraT: {fileID: 0}
+  cameraT: {fileID: 1368052381}
   transitionManager: {fileID: 608947620}
 --- !u!4 &1970751584 stripped
 Transform:
