@@ -47,6 +47,14 @@
   3. 地圖生成腳本 `LoadMapInfo`
   4. 關卡載入腳本 `LevelLoader`
 
+### 遊戲畫面截圖:
+
+![Main Menu](https://i.ibb.co/4t3ZsgP/2024-12-25-172521.png)
+
+![Cutscene](https://i.ibb.co/FH7bVzy/2024-12-25-172627.png)
+
+![Gameplay](https://i.ibb.co/JC7c25w/image.png)
+
 ## 🛠️ 安裝與執行
 
 1. 下載專案檔案，並使用 Unity 開啟。

@@ -32,6 +32,14 @@ This puzzle game features a series of levels where players must navigate their c
 2. Collect all necessary Keycodes to unlock the Terminal.
 3. Move efficiently to minimize wasted steps.
 
+### Screenshots:
+
+![Main Menu](https://i.ibb.co/4t3ZsgP/2024-12-25-172521.png)
+
+![Cutscene](https://i.ibb.co/FH7bVzy/2024-12-25-172627.png)
+
+![Gameplay](https://i.ibb.co/JC7c25w/image.png)
+
 ## 🔧 Technical Details
 
 This project includes:
