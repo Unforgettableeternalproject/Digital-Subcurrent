@@ -14,7 +14,7 @@ namespace Digital_Subcurrent
 
         public void PlayGame()
         {
-            sceneManagerCUS.ChangeScene("IF");
+            sceneManagerCUS.ChangeScene("PC");
         }
 
         public void QuitGame()

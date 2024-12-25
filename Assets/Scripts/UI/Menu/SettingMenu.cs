@@ -9,6 +9,13 @@ namespace Digital_Subcurrent
     {
         public AudioMixer audioMixer;
 
+        void Update() { 
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                CloseSettingMenu();
+            }
+        }
+
         public void OpenSettingMenu()
         {
             gameObject.SetActive(true);
